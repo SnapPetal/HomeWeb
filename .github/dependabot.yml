@@ -1,0 +1,17 @@
+
+version: 2
+updates:
+  - package-ecosystem: npm
+    versioning-strategy: lockfile-only
+    directory: /client
+    schedule:
+      interval: daily
+    ignore:
+      - dependency-name: projen
+  - package-ecosystem: npm
+    versioning-strategy: lockfile-only
+    directory: /pipeline
+    schedule:
+      interval: daily
+    ignore:
+      - dependency-name: projen
