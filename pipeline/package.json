@@ -41,7 +41,8 @@
   "peerDependencies": {},
   "dependencies": {
     "@aws-cdk/assert": "^1.80.0",
-    "@aws-cdk/core": "^1.80.0"
+    "@aws-cdk/core": "^1.80.0",
+    "cdk-cloudfront-deploy": "^1.80.0"
   },
   "bundledDependencies": [],
   "keywords": [],

@@ -1,22 +1,33 @@
 import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
+import { CreateCloudfrontSite } from 'cdk-cloudfront-deploy';
 
-export class MyStack extends Stack {
-  constructor(scope: Construct, id: string, props: StackProps = {}) {
+interface HomePageProps extends StackProps {
+  webSiteFolder: string;
+}
+
+export class HomePageStack extends Stack {
+  constructor(scope: Construct, id: string, props: HomePageProps) {
     super(scope, id, props);
 
-    // define resources here...
+    new CreateCloudfrontSite(this, 'test-website', {
+      websiteFolder: props.webSiteFolder,
+      indexDoc: 'index.html',
+      hostedZoneDomain: 'thonbecker.com',
+      websiteDomain: 'www.thonbecker.com',
+    });
   }
 }
 
-// for development, use account/region from cdk cli
-const devEnv = {
+const prodEnv = {
   account: process.env.CDK_DEFAULT_ACCOUNT,
   region: process.env.CDK_DEFAULT_REGION,
 };
 
 const app = new App();
 
-new MyStack(app, 'my-stack-dev', { env: devEnv });
-// new MyStack(app, 'my-stack-prod', { env: prodEnv });
+new HomePageStack(app, 'home-page-stack', {
+  env: prodEnv,
+  webSiteFolder: '../client/src/dist/',
+});
 
 app.synth();
