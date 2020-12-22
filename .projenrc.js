@@ -19,7 +19,7 @@ new web.ReactTypeScriptProject({
 new AwsCdkTypeScriptApp({
   parent: root,
   outdir: 'pipeline',
-  cdkVersion: '1.79.0',
+  cdkVersion: '1.80.0',
   buildWorkflow: false,
   releaseWorkflow: false,
   rebuildBot: false,
