@@ -23,6 +23,7 @@ new AwsCdkTypeScriptApp({
   outdir: 'pipeline',
   cdkVersion: '1.80.0',
   cdkDependencies: ['cdk-cloudfront-deploy'],
+  gitignore: ['cdk.context.json'],
   buildWorkflow: false,
   releaseWorkflow: false,
   rebuildBot: false,
