@@ -1,13 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import './App.css'
 import TabPanel from './TabPanel.jsx';
+import './App.css'
 
 function App() {
   function a11yProps(index) {
@@ -30,11 +27,7 @@ function App() {
     setValue(newValue);
   };
   return (
-    <div className="App">
-      <header className="App-header">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-      </header>
-<body>
+    <div classname={classes.root}>
   <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab label="Item One" {...a11yProps(0)} />
@@ -51,8 +44,7 @@ function App() {
       <TabPanel value={value} index={2}>
         Item Three
       </TabPanel>
-</body>
-    </div>
+      </div>
   );
 }
 
