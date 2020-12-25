@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { ThemeProvider } from "@material-ui/core";
+import { ThemeProvider, useMediaQuery } from "@material-ui/core";
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -18,9 +18,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import Brightness3Icon from "@material-ui/icons/Brightness3";
-import Brightness7Icon from "@material-ui/icons/Brightness7";
-
 
 const drawerWidth = 240;
 
@@ -82,11 +79,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
-  const [theme, setTheme] = React.useState(true);
   const [open, setOpen] = React.useState(false);
-  const icon = !theme ? <Brightness7Icon /> : <Brightness3Icon />;
-  const appliedTheme = createMuiTheme(theme ? light : dark);
-
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const theme = React.useMemo(
+    () =>
+    createMuiTheme({
+      palette: {
+        type: prefersDarkMode ? 'dark' : 'light',
+        primary: {
+          light: '#4dabf5',
+          main: '#2196f3',
+          dark: '#1769aa',
+          contrastText: '#fff',
+        },
+        secondary: {
+          light: '#ab003c',
+          main: '#f50057',
+          dark: '#ba000d',
+          contrastText: '#000',
+        },
+      },
+    }), [prefersDarkMode],
+  );
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -96,7 +110,7 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <ThemeProvider theme={appliedTheme}>
+    <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
@@ -118,14 +132,6 @@ export default function PersistentDrawerLeft() {
             <Typography variant="h6" noWrap>
               Persistent drawer
             </Typography>
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label="mode"
-              onClick={() => setTheme(!theme)}
-            >
-              {icon}
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -195,15 +201,3 @@ export default function PersistentDrawerLeft() {
     </ThemeProvider>
   );
 }
-
-export const light = {
-  palette: {
-    type: "light"
-  }
-};
-
-export const dark = {
-  palette: {
-    type: "dark"
-  }
-};
