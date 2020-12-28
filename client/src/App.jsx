@@ -133,7 +133,7 @@ export default function PersistentDrawerLeft() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              Thon Becker
+              About
             </Typography>
           </Toolbar>
         </AppBar>
