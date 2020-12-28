@@ -17,7 +17,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
-    "projen": "^0.8.0",
+    "projen": "^0.9.1",
     "standard-version": "^9.0.0"
   },
   "peerDependencies": {},
