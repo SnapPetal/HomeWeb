@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useLocation } from "react-router-dom";
 import { ThemeProvider, useMediaQuery } from "@material-ui/core";
 import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -84,8 +84,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PersistentDrawerLeft() {
+  const location = useLocation();
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [title, setTitle] = React.useState(false);
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = React.useMemo(
     () =>
@@ -115,6 +117,16 @@ export default function PersistentDrawerLeft() {
     setOpen(false);
   };
 
+  useEffect(() => {
+    switch (location.pathname) {
+      case '/experience':
+        setTitle('Experience')
+        break;
+      default:
+        setTitle('About')
+    }
+  }, [location]);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
@@ -136,7 +148,7 @@ export default function PersistentDrawerLeft() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              About
+              {title}
             </Typography>
           </Toolbar>
         </AppBar>
@@ -197,9 +209,9 @@ export default function PersistentDrawerLeft() {
           })}
         >
           <div className={classes.drawerHeader} />
+          <Route exact path="/"><AboutPage /></Route>
+          <Route exact path="/experience"><ExperiencePage /></Route>
         </main>
-      <Route exact path="/"><AboutPage /></Route>
-      <Route exact path="/experience"><ExperiencePage /></Route>
       </div>
     </ThemeProvider>
   );
