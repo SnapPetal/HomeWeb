@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-Run the following command and follow the instructions:
+Run the following command to deploy:
 
 ```console
 $ npx projen
