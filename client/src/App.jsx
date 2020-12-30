@@ -120,10 +120,10 @@ export default function PersistentDrawerLeft() {
   useEffect(() => {
     switch (location.pathname) {
       case '/experience':
-        setTitle('Experience')
+        setTitle('EXPERIENCE')
         break;
       default:
-        setTitle('About')
+        setTitle('ABOUT')
     }
   }, [location]);
 

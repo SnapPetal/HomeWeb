@@ -1,20 +1,59 @@
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
+import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import { red, yellow } from '@material-ui/core/colors';
 
-export default function ExperiencePage() {
+const useStyles = makeStyles((theme) => ({
+  root: {},
+  media: {
+    height: 0,
+    paddingTop: '56.25%',
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  avatar: {
+    backgroundColor: yellow[500],
+  },
+}));
+
+export default function RecipeReviewCard() {
+  const classes = useStyles();
+
   return (
     <div>
-      <Typography paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-        facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-        gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-        donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-        adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-        Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-        imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-        arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-        donec massa sapien faucibus et molestie ac.
-      </Typography>
-      </div>
+      <Card className={classes.root}>
+        <CardHeader
+          avatar={
+          
+            <Avatar alt="Intertek Alchemy" variant="square" src="/static/images/alchemy.png"  className={classes.avatar} />
+          }
+          title="Intertek Alchemy"
+          subheader="September 14, 2016"
+        />
+        <CardMedia
+          className={classes.media}
+          image="/static/images/paella.jpg"
+          title="Paella dish"
+        />
+        <CardContent>
+          <Typography variant="body2" color="textSecondary" component="p">
+            This impressive paella is a perfect party dish and a fun meal to cook together with your
+            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          </Typography>
+        </CardContent>
+      </Card> 
+    </div>
   );
 }
