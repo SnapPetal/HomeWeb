@@ -10,5 +10,4 @@ $ cd client
 $ yarn run build
 $ cd pipeline
 $ yarn run deploy
-...
 ```
