@@ -14,7 +14,7 @@
     "eject": "npx projen eject"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/jest-dom": "^5.11.7",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "projen": "^0.12.2",

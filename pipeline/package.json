@@ -41,7 +41,7 @@
   "dependencies": {
     "@aws-cdk/assert": "^1.80.0",
     "@aws-cdk/core": "^1.80.0",
-    "cdk-cloudfront-deploy": "^0.0.19"
+    "cdk-simplewebsite-deploy": "^0.0.21"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",

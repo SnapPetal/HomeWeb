@@ -1789,10 +1789,10 @@ cdk-assets@1.80.0:
     glob "^7.1.6"
     yargs "^16.2.0"
 
-cdk-cloudfront-deploy@*:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/cdk-cloudfront-deploy/-/cdk-cloudfront-deploy-0.0.19.tgz#e9c5224517fe8a4f770dcb28e23147b85341c251"
-  integrity sha512-S3ipVNTd3Ne5mmBGILJUm3ZAOuSKzHTYCHPu5J9IidYvgbfRu7DGXLPVmHWmPe1F5jheTeQB7b/Vp5kNa+rgEw==
+cdk-simplewebsite-deploy@*:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/cdk-simplewebsite-deploy/-/cdk-simplewebsite-deploy-0.0.21.tgz#46e8aec1c97cb38f89dab214dc15c70b0820f735"
+  integrity sha512-AAX6PmgcAElesyAAf20q9KCwv97cI3o1ZWaJ9TjGfR8moDzmykhdQSxCxXG39x/HYCvCuPH7OL2Qn0sVKn3pOw==
   dependencies:
     "@aws-cdk/aws-certificatemanager" "^1.80.0"
     "@aws-cdk/aws-cloudfront" "^1.80.0"

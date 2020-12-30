@@ -87,7 +87,7 @@
       "type": "runtime"
     },
     {
-      "name": "cdk-cloudfront-deploy",
+      "name": "cdk-simplewebsite-deploy",
       "type": "runtime"
     }
   ],
