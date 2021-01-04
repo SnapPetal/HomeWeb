@@ -21,7 +21,8 @@ new web.ReactProject({
 new AwsCdkTypeScriptApp({
   parent: root,
   outdir: 'pipeline',
-  cdkVersion: '1.80.0',
+  cdkVersion: '1.82.0',
+  cdkVersionPinning: true,
   cdkDependencies: [],
   deps: ['cdk-simplewebsite-deploy'],
   gitignore: ['cdk.context.json'],

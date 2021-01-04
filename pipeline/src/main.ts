@@ -13,7 +13,8 @@ export class HomePageStack extends Stack {
       websiteFolder: props.webSiteFolder,
       indexDoc: "index.html",
       hostedZoneDomain: "thonbecker.com",
-      websiteDomain: "www.thonbecker.com",
+      websiteDomain: "thonbecker.com",
+      websiteSubDomain: "www.thonbecker.com",
     });
   }
 }

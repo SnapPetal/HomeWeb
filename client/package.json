@@ -14,16 +14,16 @@
     "eject": "npx projen eject"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.7",
+    "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
-    "projen": "^0.12.2",
+    "projen": "^0.12.3",
     "standard-version": "^9.0.0"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
-    "@types/react-router-dom": "^5.1.6",
+    "@types/react-router-dom": "^5.1.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
