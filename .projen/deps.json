@@ -1,6 +1,10 @@
 {
   "dependencies": [
     {
+      "name": "@types/jest",
+      "type": "build"
+    },
+    {
       "name": "@types/node",
       "version": "^10.17.0",
       "type": "build"
@@ -37,17 +41,30 @@
       "type": "build"
     },
     {
+      "name": "jest",
+      "type": "build"
+    },
+    {
+      "name": "jest-junit",
+      "version": "^12",
+      "type": "build"
+    },
+    {
       "name": "json-schema",
       "type": "build"
     },
     {
       "name": "projen",
-      "version": "^0.14.1",
+      "version": "^0.14.2",
       "type": "build"
     },
     {
       "name": "standard-version",
       "version": "^9.0.0",
+      "type": "build"
+    },
+    {
+      "name": "ts-jest",
       "type": "build"
     },
     {

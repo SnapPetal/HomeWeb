@@ -41,7 +41,12 @@
     "test:compile": {
       "name": "test:compile",
       "category": "10.test",
-      "description": "compiles the test code"
+      "description": "compiles the test code",
+      "steps": [
+        {
+          "exec": "tsc --noEmit --project tsconfig.jest.json"
+        }
+      ]
     },
     "test": {
       "name": "test",
@@ -49,7 +54,13 @@
       "description": "Run tests",
       "steps": [
         {
+          "exec": "rm -fr lib/"
+        },
+        {
           "spawn": "test:compile"
+        },
+        {
+          "exec": "jest --passWithNoTests --all --updateSnapshot"
         },
         {
           "spawn": "eslint"
@@ -96,6 +107,26 @@
         }
       ],
       "condition": "! git log --oneline -1 | grep -q \"chore(release):\""
+    },
+    "test:watch": {
+      "name": "test:watch",
+      "category": "10.test",
+      "description": "Run jest in watch mode",
+      "steps": [
+        {
+          "exec": "jest --watch"
+        }
+      ]
+    },
+    "test:update": {
+      "name": "test:update",
+      "category": "10.test",
+      "description": "Update jest snapshots",
+      "steps": [
+        {
+          "exec": "jest --updateSnapshot"
+        }
+      ]
     },
     "projen:upgrade": {
       "name": "projen:upgrade",
