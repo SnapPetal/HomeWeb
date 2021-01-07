@@ -1,5 +1,5 @@
-import { App, Construct, Stack, StackProps } from "@aws-cdk/core";
-import { CreateCloudfrontSite } from "cdk-simplewebsite-deploy";
+import { App, Construct, Stack, StackProps } from '@aws-cdk/core';
+import { CreateCloudfrontSite } from 'cdk-simplewebsite-deploy';
 
 interface HomePageProps extends StackProps {
   webSiteFolder: string;
@@ -9,12 +9,13 @@ export class HomePageStack extends Stack {
   constructor(scope: Construct, id: string, props: HomePageProps) {
     super(scope, id, props);
 
-    new CreateCloudfrontSite(this, "test-website", {
+    new CreateCloudfrontSite(this, 'home-website', {
       websiteFolder: props.webSiteFolder,
-      indexDoc: "index.html",
-      hostedZoneDomain: "thonbecker.com",
-      websiteDomain: "thonbecker.com",
-      websiteSubDomain: "www.thonbecker.com",
+      indexDoc: 'index.html',
+      hostedZoneDomain: 'thonbecker.com',
+      websiteDomain: 'thonbecker.com',
+      websiteSubDomain: 'www.thonbecker.com',
+      encryptBucket: true,
     });
   }
 }
@@ -26,9 +27,9 @@ const prodEnv = {
 
 const app = new App();
 
-new HomePageStack(app, "home-page-stack", {
+new HomePageStack(app, 'home-page-stack', {
   env: prodEnv,
-  webSiteFolder: "../client/build/",
+  webSiteFolder: '../client/build/',
 });
 
 app.synth();
