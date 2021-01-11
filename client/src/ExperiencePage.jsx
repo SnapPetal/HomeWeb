@@ -3,9 +3,13 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
+  card: {
+    marginBottom: 10,
+  },
   media: {
     width: 150,
     padding: 10,
@@ -16,18 +20,20 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RecipeReviewCard() {
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
 
   return (
     <div>
-      <Card className={classes.root} onClick="window.open(https://www.alchemysystems.com, '_blank')">
+
+      <Card className={classes.card}>
         <CardContent>
-          <CardMedia
-            component="img"
-            className={classes.media}
-            image="/static/images/alchemy.png"
-            title="Intertek Alchemy"
-          />
+          <Link href="https://www.alchemysystems.com" target="_blank">
+            <CardMedia
+              component="img"
+              className={classes.media}
+              image="/static/images/alchemy.png"
+              title="Intertek Alchemy"
+            />
+          </Link>
           <hr/>
           <Typography variant="subtitle1" color="textSecondary" component="p">
             Senior Software Architect: 2020 - Present
@@ -38,14 +44,17 @@ export default function RecipeReviewCard() {
           </Typography>
         </CardContent>
       </Card>
-      <Card className={classes.root} onClick="window.open(https://www.alchemysystems.com, '_blank')">
+
+      <Card className={classes.card} onClick="window.open(https://www.alchemysystems.com, '_blank')">
         <CardContent>
-          <CardMedia
-            component="img"
-            className={classes.media}
-            image="/static/images/alchemy.png"
-            title="Intertek Alchemy"
-          />
+          <Link href="https://www.alchemysystems.com" target="_blank">
+            <CardMedia
+              component="img"
+              className={classes.media}
+              image="/static/images/alchemy.png"
+              title="Intertek Alchemy"
+            />
+          </Link>
           <hr/>
           <Typography variant="subtitle1" color="textSecondary" component="p">
             Senior Software Developer: 2004 - 2020
@@ -63,7 +72,7 @@ export default function RecipeReviewCard() {
             </ul>
           </Typography>
         </CardContent>
-      </Card> 
-    </div>
+        </Card>
+        </div>
   );
 }
