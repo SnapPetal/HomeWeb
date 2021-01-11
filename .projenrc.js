@@ -1,7 +1,8 @@
 const {
   Project,
   web,
-  AwsCdkTypeScriptApp
+  AwsCdkTypeScriptApp,
+  CdkApprovalLevel
 } = require('projen');
 
 const root = new Project({
@@ -23,9 +24,9 @@ new AwsCdkTypeScriptApp({
   outdir: 'pipeline',
   cdkVersion: '1.83.0',
   cdkVersionPinning: true,
-  cdkDependencies: [],
   deps: ['cdk-simplewebsite-deploy'],
   gitignore: ['cdk.context.json'],
+  requireApproval: CdkApprovalLevel.NEVER,
   buildWorkflow: false,
   releaseWorkflow: false,
   rebuildBot: false,
