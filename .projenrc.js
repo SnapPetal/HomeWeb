@@ -13,7 +13,6 @@ new web.ReactProject({
   parent: root,
   outdir: 'client',
   bundledDeps: ['@material-ui/core', '@material-ui/icons', 'react-router-dom', '@types/react-router-dom'],
-  devDeps: [],
   buildWorkflow: false,
   releaseWorkflow: false,
   rebuildBot: false,
