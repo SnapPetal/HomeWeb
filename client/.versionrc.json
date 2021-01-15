@@ -13,6 +13,6 @@
   ],
   "commitAll": true,
   "scripts": {
-    "postbump": "npx projen && git add ."
+    "postbump": "cd .. && npx projen && git add ."
   }
 }
