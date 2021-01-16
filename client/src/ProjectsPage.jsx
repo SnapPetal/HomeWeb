@@ -9,11 +9,15 @@ import ExtensionIcon from '@material-ui/icons/Extension';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        marginTop: 15,
     },
     paper: {
         padding: theme.spacing(2),
         margin: 'auto',
-        maxWidth: 500,
+        maxWidth: 400,
+    },
+    img: {
+        marginRight: 15,
     },
     button: {
         marginTop: 15,
@@ -23,15 +27,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ProjectsPage() {
     const classes = useStyles();
-    const [spacing] = React.useState(2);
+    const [spacing] = React.useState(4);
 
     return (
         <Grid container className={classes.root} spacing={2}>
             <Grid item xs={12}>
                 <Grid container justify="center" spacing={spacing}>
-                    <Paper className={classes.paper}>
-                        <Grid container spacing={2}>
-                            <Grid item >
+                    <Grid item>
+                        <Paper className={classes.paper} >
+                            <Grid item className={classes.img} >
                                 <ExtensionIcon style={{ fontSize: 40 }}/>
                             </Grid>
                             <Grid item xs={12} sm container>
@@ -41,7 +45,7 @@ export default function ProjectsPage() {
                                             CDK Simple Website Package
                                         </Typography>
                                         <Typography variant="body2" gutterBottom>
-                                           AWS CDK Construct to simplify deploying a single-page website use CloudFront distributions.
+                                            AWS CDK Construct to simplify deploying a single-page website use CloudFront distributions.
                                         </Typography>
                                         <Button className={classes.button} variant="contained" color="primary" target="_blank" href="https://github.com/SnapPetal/cdk-simplewebsite-deploy">
                                             Project Site
@@ -49,11 +53,11 @@ export default function ProjectsPage() {
                                     </Grid>
                                 </Grid>
                             </Grid>
-                        </Grid>
-                    </Paper>
-                    <Paper className={classes.paper}>
-                        <Grid container spacing={2}>
-                            <Grid item >
+                        </Paper>
+                    </Grid>
+                    <Grid item>
+                        <Paper className={classes.paper} >
+                            <Grid item className={classes.img}>
                                 <ExtensionIcon style={{ fontSize: 40 }}/>
                             </Grid>
                             <Grid item xs={12} sm container>
@@ -66,13 +70,35 @@ export default function ProjectsPage() {
                                             Valor Skate & Serve is a community app for skateboarders.
                                         </Typography>
                                         <Button className={classes.button} variant="contained" color="primary" target="_blank" href="https://play.google.com/store/apps/details?id=org.valorskateandserve.app">
+                                            Android Application
+                                        </Button>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Paper>    
+                    </Grid>
+                    <Grid item>
+                        <Paper className={classes.paper} >
+                            <Grid item className={classes.img}>
+                                <ExtensionIcon style={{ fontSize: 40 }}/>
+                            </Grid>
+                            <Grid item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={2}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="subtitle1">
+                                            Becker Games
+                                        </Typography>
+                                        <Typography variant="body2" gutterBottom>
+                                            Independent game development projects 
+                                        </Typography>
+                                        <Button className={classes.button} variant="contained" color="primary" target="_blank" href="http://beckergames.net">
                                             Project Site
                                         </Button>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                        </Grid>
-                    </Paper>
+                        </Paper>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>
