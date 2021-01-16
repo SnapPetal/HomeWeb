@@ -24,6 +24,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AboutPage from './AboutPage';
 import ExperiencePage from './ExperiencePage';
+import ProjectsPage from './ProjectsPage';
 
 const drawerWidth = 240;
 
@@ -122,6 +123,9 @@ export default function PersistentDrawerLeft() {
       case '/experience':
         setTitle('EXPERIENCE')
         break;
+      case '/projects':
+        setTitle('PROJECTS')
+        break;
       default:
         setTitle('ABOUT')
     }
@@ -180,7 +184,7 @@ export default function PersistentDrawerLeft() {
               </ListItemIcon>
               <ListItemText primary='Experience' />
             </ListItem>
-            <ListItem button key='Projects'>
+            <ListItem component={Link} to="/projects" button key='Projects'>
               <ListItemIcon>
                 <AccountTreeIcon />
               </ListItemIcon>
@@ -211,6 +215,7 @@ export default function PersistentDrawerLeft() {
           <div className={classes.drawerHeader} />
           <Route exact path="/"><AboutPage /></Route>
           <Route exact path="/experience"><ExperiencePage /></Route>
+          <Route exact path="/projects"><ProjectsPage /></Route>
         </main>
       </div>
     </ThemeProvider>
