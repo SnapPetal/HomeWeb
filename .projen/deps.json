@@ -21,7 +21,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "1.85.0",
+      "version": "1.86.0",
       "type": "build"
     },
     {
@@ -55,7 +55,7 @@
     },
     {
       "name": "projen",
-      "version": "^0.15.8",
+      "version": "^0.15.11",
       "type": "build"
     },
     {
@@ -78,12 +78,12 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "1.85.0",
+      "version": "1.86.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "1.85.0",
+      "version": "1.86.0",
       "type": "runtime"
     },
     {

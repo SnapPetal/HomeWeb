@@ -15,7 +15,6 @@ export class HomePageStack extends Stack {
       hostedZoneDomain: "thonbecker.com",
       websiteDomain: "thonbecker.com",
       websiteSubDomain: "www.thonbecker.com",
-      encryptBucket: true,
     });
   }
 }
