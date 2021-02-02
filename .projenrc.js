@@ -1,7 +1,7 @@
 const { AwsCdkTypeScriptApp, CdkApprovalLevel } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: '1.87.0',
+  cdkVersion: '1.87.1',
   cdkVersionPinning: true,
   deps: ['cdk-simplewebsite-deploy'],
   requireApproval: CdkApprovalLevel.NEVER,
