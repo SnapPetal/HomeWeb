@@ -36,7 +36,7 @@
   "dependencies": {
     "@aws-cdk/assert": "1.87.1",
     "@aws-cdk/core": "1.87.1",
-    "cdk-simplewebsite-deploy": "^0.3.2"
+    "cdk-simplewebsite-deploy": "^0.4.0"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
