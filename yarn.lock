@@ -1056,9 +1056,9 @@ cdk-assets@1.87.1:
     yargs "^16.2.0"
 
 cdk-simplewebsite-deploy@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/cdk-simplewebsite-deploy/-/cdk-simplewebsite-deploy-0.4.0.tgz#390556382f1cbab4489e69ae7116c4a9b3bb8dcd"
-  integrity sha512-QXqBhF4E3fJLNXxMj3rMj2uM2fsAn0pFhHLqrZ3vWTKq+Fos+mWNavhw3EH43YKcwVj8yggaN3j6hLFodBozjQ==
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/cdk-simplewebsite-deploy/-/cdk-simplewebsite-deploy-0.4.1.tgz#20521021acb2975fc09558be698b0a24d00200ca"
+  integrity sha512-zntdKn2SzFXecehVKdlxHlLec/qfSD2rupsHNd2mOgPyN7qhOWGxkjhoMRCveM6SijlSO9vgTEFIB2bYB6eOug==
   dependencies:
     "@aws-cdk/aws-certificatemanager" "1.87.1"
     "@aws-cdk/aws-cloudfront" "1.87.1"
