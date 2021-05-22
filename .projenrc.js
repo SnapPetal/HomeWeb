@@ -7,6 +7,7 @@ const project = new AwsCdkTypeScriptApp({
   requireApproval: CdkApprovalLevel.NEVER,
   name: 'HomeWeb',
   defaultReleaseBranch: 'master',
+  gitignore: ['*.DS_Store'],
   jest: false,
 });
 
