@@ -15,7 +15,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "1.103.0",
+      "version": "^1.103.0",
       "type": "build"
     },
     {
@@ -44,22 +44,13 @@
       "type": "build"
     },
     {
-      "name": "npm-check-updates",
-      "version": "^11",
-      "type": "build"
-    },
-    {
       "name": "projen",
-      "version": "^0.18.5",
-      "type": "build"
-    },
-    {
-      "name": "standard-version",
-      "version": "^9",
+      "version": "^0.22.13",
       "type": "build"
     },
     {
       "name": "ts-node",
+      "version": "^9",
       "type": "build"
     },
     {
@@ -68,12 +59,12 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "1.103.0",
+      "version": "^1.103.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "1.103.0",
+      "version": "^1.103.0",
       "type": "runtime"
     },
     {
