@@ -19,10 +19,10 @@
   },
   "devDependencies": {
     "@types/node": "^10.17.0",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "aws-cdk": "^1.103.0",
-    "eslint": "^7.28.0",
+    "eslint": "^7.29.0",
     "eslint-import-resolver-node": "^0.3.4",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.23.4",
@@ -30,12 +30,12 @@
     "npm-check-updates": "^11",
     "projen": "^0.22.13",
     "ts-node": "^9",
-    "typescript": "^3.9.9"
+    "typescript": "^3.9.10"
   },
   "dependencies": {
     "@aws-cdk/assert": "^1.103.0",
     "@aws-cdk/core": "^1.103.0",
-    "cdk-simplewebsite-deploy": "^0.4.36"
+    "cdk-simplewebsite-deploy": "^0.4.38"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
