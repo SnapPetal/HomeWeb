@@ -1,8 +1,9 @@
 const { AwsCdkTypeScriptApp, CdkApprovalLevel } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: '1.103.0',
-  deps: ['cdk-simplewebsite-deploy'],
+  cdkVersion: '1.110.0',
+  cdkDependencies: ['@aws-cdk/aws-ec2', '@aws-cdk/aws-ecs', '@aws-cdk/aws-ecs-patterns', '@aws-cdk/aws-iam'],
+  deps: ['path'],
   requireApproval: CdkApprovalLevel.NEVER,
   name: 'HomeWeb',
   defaultReleaseBranch: 'master',

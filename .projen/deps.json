@@ -15,7 +15,7 @@
     },
     {
       "name": "aws-cdk",
-      "version": "^1.103.0",
+      "version": "^1.110.0",
       "type": "build"
     },
     {
@@ -45,7 +45,6 @@
     },
     {
       "name": "projen",
-      "version": "^0.22.13",
       "type": "build"
     },
     {
@@ -59,16 +58,36 @@
     },
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.103.0",
+      "version": "^1.110.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ec2",
+      "version": "^1.110.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs-patterns",
+      "version": "^1.110.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-ecs",
+      "version": "^1.110.0",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-iam",
+      "version": "^1.110.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.103.0",
+      "version": "^1.110.0",
       "type": "runtime"
     },
     {
-      "name": "cdk-simplewebsite-deploy",
+      "name": "path",
       "type": "runtime"
     }
   ],
