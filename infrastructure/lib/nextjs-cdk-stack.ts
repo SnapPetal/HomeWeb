@@ -6,7 +6,7 @@ import * as s3 from '@aws-cdk/aws-s3'
 import * as s3deploy from '@aws-cdk/aws-s3-deployment'
 import * as acm from '@aws-cdk/aws-certificatemanager'
 import * as r53 from '@aws-cdk/aws-route53'
-
+import { CloudFrontTarget } from '@aws-cdk/aws-route53-targets';
 import * as path from 'path'
 import { Builder } from '@sls-next/lambda-at-edge'
 
@@ -57,15 +57,36 @@ export class NextjsCdkStack extends cdk.Stack {
       });
 
       // Static Asset bucket for cloudfront distribution as default origin
-      const myBucket = new s3.Bucket(this, 'myBucket', {});
+      const staticBucket = new s3.Bucket(this, 'StaticBucket', {
+        autoDeleteObjects: true,
+      });
 
       // Allow images to be fetched
-      myBucket.grantRead(imageLambda)
+      staticBucket.grantRead(imageLambda);
 
-      const origin = new origins.S3Origin(myBucket);
+      const logBucket = new s3.Bucket(this, 'LogBucket', {
+        autoDeleteObjects: true,
+      });
+
+      const hostedZoneLookup = r53.HostedZone.fromLookup(
+        this,
+        'WebsiteHostedZone',
+        {
+          domainName: 'thonbecker.com',
+        },
+      );
+
+      const origin = new origins.S3Origin(staticBucket);
+
+      const websiteCert = new acm.DnsValidatedCertificate(this, 'WebsiteCert', {
+        domainName: 'thonbecker.com',
+        subjectAlternativeNames: ['www.thonbecker.com'],
+        hostedZone: hostedZoneLookup,
+        region: 'us-east-1',
+      });
 
       // Default distribution requests to the default lambda
-      const distribution = new cloudfront.Distribution(this, 'myDist', {
+      const distribution = new cloudfront.Distribution(this, 'Distribution', {
         defaultBehavior: {
           origin: origin,
           viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
@@ -76,6 +97,9 @@ export class NextjsCdkStack extends cdk.Stack {
             }
           ],
         },
+        domainNames: ['thonbecker.com', 'www.thonbecker.com'],
+        logBucket,
+        certificate: websiteCert,
         enableLogging: true,
       });
 
@@ -111,11 +135,28 @@ export class NextjsCdkStack extends cdk.Stack {
         ],
         cachePolicy: imageCachePolicy
       });
+
       // Upload deployment bucket
       new s3deploy.BucketDeployment(this, 'nextJsAssets', {
         sources: [s3deploy.Source.asset(path.join(outputDir, 'assets'))],
-        destinationBucket: myBucket,
+        destinationBucket: staticBucket,
         distribution: distribution,
+      });
+
+      new r53.ARecord(scope, 'WebisteDomainAlias', {
+        zone: hostedZoneLookup,
+        recordName: 'thonbecker.com',
+        target: r53.RecordTarget.fromAlias(
+          new CloudFrontTarget(distribution),
+        ),
+      });
+
+      new r53.ARecord(scope, 'WebisteDomainAlias', {
+        zone: hostedZoneLookup,
+        recordName: 'www.thonbecker.com',
+        target: r53.RecordTarget.fromAlias(
+          new CloudFrontTarget(distribution),
+        ),
       });
 
       new cdk.CfnOutput(this, 'DistributionDomain', {
