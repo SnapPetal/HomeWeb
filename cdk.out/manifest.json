@@ -1,0 +1,1692 @@
+{
+  "version": "12.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "NextJsStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/us-east-1",
+      "properties": {
+        "templateFile": "NextJsStack.template.json",
+        "validateOnSynth": false
+      },
+      "metadata": {
+        "/NextJsStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392",
+              "id": "4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392",
+              "packaging": "zip",
+              "sourceHash": "4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392",
+              "s3BucketParameter": "AssetParameters4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392S3BucketBF7A7F3F",
+              "s3KeyParameter": "AssetParameters4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392S3VersionKeyFAF93626",
+              "artifactHashParameter": "AssetParameters4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392ArtifactHashE56CD69A"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "new CustomResourceProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:97:25)",
+              "Function.getOrCreateProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:69:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1149:45)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.e69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1",
+              "id": "e69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1",
+              "packaging": "zip",
+              "sourceHash": "e69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1",
+              "s3BucketParameter": "AssetParameterse69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1S3Bucket25BD8ECA",
+              "s3KeyParameter": "AssetParameterse69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1S3VersionKeyEA681410",
+              "artifactHashParameter": "AssetParameterse69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1ArtifactHash1A6D2FD3"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24",
+              "id": "67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24",
+              "packaging": "zip",
+              "sourceHash": "67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24",
+              "s3BucketParameter": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5",
+              "s3KeyParameter": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861",
+              "artifactHashParameter": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:103:19)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597",
+              "id": "1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597",
+              "packaging": "zip",
+              "sourceHash": "1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597",
+              "s3BucketParameter": "AssetParameters1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597S3BucketC90E4CC8",
+              "s3KeyParameter": "AssetParameters1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597S3VersionKey828EEC42",
+              "artifactHashParameter": "AssetParameters1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597ArtifactHash72C0D1FC"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:202:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68.zip",
+              "id": "e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68",
+              "packaging": "file",
+              "sourceHash": "e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68",
+              "s3BucketParameter": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7",
+              "s3KeyParameter": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+              "artifactHashParameter": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:120:29)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf",
+              "id": "c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf",
+              "packaging": "zip",
+              "sourceHash": "c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf",
+              "s3BucketParameter": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3Bucket55EFA30C",
+              "s3KeyParameter": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70",
+              "artifactHashParameter": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfArtifactHash85F58E48"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "SingletonFunction.ensureLambda (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:93:12)",
+              "new SingletonFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:32:32)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:87:21)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822c",
+              "id": "7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822c",
+              "packaging": "zip",
+              "sourceHash": "7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822c",
+              "s3BucketParameter": "AssetParameters7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822cS3Bucket1B58C715",
+              "s3KeyParameter": "AssetParameters7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822cS3VersionKeyF4A3D185",
+              "artifactHashParameter": "AssetParameters7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822cArtifactHashC9B2D4F2"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.e10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0c",
+              "id": "e10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0c",
+              "packaging": "zip",
+              "sourceHash": "e10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0c",
+              "s3BucketParameter": "AssetParameterse10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0cS3BucketF957B7EC",
+              "s3KeyParameter": "AssetParameterse10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0cS3VersionKeyB02729D4",
+              "artifactHashParameter": "AssetParameterse10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0cArtifactHashAB980D4F"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.b321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3",
+              "id": "b321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3",
+              "packaging": "zip",
+              "sourceHash": "b321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3",
+              "s3BucketParameter": "AssetParametersb321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3S3Bucket3E22B4EF",
+              "s3KeyParameter": "AssetParametersb321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3S3VersionKey7CEFD136",
+              "artifactHashParameter": "AssetParametersb321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3ArtifactHash252FF39B"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792",
+              "id": "046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792",
+              "packaging": "zip",
+              "sourceHash": "046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792",
+              "s3BucketParameter": "AssetParameters046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792S3BucketEB83708E",
+              "s3KeyParameter": "AssetParameters046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792S3VersionKey274F7A69",
+              "artifactHashParameter": "AssetParameters046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792ArtifactHashDF602E0B"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092",
+              "id": "76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092",
+              "packaging": "zip",
+              "sourceHash": "76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092",
+              "s3BucketParameter": "AssetParameters76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092S3BucketBE7D0DEF",
+              "s3KeyParameter": "AssetParameters76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092S3VersionKey5E490286",
+              "artifactHashParameter": "AssetParameters76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092ArtifactHashE26D2153"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/construct-compat.ts:252:92)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:161:23)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/PublicAssets/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppPublicAssets04474AF7",
+            "trace": [
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:713:22)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/PublicAssets/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppPublicAssetsPolicy3EC07500",
+            "trace": [
+              "new BucketPolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket-policy.ts:30:21)",
+              "Bucket.addToResourcePolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:227:21)",
+              "Function.addToPrincipalOrResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:76:45)",
+              "Bucket.grantPublicAccess (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:328:22)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:772:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/PublicAssets/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppPublicAssetsAutoDeleteObjectsCustomResource34FD50D1",
+            "trace": [
+              "new CustomResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1170:28)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextEdgeLambdaRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextEdgeLambdaRole6A1616F1",
+            "trace": [
+              "new Role (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/role.ts:192:18)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:126:27)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextEdgeLambdaRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextEdgeLambdaRoleDefaultPolicy5EC23234",
+            "trace": [
+              "new Policy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/role.ts:229:28)",
+              "Function.addToPrincipal (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:92:61)",
+              "Function.addToPrincipalOrResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:48:26)",
+              "Bucket.grant (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:383:27)",
+              "Bucket.grantReadWrite (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:313:17)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:160:17)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextLambdaBA081175",
+            "trace": [
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:369:35)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextLambda/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextLambdaLogRetentionB6609DC5",
+            "trace": [
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:53:22)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextLambda/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextLambdaCurrentVersion4A0FAFFFe8642b5863186a671dd6c03a001c69f2",
+            "trace": [
+              "new Version (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.ts:126:21)",
+              "Function.get currentVersion [as currentVersion] (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:144:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:161:28)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextLambda/CurrentVersion/Aliaslive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextLambdaCurrentVersionAliasliveA2F1A336",
+            "trace": [
+              "new Alias (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/alias.ts:92:19)",
+              "Object.addAlias (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/util.ts:6:10)",
+              "Version.addAlias (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.ts:178:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:161:43)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextImageLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextImageLambda8C77998E",
+            "trace": [
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:369:35)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:202:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextImageLambda/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextImageLambdaLogRetention29947842",
+            "trace": [
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:53:22)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:202:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextImageLambda/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextImageLambdaCurrentVersionE2204C828bac12ab374b200db6b6c99a69722f90",
+            "trace": [
+              "new Version (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.ts:126:21)",
+              "Function.get currentVersion [as currentVersion] (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:144:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:222:28)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextImageLambda/CurrentVersion/EventInvokeConfig/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextImageLambdaCurrentVersionEventInvokeConfig73E90EBB",
+            "trace": [
+              "new EventInvokeConfig (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/event-invoke-config.ts:44:5)",
+              "Version.configureAsyncInvoke (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:360:5)",
+              "new Version (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.ts:145:12)",
+              "Function.get currentVersion [as currentVersion] (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:144:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:222:28)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextImageLambda/CurrentVersion/Aliaslive/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextImageLambdaCurrentVersionAliasliveA63EAB75",
+            "trace": [
+              "new Alias (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/alias.ts:92:19)",
+              "Object.addAlias (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/util.ts:6:10)",
+              "Version.addAlias (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.ts:178:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:222:43)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextStaticsCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextStaticsCache6EC2D576",
+            "trace": [
+              "new CachePolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/cache-policy.ts:86:22)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:225:35)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextImageCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextImageCacheA9CBA950",
+            "trace": [
+              "new CachePolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/cache-policy.ts:86:22)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:241:33)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextLambdaCache/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextLambdaCache2A7551F8",
+            "trace": [
+              "new CachePolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/cache-policy.ts:86:22)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:257:34)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/ImageOriginRequest/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppImageOriginRequest6AF71D57",
+            "trace": [
+              "new OriginRequestPolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/origin-request-policy.ts:73:22)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:324:40)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionOrigin1S3Origin760DE64A",
+            "trace": [
+              "new OriginAccessIdentity (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.ts:80:21)",
+              "S3BucketOrigin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:63:35)",
+              "S3Origin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:33:24)",
+              "Distribution.addOrigin (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:209:39)",
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:147:27)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/Origin2/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionOrigin2S3Origin9E9817DB",
+            "trace": [
+              "new OriginAccessIdentity (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.ts:80:21)",
+              "S3BucketOrigin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:63:35)",
+              "S3Origin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:33:24)",
+              "Distribution.addOrigin (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:209:39)",
+              "Distribution.addBehavior (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:195:27)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:151:14",
+              "Array.forEach (<anonymous>)",
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:150:49)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/Origin3/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionOrigin3S3Origin20C3EFCA",
+            "trace": [
+              "new OriginAccessIdentity (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.ts:80:21)",
+              "S3BucketOrigin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:63:35)",
+              "S3Origin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:33:24)",
+              "Distribution.addOrigin (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:209:39)",
+              "Distribution.addBehavior (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:195:27)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:151:14",
+              "Array.forEach (<anonymous>)",
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:150:49)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/Origin4/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionOrigin4S3OriginE84D59E0",
+            "trace": [
+              "new OriginAccessIdentity (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.ts:80:21)",
+              "S3BucketOrigin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:63:35)",
+              "S3Origin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:33:24)",
+              "Distribution.addOrigin (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:209:39)",
+              "Distribution.addBehavior (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:195:27)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:151:14",
+              "Array.forEach (<anonymous>)",
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:150:49)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/Origin5/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionOrigin5S3Origin584D6386",
+            "trace": [
+              "new OriginAccessIdentity (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/origin-access-identity.ts:80:21)",
+              "S3BucketOrigin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:63:35)",
+              "S3Origin.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront-origins/lib/s3-origin.ts:33:24)",
+              "Distribution.addOrigin (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:209:39)",
+              "Distribution.addBehavior (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:195:27)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:151:14",
+              "Array.forEach (<anonymous>)",
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:150:49)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/LoggingBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionLoggingBucket37E3858A",
+            "trace": [
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:713:22)",
+              "Distribution.renderLogging (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:300:39)",
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:177:23)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/NextJSDistribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppNextJSDistributionB60DA7A7",
+            "trace": [
+              "new Distribution (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-cloudfront/lib/distribution.ts:164:26)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:293:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeploymentBuildID/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentBuildIDAwsCliLayer8F0726F2",
+            "trace": [
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:128:39)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeploymentBuildID/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentBuildIDCustomResource52DC1C3E",
+            "trace": [
+              "new CustomResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:115:5)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_publicFiles/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentpublicFilesAwsCliLayer1B7510EC",
+            "trace": [
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:128:39)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_publicFiles/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentpublicFilesCustomResource1BA9394D",
+            "trace": [
+              "new CustomResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:115:5)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_staticPages/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentstaticPagesAwsCliLayer78AEE35E",
+            "trace": [
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:128:39)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_staticPages/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentstaticPagesCustomResource977D68A2",
+            "trace": [
+              "new CustomResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:115:5)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_nextData/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentnextDataAwsCliLayerAAC11871",
+            "trace": [
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:128:39)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_nextData/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentnextDataCustomResourceCF384C13",
+            "trace": [
+              "new CustomResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:115:5)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_nextStatic/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentnextStaticAwsCliLayer01F74D38",
+            "trace": [
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:128:39)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/NextJsApp/AssetDeployment_nextStatic/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "NextJsAppAssetDeploymentnextStaticCustomResourceA44267FC",
+            "trace": [
+              "new CustomResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource.ts:36:21)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:115:5)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+            "trace": [
+              "new CustomResourceProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:113:18)",
+              "Function.getOrCreateProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:69:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1149:45)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+            "trace": [
+              "new CustomResourceProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:131:21)",
+              "Function.getOrCreateProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:69:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1149:45)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392S3BucketBF7A7F3F",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "new CustomResourceProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:97:25)",
+              "Function.getOrCreateProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:69:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1149:45)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392S3VersionKeyFAF93626",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "new CustomResourceProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:97:25)",
+              "Function.getOrCreateProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:69:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1149:45)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters4cd61014b71160e8c66fe167e43710d5ba068b80b134e9bd84508cf9238b2392ArtifactHashE56CD69A",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "new CustomResourceProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:97:25)",
+              "Function.getOrCreateProvider (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/custom-resource-provider/custom-resource-provider.ts:69:10)",
+              "Bucket.enableAutoDeleteObjects (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:1149:45)",
+              "new Bucket (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:780:12)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:80:19)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1S3Bucket25BD8ECA",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1S3VersionKeyEA681410",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse69d389ddfcc4b484707502154a2b2e30d58b76c4072dbf323f81488b8cd5df1ArtifactHash1A6D2FD3",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:103:19)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:103:19)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:103:19)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597S3BucketC90E4CC8",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:202:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597S3VersionKey828EEC42",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:202:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters1f6fe0e9d2f70d8a9fe2a0d6eba5665393f8870ff671b385a9923f9863df6597ArtifactHash72C0D1FC",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:202:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3BucketAEADE8C7",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:120:29)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68S3VersionKeyE415415F",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:120:29)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse9882ab123687399f934da0d45effe675ecc8ce13b40cb946f3e1d6141fe8d68ArtifactHashD9A515C3",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new LayerVersion (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/layers.ts:120:29)",
+              "new AwsCliLayer (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/lambda-layer-awscli/lib/awscli-layer.ts:10:5)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:90:16)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3Bucket55EFA30C",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "SingletonFunction.ensureLambda (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:93:12)",
+              "new SingletonFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:32:32)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:87:21)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfS3VersionKey60329B70",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "SingletonFunction.ensureLambda (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:93:12)",
+              "new SingletonFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:32:32)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:87:21)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/c24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cf/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc24b999656e4fe6c609c31bae56a1cf4717a405619c3aa6ba1bc686b8c2c86cfArtifactHash85F58E48",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "AssetCode.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/code.ts:180:20)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:327:29)",
+              "SingletonFunction.ensureLambda (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:93:12)",
+              "new SingletonFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:32:32)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:87:21)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822c/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822cS3Bucket1B58C715",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822c/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822cS3VersionKeyF4A3D185",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822c/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters7fed68801390a83d521277cee5ed3822bad14b6a71dad3f074559cfb411e822cArtifactHashC9B2D4F2",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0c/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0cS3BucketF957B7EC",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0c/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0cS3VersionKeyB02729D4",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/e10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0c/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse10cbd598acb1f22141033bac07d85aa9e3954d63fa58e213c93a9d01bbd8c0cArtifactHashAB980D4F",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/b321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3S3Bucket3E22B4EF",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/b321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3S3VersionKey7CEFD136",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/b321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersb321b1ccf84173eb4cbe2b47e10459dc9749959a9ec8fdc31c95174db2f549a3ArtifactHash252FF39B",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792S3BucketEB83708E",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792S3VersionKey274F7A69",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters046b250f8c3b0e921da8903f0fc2b60f36b7f4d60b3ea98c1eaabeeffb841792ArtifactHashDF602E0B",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092S3BucketBE7D0DEF",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:16:32)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092S3VersionKey5E490286",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:21:31)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/AssetParameters/76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters76d22aba9c8fd998dea81b5262241f0ce59eef499c51cce15e6a4df216b01092ArtifactHashE26D2153",
+            "trace": [
+              "new FileAssetParameters (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/asset-parameters.ts:26:34)",
+              "LegacyStackSynthesizer.doAddFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:144:16)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:66:19)",
+              "NextStack.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack.ts:355:29)",
+              "LegacyStackSynthesizer.addFileAsset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.ts:70:25)",
+              "new Asset (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:86:40)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:58:23)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:423:7",
+              "Array.forEach (<anonymous>)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:421:25)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "trace": [
+              "new Role (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/role.ts:192:18)",
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:108:32)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+            "trace": [
+              "new Policy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/role.ts:229:28)",
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:113:10)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "trace": [
+              "new LogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:122:22)",
+              "LogRetention.ensureSingletonLogRetentionFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:89:12)",
+              "new LogRetention (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-logs/lib/log-retention.ts:48:27)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:428:28)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:140:30)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "trace": [
+              "new Role (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/role.ts:192:18)",
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:307:31)",
+              "SingletonFunction.ensureLambda (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:93:12)",
+              "new SingletonFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:32:32)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:87:21)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+            "trace": [
+              "new Policy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/policy.ts:89:22)",
+              "Role.addToPrincipalPolicy (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/role.ts:229:28)",
+              "Function.addToPrincipal (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:92:61)",
+              "Function.addToPrincipalOrResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-iam/lib/grant.ts:48:26)",
+              "Import.grant (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:383:27)",
+              "Import.grantRead (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3/lib/bucket.ts:280:17)",
+              "Asset.grantRead (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-assets/lib/asset.ts:128:17)",
+              "Object.bind (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/source.ts:65:15)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:83",
+              "Array.map (<anonymous>)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:104:51)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "trace": [
+              "new Function (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/function.ts:369:35)",
+              "SingletonFunction.ensureLambda (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:93:12)",
+              "new SingletonFunction (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-lambda/lib/singleton-lambda.ts:32:32)",
+              "new BucketDeployment (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/aws-s3-deployment/lib/bucket-deployment.ts:87:21)",
+              "new NextJSLambdaEdge (/Users/thonbecker/Projects/HomeWeb/node_modules/@sls-next/cdk-construct/src/index.ts:404:5)",
+              "new NextStack (/Users/thonbecker/Projects/HomeWeb/stack.ts:9:5)",
+              "/Users/thonbecker/Projects/HomeWeb/bin.ts:11:5"
+            ]
+          }
+        ],
+        "/NextJsStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5",
+              "visit (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:202:5)",
+              "visit (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:198:5)",
+              "injectMetadataResources (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/stage.ts:94:23)",
+              "process.<anonymous> (/Users/thonbecker/Projects/HomeWeb/node_modules/@aws-cdk/core/lib/app.ts:62:45)",
+              "Object.onceWrapper (events.js:483:26)",
+              "process.emit (events.js:376:20)",
+              "process.emit (domain.js:470:12)",
+              "process.emit (/Users/thonbecker/Projects/HomeWeb/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "NextJsStack"
+    }
+  }
+}
