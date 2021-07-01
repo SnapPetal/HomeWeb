@@ -8,12 +8,13 @@
     "clean": "lerna run clean",
     "watch": "lerna run watch --stream",
     "test": "lerna run test --",
-    "cdk": "yarn --cwd packages/infrastructure cdk",
-    "dev": "yarn --cwd packages/application dev",
+    "cdk": "yarn --cwd infrastructure cdk",
+    "dev": "yarn --cwd application dev",
     "deploy": "yarn build && yarn cdk synth && yarn cdk deploy --require-approval never"
   },
   "workspaces": [
-    "packages/*"
+    "application/*",
+    "infrastructure/*"
   ],
   "devDependencies": {
     "lerna": "^3.22.1"
