@@ -18,6 +18,7 @@
     "@aws-cdk/aws-certificatemanager": "^1.110.1",
     "@aws-cdk/aws-cloudfront-origins": "^1.110.1",
     "@aws-cdk/aws-lambda": "^1.110.1",
+    "@aws-cdk/aws-lambda-event-sources": "^1.110.1",
     "@aws-cdk/aws-route53": "^1.110.1",
     "@aws-cdk/aws-s3-deployment": "^1.110.1",
     "@aws-cdk/core": "^1.110.1",
