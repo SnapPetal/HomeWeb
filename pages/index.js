@@ -17,7 +17,7 @@ const BibleVerse = ({ data }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch('https://www.ourmanna.com/verses/api/get?format=json&order=random');
   const data = await res.json()
 
