@@ -10,7 +10,8 @@ const BibleVerse = ({ data }) => {
       </Head>
       <body>
         <h2>Verse of the Day</h2>
-        <p>{data.results}</p>
+        <p>{data.verse.details.text}</p>
+        <p>{data.verse.details.reference} {data.verse.details.version}</p>
       </body>
     </section>
   )
