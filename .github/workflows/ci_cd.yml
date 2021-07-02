@@ -26,4 +26,4 @@ jobs:
       run: npm run deploy
 
     - name: Deploy
-      run: AWS_PROFILE=default npm run cdk deploy --no-version-reporting
+      run: AWS_PROFILE=default npm run cdk deploy

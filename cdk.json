@@ -1,3 +1,4 @@
 {
-  "app": "npm run deploy"
+  "app": "npm run deploy",
+  "requireApproval": "never"
 }
