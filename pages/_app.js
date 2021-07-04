@@ -26,7 +26,6 @@ export default function MyApp(props) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>

@@ -8,10 +8,8 @@ import Copyright from '../components/Copyright';
 export default function Index() {
   return (
     <Container maxWidth="sm">
-      <Box my={4}>
         <BibleVerse />
         <Copyright />
-      </Box>
     </Container>
   );
 }
