@@ -11,28 +11,11 @@ const fetchBibleVerse = async () => {
 
 export default function BibleVerse() {
     const { data } = useQuery("verse", fetchBibleVerse);
-    if (data) {
-        return (
-            <Typography variant="body2" color="textSecondary" align="center">
-                <h2>Verse of the Day</h2>
-                <p>{data.data.contents.verse}</p>
-            </Typography>
-        );
-    }
-    else {
-        return (
-            <Grid
-                container
-                spacing={0}
-                direction="column"
-                alignItems="center"
-                justify="center"
-                style={{ minHeight: '100vh' }}
-            >
-                <Grid item xs={3}>
-                    <Loader />
-                </Grid>
-            </Grid>
-        );
-    }
+    if (!data) return <Loader />
+    return (
+        <Typography variant="body2" color="textSecondary" align="center">
+            <h2>Verse of the Day</h2>
+            <p>{data.data.contents.verse}</p>
+        </Typography>
+    );
 }
