@@ -15,7 +15,8 @@
     "next": "^11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-query": "^3.18.1"
+    "react-query": "^3.18.1",
+    "react-swipeable-views": "^0.14.0"
   },
   "devDependencies": {
     "@aws-cdk/aws-certificatemanager": "^1.111.0",
