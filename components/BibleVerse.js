@@ -14,10 +14,10 @@ export default function BibleVerse() {
     if (!data) return <Loader />
     return (
         <React.Fragment>
-            <Typography variant="h6" component="h1" align="center">
+            <Typography variant="subtitle2" component="h1" align="center">
                 Verse of the Day
             </Typography>
-            <Typography variant="subtitle1" component="h2" align="center">
+            <Typography variant="subtitle2" component="h2" align="center">
                 {data.data.contents.verse}
             </Typography>
         </React.Fragment>
