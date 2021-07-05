@@ -23,6 +23,8 @@ export default function MyApp(props) {
       <Head>
         <title>Thon Becker</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>

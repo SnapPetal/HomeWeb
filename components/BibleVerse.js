@@ -13,9 +13,13 @@ export default function BibleVerse() {
     const { data } = useQuery("verse", fetchBibleVerse);
     if (!data) return <Loader />
     return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            <h2>Verse of the Day</h2>
-            <p>{data.data.contents.verse}</p>
-        </Typography>
+        <React.Fragment>
+            <Typography variant="h6" component="h1" align="center">
+                Verse of the Day
+            </Typography>
+            <Typography variant="subtitle1" component="h2" align="center">
+                {data.data.contents.verse}
+            </Typography>
+        </React.Fragment>
     );
 }
