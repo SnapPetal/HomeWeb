@@ -83,7 +83,9 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Home
+          <Typography variant="h3" component="h1" align="center">
+            Thon Becker
+          </Typography>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Blog
