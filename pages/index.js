@@ -6,9 +6,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import BibleVerse from '../components/BibleVerse';
 import Copyright from '../components/Copyright';
+import Projects from '../components/Projects';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -53,6 +55,7 @@ export default function FullWidthTabs() {
   const classes = useStyles();
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const preventDefault = (event) => event.preventDefault();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -86,6 +89,7 @@ export default function FullWidthTabs() {
           <Typography variant="h3" component="h1" align="center">
             Thon Becker
           </Typography>
+          <Projects />
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Blog
