@@ -47,7 +47,6 @@ export default function Projects() {
                   <Link
                     href="https://github.com/SnapPetal/cdk-simplewebsite-deploy"
                     target="_blank"
-                    rel="noopener"
                     onClick={preventDefault}>
                     cdk-simplewebsite-deploy
                   </Link>
@@ -61,7 +60,6 @@ export default function Projects() {
                   <Link
                     href="https://github.com/SnapPetal/HomeWeb"
                     target="_blank"
-                    rel="noopener"
                     onClick={preventDefault}>
                     Personal Site - Next.js
                   </Link>
@@ -88,7 +86,6 @@ export default function Projects() {
                   <Link
                     href="https://play.google.com/store/apps/details?id=org.valorskateandserve.app"
                     target="_blank"
-                    rel="noopener"
                     onClick={preventDefault}>
                     Valor Skate & Serve
                   </Link>
