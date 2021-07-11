@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     margin: 'auto',
-    maxWidth: 360,
+    maxWidth: 600,
     backgroundColor: theme.palette.background.paper,
   },
   inline: {

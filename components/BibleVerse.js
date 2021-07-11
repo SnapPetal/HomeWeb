@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
     container: {
         margin: 'auto',
-        maxWidth: 360,
+        maxWidth: 600,
     }
 });
 
