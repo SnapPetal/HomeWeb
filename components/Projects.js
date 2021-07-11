@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 600,
     backgroundColor: theme.palette.background.paper,
   },
-  inline: {
-    display: 'inline-block',
+  s: {
+    display: 'block',
   },
 }));
 
@@ -48,7 +48,7 @@ export default function Projects() {
                     href="https://github.com/SnapPetal/cdk-simplewebsite-deploy"
                     target="_blank"
                     onClick={preventDefault}>
-                    cdk-simplewebsite-deploy
+                    NPM Package - CDK Constructor
                   </Link>
                 </Typography>
                 <Typography
