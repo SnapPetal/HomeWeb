@@ -18,9 +18,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 600,
     backgroundColor: theme.palette.background.paper,
   },
-  s: {
-    display: 'block',
-  },
 }));
 
 export default function Projects() {
@@ -41,8 +38,8 @@ export default function Projects() {
                 <Typography
                   component="span"
                   variant="body2"
-                  className={classes.inline}
                   color="textPrimary"
+                  display="block"
                 >
                   <Link
                     href="https://github.com/SnapPetal/cdk-simplewebsite-deploy"
@@ -54,8 +51,8 @@ export default function Projects() {
                 <Typography
                   component="span"
                   variant="body2"
-                  className={classes.inline}
                   color="textPrimary"
+                  display="block"
                 >
                   <Link
                     href="https://github.com/SnapPetal/HomeWeb"
@@ -80,8 +77,8 @@ export default function Projects() {
                 <Typography
                   component="span"
                   variant="body2"
-                  className={classes.inline}
                   color="textPrimary"
+                  display="block"
                 >
                   <Link
                     href="https://play.google.com/store/apps/details?id=org.valorskateandserve.app"
