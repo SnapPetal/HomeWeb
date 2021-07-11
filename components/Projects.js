@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Projects() {
   const classes = useStyles();
-  const preventDefault = (event) => event.preventDefault();
 
   return (
     <div className={classes.root}>
@@ -43,8 +42,7 @@ export default function Projects() {
                 >
                   <Link
                     href="https://github.com/SnapPetal/cdk-simplewebsite-deploy"
-                    target="_blank"
-                    onClick={preventDefault}>
+                    target="_blank">
                     NPM Package - CDK Constructor
                   </Link>
                 </Typography>
@@ -56,8 +54,7 @@ export default function Projects() {
                 >
                   <Link
                     href="https://github.com/SnapPetal/HomeWeb"
-                    target="_blank"
-                    onClick={preventDefault}>
+                    target="_blank">
                     Personal Site - Next.js
                   </Link>
                 </Typography>
@@ -82,8 +79,7 @@ export default function Projects() {
                 >
                   <Link
                     href="https://play.google.com/store/apps/details?id=org.valorskateandserve.app"
-                    target="_blank"
-                    onClick={preventDefault}>
+                    target="_blank">
                     Valor Skate & Serve
                   </Link>
                 </Typography>
