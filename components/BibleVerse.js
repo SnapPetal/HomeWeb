@@ -15,11 +15,10 @@ const useStyles = makeStyles({
     root: {
         flexGrow: 1,
         width: '100%',
-        margin: 10,
     },
     container: {
         margin: 'auto',
-        maxWidth: 600,
+        maxWidth: 500,
     }
 });
 
