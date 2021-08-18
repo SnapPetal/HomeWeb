@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Loader from './Loader';
 
 const fetchBibleVerse = async () => {
-    const response = await axios.get('https://quotes.rest/bible/vod.json');
+    const response = await axios.get('https://bibleverse.thonbecker.com/');
     return response.data
 };
 
@@ -28,12 +28,10 @@ export default function BibleVerse() {
     console.log(data);
     if (isLoading) return <Loader />
     const {
-        contents: {
-            book,
-            chapter,
-            number,
-            verse
-        },
+        book,
+        chapter,
+        verse,
+        text
     } = data;
     return (
         <div className={classes.root}>
@@ -42,7 +40,7 @@ export default function BibleVerse() {
                     Verse of the Day
                 </Typography>
                 <Typography variant="subtitle2" component="h2" align="center">
-                    {book} {chapter}:{number} - {verse}
+                    {book} {chapter}:{verse} - {text}
                 </Typography>
             </div>
         </div>
