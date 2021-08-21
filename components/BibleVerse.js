@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Loader from './Loader';
 
 const fetchBibleVerse = async () => {
-    const response = await axios.get('https://bibleverse.thonbecker.com/');
+    const response = await axios.get('https://bibleverse.thonbecker.com/random');
     return response.data
 };
 

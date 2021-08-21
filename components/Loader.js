@@ -10,7 +10,6 @@ export default function Loader() {
       direction="column"
       alignItems="center"
       justify="center"
-      style={{ minHeight: '100vh' }}
     >
       <Grid item xs={3}>
         <CircularProgress disableShrink />
