@@ -1,6 +1,6 @@
 on: [pull_request]
 
-name: Build project
+name: Build Project
 
 jobs:
   deploy:
