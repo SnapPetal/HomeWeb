@@ -23,7 +23,14 @@ const useStyles = makeStyles({
 });
 
 export default function BibleVerse() {
-    const { data, isLoading } = useQuery("verse", fetchBibleVerse);
+    const { data, isLoading } = useQuery(
+        "verse",
+        fetchBibleVerse,
+        {
+            staleTime:Infinity,
+            cacheTime:Infinity
+            
+        });
     const classes = useStyles();
     console.log(data);
     if (isLoading) return <Loader />
