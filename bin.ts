@@ -8,7 +8,7 @@ builder
   .build(true)
   .then(() => {
     const app = new cdk.App();
-    new NextStack(app, "NextJsStack", {
+    new NextStack(app, "homeweb-stack", {
       env: {
         region: 'us-east-1',
       },
