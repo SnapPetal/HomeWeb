@@ -15,7 +15,7 @@ export class NextStack extends cdk.Stack {
       timeout: Duration.seconds(30),
       withLogging: true,
       domain: {
-        domainNames: ['thonbecker.com', 'www.thonbecker.com'],
+        domainNames: ['thonbecker.com', 'www.thonbecker.com', 'bibleverse.thonbecker.com'],
         hostedZone: HostedZone.fromHostedZoneAttributes(this, "Zone", {
           hostedZoneId: "Z0960080GF0UBO75OWWP",
           zoneName: "thonbecker.com"
