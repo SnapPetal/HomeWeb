@@ -1,8 +1,15 @@
 {
+  "name": "homeweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch"
+    "build:css": "tailwind build src/tailwind.css -o public/assets/css/tailwind.css"
   },
-  "devDependencies": {
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
     "tailwindcss": "^3.0.24"
   }
 }
