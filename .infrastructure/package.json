@@ -23,6 +23,6 @@
   "dependencies": {
     "aws-cdk-lib": "2.37.1",
     "cdk-simplewebsite-deploy": "^2.0.35",
-    "constructs": "^10.1.75"
+    "constructs": "^10.1.76"
   }
 }
