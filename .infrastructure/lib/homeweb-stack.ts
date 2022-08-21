@@ -1,5 +1,5 @@
 import { Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
-import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as apigw from '@aws-cdk/aws-apigatewayv2-alpha'
 import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
@@ -11,10 +11,8 @@ export class HomeWebStack extends Stack {
     super(scope, id, props);
 
     // Lambda Function that takes in text and returns a polly voice synthesis
-    const pollyLambda = new lambda.Function(this, 'PollyHandler', {
-      runtime: lambda.Runtime.NODEJS_16_X,
-      code: lambda.Code.fromAsset('lambda-fns'),
-      handler: 'polly.handler'
+    const pollyLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
+      entry: 'lambda-fns/polly.ts',
     });
 
     const pollyStatement = new iam.PolicyStatement({
@@ -27,10 +25,10 @@ export class HomeWebStack extends Stack {
     });
     pollyLambda.addToRolePolicy(pollyStatement);
 
-    // defines an API Gateway Http API resource backed by our "pollyLambda" function.
-    let api = new apigw.HttpApi(this, 'Endpoint', {
+    let api = new apigw.HttpApi(this, '	HttpApiPolly', {
       corsPreflight: {
-        allowOrigins: ['https://thonbecker.com'],
+        allowOrigins: ['https://thonbecker.com', 'https://www.thonbecker.com'],
+        allowMethods: [apigw.CorsHttpMethod.GET, apigw.CorsHttpMethod.OPTIONS]
       },
       defaultIntegration: new HttpLambdaIntegration('DefaultIntegration', pollyLambda),
     });

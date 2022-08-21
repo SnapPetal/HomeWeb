@@ -10,15 +10,16 @@ function getRandomJoke() {
 		const { joke } = response.data;
 		axios({
 			method: 'get',
-			url: 'https://hqgmdtf0t9.execute-api.us-east-1.amazonaws.com/',
-			responseType: 'stream',
+			url: 'https://w54rs5fe5j.execute-api.us-east-1.amazonaws.com/',
 			data: {
 				joke
 			},
 			headers: {
 				"content-type": "application/json",
+				"Accept": "audio/mpeg",
+				"Access-Control-Allow-Origin": "*"
 			}
-		}).then((response)=>{
+		}).then((response) => {
 			console.log(response);
 		});
 	});
