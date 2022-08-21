@@ -28,7 +28,8 @@ export class HomeWebStack extends Stack {
     let api = new apigw.HttpApi(this, '	HttpApiPolly', {
       corsPreflight: {
         allowOrigins: ['https://thonbecker.com', 'https://www.thonbecker.com'],
-        allowMethods: [apigw.CorsHttpMethod.GET, apigw.CorsHttpMethod.OPTIONS]
+        allowMethods: [apigw.CorsHttpMethod.GET, apigw.CorsHttpMethod.OPTIONS],
+        allowHeaders: ['Content-Type', 'Access-Control-Allow-Headers', 'Access-Control-Allow-Origin', 'Access-Control-Allow-Methods']
       },
       defaultIntegration: new HttpLambdaIntegration('DefaultIntegration', pollyLambda),
     });

@@ -51,6 +51,9 @@ const sendVoiceRes = (status: number, body: string) => {
     statusCode: status,
     headers: {
       "Content-Type": "audio/mpeg",
+      "Access-Control-Allow-Headers": "Content-Type,Access-Control-Allow-Headers,Access-Control-Allow-Origin,Access-Control-Allow-Methods",
+      "Access-Control-Allow-Origin": "https://www.thonbecker.com,https://thonbecker.com",
+      "Access-Control-Allow-Methods": "OPTIONS,GET"
     },
     body: body,
     isBase64Encoded: true
