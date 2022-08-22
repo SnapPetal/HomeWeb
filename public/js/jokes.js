@@ -22,7 +22,7 @@ function getRandomJoke() {
 				"Access-Control-Allow-Origin": "*"
 			}
 		}).then((response) => {
-			document.getElementById("dataJokeAudio").src = `data:audio/ogg;base64,${convertDataURIToBinary(response.data)}`;
+			document.getElementById("dataJokeAudio").src = `data:audio/ogg;base64,${response.data}`;
 			document.getElementById("dataJokeAudio").load();
 		});
 	});
