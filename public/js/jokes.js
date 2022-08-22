@@ -1,3 +1,5 @@
+var BASE64_MARKER = ';base64,';
+
 function getRandomJoke() {
 	axios({
 		method: 'get',
@@ -20,7 +22,8 @@ function getRandomJoke() {
 				"Access-Control-Allow-Origin": "*"
 			}
 		}).then((response) => {
-			console.log(response);
+			document.getElementById("dataJokeAudio").src = `data:audio/ogg;base64,${convertDataURIToBinary(response.data)}`;
+			document.getElementById("dataJokeAudio").load();
 		});
 	});
 }

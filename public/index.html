@@ -14,7 +14,7 @@
   <script src="./js/jokes.js"></script>
 </head>
 
-<body>
+<body onload="getRandomJoke()">
   <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Thon Becker</h1>
     <div class="col-lg-6 mx-auto">
@@ -25,8 +25,9 @@
         collaboratively with a team. Continuing to look for opportunities
         to expand my experience in designing cloud-based solutions.</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button type="button" onclick="getRandomJoke()"
-          class="btn btn-primary btn-lg px-4 gap-3">Generate Dad Joke</button>
+        <audio controls autoplay id="dataJokeAudio" src="">
+          Your browser does not support the audio element.
+        </audio>
       </div>
     </div>
   </div>
