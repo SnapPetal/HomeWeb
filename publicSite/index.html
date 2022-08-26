@@ -8,8 +8,10 @@
   <meta name="author" content="Thon Becker">
   <title>Thon Becker</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
   <link href="./css/heroes.css" rel="stylesheet">
   <script src="./js/jokes.js"></script>
 </head>
@@ -25,9 +27,13 @@
         collaboratively with a team. Continuing to look for opportunities
         to expand my experience in designing cloud-based solutions.</p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <audio controls autoplay id="dataJokeAudio" src="">
-          Your browser does not support the audio element.
-        </audio>
+        <figure>
+          <figcaption>Listen to the Dad Joke of the Day:</figcaption>
+          <audio id="dataJokeAudioControl" controls src="">
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
+        </figure>
       </div>
     </div>
   </div>

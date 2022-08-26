@@ -5,7 +5,7 @@ function getRandomJoke() {
 		method: 'get',
 		url: 'https://icanhazdadjoke.com/',
 		headers: {
-			"content-type": "application/json",
+			"content-type": "text/plain",
 			"Accept": "application/json"
 		}
 	}).then((response) => {
@@ -18,12 +18,12 @@ function getRandomJoke() {
 			},
 			headers: {
 				"content-type": "application/json",
-				"Accept": "audio/mpeg",
+				"Accept": "audio/ogg",
 				"Access-Control-Allow-Origin": "*"
 			}
 		}).then((response) => {
-			document.getElementById("dataJokeAudio").src = `data:audio/ogg;base64,${response.data}`;
-			document.getElementById("dataJokeAudio").load();
+			document.getElementById("dataJokeAudioControl").src = `data:audio/ogg;base64,${response.data}`;
+			document.getElementById("dataJokeAudioControl").load();
 		});
 	});
 }
