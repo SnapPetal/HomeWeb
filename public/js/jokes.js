@@ -12,7 +12,7 @@ function getRandomJoke() {
 		const { joke } = response.data;
 		axios({
 			method: 'get',
-			url: 'https://w54rs5fe5j.execute-api.us-east-1.amazonaws.com/',
+			url: 'https://3f1xw41yse.execute-api.us-east-1.amazonaws.com/',
 			data: {
 				joke
 			},
@@ -23,7 +23,7 @@ function getRandomJoke() {
 			}
 		}).then((response) => {
 			const {key} = response.data;
-			document.getElementById("dataJokeAudioControl").src = `.${key}`;
+			document.getElementById("dataJokeAudioControl").src = `./${key}`;
 			document.getElementById("dataJokeAudioControl").load();
 		});
 	});

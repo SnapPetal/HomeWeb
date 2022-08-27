@@ -54,37 +54,7 @@ export class HomeWebStack extends Stack {
       hostedZone: 'thonbecker.com',
       subDomain: 'www.thonbecker.com',
     });
-
-    const publicBucket = s3.Bucket.fromBucketName(
-      this,
-      'website-bucket-import',
-      'thonbecker-page-stack-websitebucket75c24d94-gp1qpd1m4y4p'
-    );
-
-    // 👇 create the bucket policy
-    const bucketPolicy = new s3.BucketPolicy(this, 'website-bucket-policy', {
-      bucket: publicBucket,
-    });
-
-    // 👇 add policy statements ot the bucket policy
-    bucketPolicy.document.addStatements(
-      new iam.PolicyStatement({
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal('lambda.amazonaws.com')],
-        actions: ['s3:PutObject'],
-        resources: [`${publicBucket.bucketArn}/dadjokes/*`],
-      })
-    );
-
-    bucketPolicy.document.addStatements(
-      new iam.PolicyStatement({
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal('cloudfront.amazonaws.com')],
-        actions: ['s3:GetObject', 's3:ListObjects'],
-        resources: [`${publicBucket.bucketArn}/`,`${publicBucket.bucketArn}/*`],
-      })
-    );
-
+    
     new CfnOutput(this, 'HTTP API Url', {
       value: api.url ?? 'Something went wrong with the deploy',
     });

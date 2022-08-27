@@ -50,9 +50,9 @@ exports.handler = async function (event: any) {
   const s3 = new S3({ apiVersion: '2006-03-01' });
 
   const uploadParams = {
-    Bucket: `thonbecker-page-stack-websitebucket75c24d94-gp1qpd1m4y4p`,
+    Bucket: `thonbecker-page-stack-websitebucket75c24d94-laa1zz4sut65`,
     Body: synthesis.AudioStream,
-    Key: `/dadjokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
+    Key: `dadjokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
   }
 
   // call S3 to retrieve upload file to specified bucket
