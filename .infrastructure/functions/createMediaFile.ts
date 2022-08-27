@@ -1,6 +1,7 @@
-const {Polly, Translate} = require('aws-sdk');
+const { Polly, Translate, S3, config } = require('aws-sdk');
 
 exports.handler = async function (event: any) {
+
   // Default to Matthew voice and add some default text
   let text =
     event?.body ??
@@ -43,15 +44,27 @@ exports.handler = async function (event: any) {
   };
 
   const synthesis = await polly.synthesizeSpeech(params).promise();
-  const audioStreamBuffer = Buffer.from(synthesis.AudioStream);
-  return sendVoiceRes(200, audioStreamBuffer.toString('base64'));
+  
+  const now = new Date();
+  config.update({ region: 'us-east-1' });
+  const s3 = new S3({ apiVersion: '2006-03-01' });
+
+  const uploadParams = {
+    Bucket: `thonbecker-page-stack-websitebucket75c24d94-gp1qpd1m4y4p`,
+    Body: synthesis.AudioStream,
+    Key: `/dadjokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
+  }
+
+  // call S3 to retrieve upload file to specified bucket
+  const response = await s3.putObject(uploadParams).promise();
+  return sendVoiceRes(200, JSON.stringify(response));
 };
 
 const sendVoiceRes = (status: number, body: string) => {
   const response = {
     statusCode: status,
     headers: {
-      'Content-Type': 'audio/ogg',
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Headers':
         'Content-Type,Access-Control-Allow-Headers,Access-Control-Allow-Origin,Access-Control-Allow-Methods',
       'Access-Control-Allow-Origin':
@@ -59,7 +72,7 @@ const sendVoiceRes = (status: number, body: string) => {
       'Access-Control-Allow-Methods': 'OPTIONS,GET',
     },
     body: body,
-    isBase64Encoded: true,
+    isBase64Encoded: false,
   };
   return response;
 };
