@@ -12,7 +12,7 @@ export class HomeWebStack extends Stack {
 
     // Lambda Function that takes in text and returns a polly voice synthesis
     const pollyLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
-      entry: 'functions/create<edoaFile.ts',
+      entry: 'functions/createMediaFile.ts',
     });
 
     const pollyStatement = new iam.PolicyStatement({
@@ -39,21 +39,15 @@ export class HomeWebStack extends Stack {
       ),
     });
 
-    new CfnOutput(this, 'HTTP API Url', {
-      value: api.url ?? 'Something went wrong with the deploy',
-    });
-
     new CreateCloudfrontSite(this, 'public-website', {
-      websiteFolder: '../../publicSite/',
+      websiteFolder: '../public/',
       indexDoc: 'index.html',
       hostedZone: 'thonbecker.com',
       subDomain: 'www.thonbecker.com',
     });
 
-    new CreateCloudfrontSite(this, 'media-website', {
-      websiteFolder: '../../mediaSite/',
-      indexDoc: 'index.html',
-      hostedZone: 'media.thonbecker.com',
+    new CfnOutput(this, 'HTTP API Url', {
+      value: api.url ?? 'Something went wrong with the deploy',
     });
   }
 }
