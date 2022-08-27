@@ -1,11 +1,11 @@
 import {Stack, StackProps, CfnOutput} from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import * as s3 from 'aws-cdk-lib/aws-s3';
 import * as apigw from '@aws-cdk/aws-apigatewayv2-alpha';
 import {HttpLambdaIntegration} from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import {Construct} from 'constructs';
 import {CreateCloudfrontSite} from 'cdk-simplewebsite-deploy';
+import {HttpMethod} from '@aws-cdk/aws-apigatewayv2-alpha';
 
 export class HomeWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -42,8 +42,13 @@ export class HomeWebStack extends Stack {
           'Access-Control-Allow-Methods',
         ],
       },
-      defaultIntegration: new HttpLambdaIntegration(
-        'DefaultIntegration',
+    });
+
+    api.addRoutes({
+      path: '/joke',
+      methods: [HttpMethod.POST],
+      integration: new HttpLambdaIntegration(
+        'polly-lambda-integration',
         pollyLambda
       ),
     });
@@ -54,7 +59,7 @@ export class HomeWebStack extends Stack {
       hostedZone: 'thonbecker.com',
       subDomain: 'www.thonbecker.com',
     });
-    
+
     new CfnOutput(this, 'HTTP API Url', {
       value: api.url ?? 'Something went wrong with the deploy',
     });

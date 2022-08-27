@@ -1,5 +1,3 @@
-var BASE64_MARKER = ';base64,';
-
 function getRandomJoke() {
 	axios({
 		method: 'get',
@@ -11,9 +9,9 @@ function getRandomJoke() {
 	}).then((response) => {
 		const { joke } = response.data;
 		axios({
-			method: 'get',
-			url: 'https://3f1xw41yse.execute-api.us-east-1.amazonaws.com/',
-			data: joke,
+			method: 'post',
+			url: 'https://3f1xw41yse.execute-api.us-east-1.amazonaws.com/joke',
+			data: `${joke}`,
 			headers: {
 				"content-type": "text/plain",
 				"Accept": "application/json",
