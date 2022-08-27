@@ -56,7 +56,7 @@ exports.handler = async function (event: any) {
   }
 
   // call S3 to retrieve upload file to specified bucket
-  const response = await s3.putObject(uploadParams).promise();
+  const response = await s3.upload(uploadParams).promise();
   return sendVoiceRes(200, JSON.stringify(response));
 };
 

@@ -18,11 +18,12 @@ function getRandomJoke() {
 			},
 			headers: {
 				"content-type": "application/json",
-				"Accept": "audio/ogg",
+				"Accept": "application/json",
 				"Access-Control-Allow-Origin": "*"
 			}
 		}).then((response) => {
-			document.getElementById("dataJokeAudioControl").src = `data:audio/ogg;base64,${response.data}`;
+			const {key} = response.data;
+			document.getElementById("dataJokeAudioControl").src = `.${key}`;
 			document.getElementById("dataJokeAudioControl").load();
 		});
 	});
