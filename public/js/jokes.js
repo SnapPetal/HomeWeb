@@ -13,9 +13,7 @@ function getRandomJoke() {
 		axios({
 			method: 'get',
 			url: 'https://3f1xw41yse.execute-api.us-east-1.amazonaws.com/',
-			data: {
-				joke
-			},
+			data: joke,
 			headers: {
 				"content-type": "application/json",
 				"Accept": "application/json",
