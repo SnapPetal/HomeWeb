@@ -15,7 +15,7 @@ function getRandomJoke() {
 			url: 'https://3f1xw41yse.execute-api.us-east-1.amazonaws.com/',
 			data: joke,
 			headers: {
-				"content-type": "application/json",
+				"content-type": "text/plain",
 				"Accept": "application/json",
 				"Access-Control-Allow-Origin": "*"
 			}
