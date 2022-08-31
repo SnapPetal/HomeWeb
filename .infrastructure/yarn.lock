@@ -1335,10 +1335,10 @@ configstore@^5.0.1:
     write-file-atomic "^3.0.0"
     xdg-basedir "^4.0.0"
 
-constructs@^10.1.86:
-  version "10.1.86"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.86.tgz#007215a46998d033e2e9ae1511fff0ac2e67e7d5"
-  integrity sha512-yEC7T93oQU6pEhJlooqSq5JKNGOqMiOvmmnZtJxFBOmCNhUDddNmewb0/9K+FPMFMJn4MQ4G0qNGAaEqVgAyFg==
+constructs@^10.1.92:
+  version "10.1.92"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.1.92.tgz#3341afb381c3127a3ff52517fbafaf1c4fcd3db8"
+  integrity sha512-ksULq4jw2mQyWGBJoxVktwhwsIkkWZFoxeCsWbiB9dt1hkXbK6z18R7FRsS/Ku7h6eGZo+odi699zC9hfZhvTg==
 
 convert-source-map@^1.4.0, convert-source-map@^1.6.0, convert-source-map@^1.7.0:
   version "1.8.0"
