@@ -1,7 +1,6 @@
-const { Polly, Translate, S3, config } = require('aws-sdk');
+const {Polly, Translate, S3, config} = require('aws-sdk');
 
 exports.handler = async function (event: any) {
-
   // Default to Matthew voice and add some default text
   let text =
     event?.body ??
@@ -44,16 +43,16 @@ exports.handler = async function (event: any) {
   };
 
   const synthesis = await polly.synthesizeSpeech(params).promise();
-  
+
   const now = new Date();
-  config.update({ region: 'us-east-1' });
-  const s3 = new S3({ apiVersion: '2006-03-01' });
+  config.update({region: 'us-east-1'});
+  const s3 = new S3({apiVersion: '2006-03-01'});
 
   const uploadParams = {
-    Bucket: `thonbecker-page-stack-websitebucket75c24d94-laa1zz4sut65`,
+    Bucket: 'thonbecker-page-stack-websitebucket75c24d94-laa1zz4sut65',
     Body: synthesis.AudioStream,
-    Key: `dadjokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
-  }
+    Key: `dadjokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`,
+  };
 
   // call S3 to retrieve upload file to specified bucket
   const response = await s3.upload(uploadParams).promise();

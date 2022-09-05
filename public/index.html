@@ -19,7 +19,8 @@
 </head>
 
 <body onload="getRandomJoke(),getRandomBibleVerse()">
-  <div class="px-4 py-5 my-5 min-vh-100 text-center">
+  <div class="min-vh-100">
+  <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">Thon Becker</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
@@ -37,12 +38,17 @@
           </audio>
         </figure>
       </div>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <figure>
+          <figcaption>Bible Verse of the Day:</figcaption>
+          <div id="bibleVerse" class="text-center text-dark p-3">
+        </figure>
+      </div>
+      </div>
     </div>
   </div>
   <footer class="text-center text-white" style="background-color: #f1f1f1;">
     <div class="container pt-4">
-      <div id="bibleVerse" class="text-center text-dark p-3">
-      </div>
       <section class="mb-4">
         <a class="btn btn-link btn-floating btn-lg text-dark m-1"
           href="https://www.facebook.com/profile.php?id=100014388064515" role="button" data-mdb-ripple-color="dark"><i
@@ -54,11 +60,10 @@
           data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
       </section>
     </div>
-
     <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2022 Copyright: Thon Becker
     </div>
   </footer>
+</div>
 </body>
-
 </html>
