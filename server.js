@@ -5,9 +5,7 @@ const app = express();
 const port = 3000;
 
 // sendFile will go here
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/public/index.html'));
-});
+app.use(express.static('public'))
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
