@@ -11,9 +11,12 @@ export class HomeWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // Lambda Function that takes in text and returns a polly voice synthesis
-    const pollyLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
-      entry: 'functions/createMediaFile.ts',
+    const pollyJokeLambda = new lambda.NodejsFunction(this, 'PollyJokeHandler', {
+      entry: 'functions/createJokeMediaFile.ts',
+    });
+
+    const pollyMediaLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
+      entry: 'functions/createJokeMediaFile.ts',
     });
 
     const pollyStatement = new iam.PolicyStatement({
@@ -28,8 +31,11 @@ export class HomeWebStack extends Stack {
       actions: ['s3:PutObject'],
     });
 
-    pollyLambda.addToRolePolicy(pollyStatement);
-    pollyLambda.addToRolePolicy(s3Statement);
+    pollyJokeLambda.addToRolePolicy(pollyStatement);
+    pollyJokeLambda.addToRolePolicy(s3Statement);
+
+    pollyMediaLambda.addToRolePolicy(pollyStatement);
+    pollyMediaLambda.addToRolePolicy(s3Statement);
 
     const api = new apigw.HttpApi(this, '	HttpApiPolly', {
       corsPreflight: {
@@ -48,8 +54,17 @@ export class HomeWebStack extends Stack {
       path: '/joke',
       methods: [HttpMethod.POST],
       integration: new HttpLambdaIntegration(
+        'polly-joke-lambda-integration',
+        pollyJokeLambda
+      ),
+    });
+
+    api.addRoutes({
+      path: '/polly',
+      methods: [HttpMethod.POST],
+      integration: new HttpLambdaIntegration(
         'polly-lambda-integration',
-        pollyLambda
+        pollyMediaLambda
       ),
     });
 
