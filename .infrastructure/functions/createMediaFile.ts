@@ -36,7 +36,7 @@ exports.handler = async function(event:any) {
     OutputFormat: 'mp3',
     Engine:'neural',
     TextType:'ssml',
-    Text: `<speak><amazon:domain name="news">${text}></amazon:domain></speak>`,
+    Text: text,
     VoiceId: voice,
   };
 

@@ -16,7 +16,7 @@ export class HomeWebStack extends Stack {
     });
 
     const pollyMediaLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
-      entry: 'functions/createJokeMediaFile.ts',
+      entry: 'functions/createMediaFile.ts',
     });
 
     const pollyStatement = new iam.PolicyStatement({
