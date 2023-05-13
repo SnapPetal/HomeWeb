@@ -1,19 +1,23 @@
-import {Stack, StackProps, CfnOutput} from 'aws-cdk-lib';
+import { Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as apigw from '@aws-cdk/aws-apigatewayv2-alpha';
-import {HttpLambdaIntegration} from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
-import {Construct} from 'constructs';
-import {CreateCloudfrontSite} from 'cdk-simplewebsite-deploy';
-import {HttpMethod} from '@aws-cdk/aws-apigatewayv2-alpha';
+import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import { Construct } from 'constructs';
+import { CreateCloudfrontSite } from 'cdk-simplewebsite-deploy';
+import { HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
 
-export class HomeWebStack extends Stack {
+export class PersonalWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const pollyJokeLambda = new lambda.NodejsFunction(this, 'PollyJokeHandler', {
-      entry: 'functions/createJokeMediaFile.ts',
-    });
+    const pollyJokeLambda = new lambda.NodejsFunction(
+      this,
+      'PollyJokeHandler',
+      {
+        entry: 'functions/createJokeMediaFile.ts',
+      }
+    );
 
     const pollyMediaLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
       entry: 'functions/createMediaFile.ts',
@@ -69,10 +73,10 @@ export class HomeWebStack extends Stack {
     });
 
     new CreateCloudfrontSite(this, 'public-website', {
-      websiteFolder: '../public/',
+      websiteFolder: '../personal/dist/',
       indexDoc: 'index.html',
       hostedZone: 'thonbecker.com',
-      subDomain: 'www.thonbecker.com',
+      domain: 'www.thonbecker.com',
     });
 
     new CfnOutput(this, 'HTTP API Url', {
