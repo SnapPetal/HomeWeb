@@ -7,7 +7,7 @@ export class CdnWebStack extends Stack {
     super(scope, id, props);
 
     new CreateCloudfrontSite(this, 'public-website', {
-      websiteFolder: '../personal/',
+      websiteFolder: '../cdn/',
       indexDoc: 'index.html',
       hostedZone: 'thonbecker.com',
       domain: 'cdn.thonbecker.com',
