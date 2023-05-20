@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { PersonalWebStack } from '../lib/personalweb-stack';
-import { CdnWebStack } from '../lib/cdnweb-stack';
+import {PersonalWebStack} from '../lib/personalweb-stack';
+import {CdnWebStack} from '../lib/cdnweb-stack';
 
 const app = new cdk.App();
 new PersonalWebStack(app, 'thonbecker-page-stack', {

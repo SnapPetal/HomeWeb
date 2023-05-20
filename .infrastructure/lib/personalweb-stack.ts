@@ -1,11 +1,11 @@
-import { Stack, StackProps, CfnOutput } from 'aws-cdk-lib';
+import {Stack, StackProps, CfnOutput} from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as apigw from '@aws-cdk/aws-apigatewayv2-alpha';
-import { HttpLambdaIntegration } from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
-import { Construct } from 'constructs';
-import { CreateCloudfrontSite } from 'cdk-simplewebsite-deploy';
-import { HttpMethod } from '@aws-cdk/aws-apigatewayv2-alpha';
+import {HttpLambdaIntegration} from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
+import {Construct} from 'constructs';
+import {CreateCloudfrontSite} from 'cdk-simplewebsite-deploy';
+import {HttpMethod} from '@aws-cdk/aws-apigatewayv2-alpha';
 
 export class PersonalWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -15,12 +15,12 @@ export class PersonalWebStack extends Stack {
       this,
       'PollyJokeHandler',
       {
-        entry: 'functions/createJokeMediaFile.ts',
+        entry: '../functions/createJokeMediaFile.ts',
       }
     );
 
     const pollyMediaLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
-      entry: 'functions/createMediaFile.ts',
+      entry: '../functions/createMediaFile.ts',
     });
 
     const pollyStatement = new iam.PolicyStatement({
