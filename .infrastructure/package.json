@@ -33,7 +33,7 @@
     "@aws-cdk/aws-apigatewayv2-alpha": "2.80.0-alpha.0",
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "2.80.0-alpha.0",
     "aws-cdk-lib": "2.80.0",
-    "cdk-simplewebsite-deploy": "2.0.59",
+    "cdk-simplewebsite-deploy": "2.0.61",
     "constructs": "10.2.29"
   }
 }

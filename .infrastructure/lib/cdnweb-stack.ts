@@ -22,16 +22,34 @@ export class CdnWebStack extends Stack {
     );
     const websiteCert = new acm.Certificate(this, 'WebsiteCert', {
       domainName: domainName,
+      validation: acm.CertificateValidation.fromDns(hostedZoneLookup),
     });
 
-    const websiteBucket = new s3.Bucket(scope, 'WebsiteBucket', {
-      removalPolicy: RemovalPolicy.RETAIN,
+    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', {
+      removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
-    const websiteDist = new cloudfront.Distribution(scope, 'WebsiteDist', {
+
+    const MediaBucket = new s3.Bucket(this, 'MediaBucket', {
+      removalPolicy: RemovalPolicy.RETAIN,
+      autoDeleteObjects: false,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      encryption: s3.BucketEncryption.S3_MANAGED,
+      inventories: [
+        {
+          frequency: s3.InventoryFrequency.DAILY,
+          includeObjectVersions: s3.InventoryObjectVersion.CURRENT,
+          format: s3.InventoryFormat.PARQUET,
+          destination: {
+            bucket: websiteBucket,
+          },
+        }],
+    });
+
+    const websiteDist = new cloudfront.Distribution(this, 'WebsiteDist', {
       defaultBehavior: {
         origin: new origins.S3Origin(websiteBucket),
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
@@ -44,7 +62,7 @@ export class CdnWebStack extends Stack {
       certificate: websiteCert,
     });
 
-    new route53.ARecord(scope, 'WebisteDomainAlias', {
+    new route53.ARecord(this, 'WebisteDomainAlias', {
       zone: hostedZoneLookup,
       recordName: domainName,
       target: route53.RecordTarget.fromAlias(
