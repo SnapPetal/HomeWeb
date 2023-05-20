@@ -25,15 +25,14 @@ export class CdnWebStack extends Stack {
       validation: acm.CertificateValidation.fromDns(hostedZoneLookup),
     });
 
-    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', {
+    const inventoryBucket = new s3.Bucket(this, 'InventoryBucket', {
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
-
-    const MediaBucket = new s3.Bucket(this, 'MediaBucket', {
+    const mediaBucket = new s3.Bucket(this, 'MediaBucket', {
       removalPolicy: RemovalPolicy.RETAIN,
       autoDeleteObjects: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
@@ -44,14 +43,15 @@ export class CdnWebStack extends Stack {
           includeObjectVersions: s3.InventoryObjectVersion.CURRENT,
           format: s3.InventoryFormat.PARQUET,
           destination: {
-            bucket: websiteBucket,
+            bucket: inventoryBucket,
           },
-        }],
+        },
+      ],
     });
 
     const websiteDist = new cloudfront.Distribution(this, 'WebsiteDist', {
       defaultBehavior: {
-        origin: new origins.S3Origin(websiteBucket),
+        origin: new origins.S3Origin(mediaBucket),
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
@@ -61,6 +61,15 @@ export class CdnWebStack extends Stack {
       domainNames: [domainName],
       certificate: websiteCert,
     });
+
+    websiteDist.addBehavior(
+      '/inventory/*.parquet',
+      new origins.S3Origin(inventoryBucket),
+      {
+        allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
+        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+      }
+    );
 
     new route53.ARecord(this, 'WebisteDomainAlias', {
       zone: hostedZoneLookup,
