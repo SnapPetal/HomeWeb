@@ -19,16 +19,13 @@
     <v-content>
       <v-parallax src="@/assets/hero_background.png" height="600">
         <div class="parallax-overlay">
-          <v-container class="d-flex justify-center align-center">
-            <v-layout class="hero-banner">
+          <v-container>
+            <v-layout class="d-flex justify-center align-center hero-banner">
               <h1 class="hero-heading">Hi, I'm Thon Becker</h1>
               <p class="hero-subheading">I'm a Software Engineer that welcomes challenges and architects solutions.</p>
             </v-layout>
           </v-container>
         </div>
-        <v-layout class="d-flex justify-center align-center">
-
-        </v-layout>
       </v-parallax>
     </v-content>
   </div>
