@@ -25,9 +25,9 @@ export class CdnWebStack extends Stack {
       validation: acm.CertificateValidation.fromDns(hostedZoneLookup),
     });
 
-    const inventoryBucket = new s3.Bucket(this, 'InventoryBucket', {
+    const processedMediaBucket = new s3.Bucket(this, 'ProcessedMediaBucket', {
       removalPolicy: RemovalPolicy.DESTROY,
-      autoDeleteObjects: false,
+      autoDeleteObjects: true,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
@@ -37,39 +37,21 @@ export class CdnWebStack extends Stack {
       autoDeleteObjects: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
-      inventories: [
-        {
-          frequency: s3.InventoryFrequency.DAILY,
-          includeObjectVersions: s3.InventoryObjectVersion.CURRENT,
-          format: s3.InventoryFormat.PARQUET,
-          destination: {
-            bucket: inventoryBucket,
-          },
-        },
-      ],
+      eventBridgeEnabled: true,
     });
 
     const websiteDist = new cloudfront.Distribution(this, 'WebsiteDist', {
       defaultBehavior: {
-        origin: new origins.S3Origin(mediaBucket),
+        origin: new origins.S3Origin(processedMediaBucket),
         allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       minimumProtocolVersion: cloudfront.SecurityPolicyProtocol.TLS_V1_2_2021,
-      httpVersion: cloudfront.HttpVersion.HTTP2_AND_3,
+      httpVersion: cloudfront.HttpVersion.HTTP3,
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
       domainNames: [domainName],
       certificate: websiteCert,
     });
-
-    websiteDist.addBehavior(
-      '/inventory/*.parquet',
-      new origins.S3Origin(inventoryBucket),
-      {
-        allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-      }
-    );
 
     new route53.ARecord(this, 'WebisteDomainAlias', {
       zone: hostedZoneLookup,

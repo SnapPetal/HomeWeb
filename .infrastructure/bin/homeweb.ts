@@ -2,6 +2,7 @@
 import * as cdk from 'aws-cdk-lib';
 import {PersonalWebStack} from '../lib/personalweb-stack';
 import {CdnWebStack} from '../lib/cdnweb-stack';
+import {EbStack} from '../lib/eb-stack';
 
 const app = new cdk.App();
 new PersonalWebStack(app, 'thonbecker-page-stack', {
@@ -11,6 +12,12 @@ new PersonalWebStack(app, 'thonbecker-page-stack', {
   },
 });
 new CdnWebStack(app, 'cdn-page-stack', {
+  env: {
+    account: '664759038511',
+    region: 'us-east-1',
+  },
+});
+new EbStack(app, 'eb-page-stack', {
   env: {
     account: '664759038511',
     region: 'us-east-1',
