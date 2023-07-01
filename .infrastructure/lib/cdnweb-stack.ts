@@ -1,4 +1,4 @@
-import {Stack, StackProps} from 'aws-cdk-lib';
+import {Duration, Stack, StackProps} from 'aws-cdk-lib';
 import {Construct} from 'constructs';
 import {RemovalPolicy} from 'aws-cdk-lib';
 import * as acm from 'aws-cdk-lib/aws-certificatemanager';
@@ -6,7 +6,12 @@ import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
 import * as origins from 'aws-cdk-lib/aws-cloudfront-origins';
 import * as route53 from 'aws-cdk-lib/aws-route53';
 import * as targets from 'aws-cdk-lib/aws-route53-targets';
+import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as s3 from 'aws-cdk-lib/aws-s3';
+import {S3ToStepfunctions} from '@aws-solutions-constructs/aws-s3-stepfunctions';
+import * as sfn from 'aws-cdk-lib/aws-stepfunctions';
+import * as tasks from 'aws-cdk-lib/aws-stepfunctions-tasks';
+import * as logs from 'aws-cdk-lib/aws-logs';
 
 export class CdnWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -59,6 +64,34 @@ export class CdnWebStack extends Stack {
       target: route53.RecordTarget.fromAlias(
         new targets.CloudFrontTarget(websiteDist)
       ),
+    });
+
+    const processMediaFileLambda = new lambda.NodejsFunction(
+      this,
+      'processMediaFile',
+      {
+        entry: '../functions/processMediaFile.ts',
+        logRetention: logs.RetentionDays.FIVE_DAYS,
+      }
+    );
+
+    const processMediaFile = new tasks.LambdaInvoke(
+      this,
+      'Process Media File From Bucket',
+      {
+        lambdaFunction: processMediaFileLambda,
+      }
+    );
+
+    const definition = processMediaFile;
+
+    new S3ToStepfunctions(this, 'ProcessedMediaStepFunction', {
+      existingBucketObj: mediaBucket,
+      stateMachineProps: {
+        timeout: Duration.minutes(5),
+        stateMachineType: sfn.StateMachineType.EXPRESS,
+        definitionBody: sfn.DefinitionBody.fromChainable(definition),
+      },
     });
   }
 }
