@@ -2,10 +2,12 @@ import {Stack, StackProps, CfnOutput} from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as apigw from '@aws-cdk/aws-apigatewayv2-alpha';
+import * as route53 from 'aws-cdk-lib/aws-route53';
 import {HttpLambdaIntegration} from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
 import {Construct} from 'constructs';
 import {CreateCloudfrontSite} from 'cdk-simplewebsite-deploy';
 import {HttpMethod} from '@aws-cdk/aws-apigatewayv2-alpha';
+import {HttpsRedirect} from 'aws-cdk-lib/aws-route53-patterns/lib/website-redirect';
 
 export class PersonalWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -72,11 +74,20 @@ export class PersonalWebStack extends Stack {
       ),
     });
 
-    new CreateCloudfrontSite(this, 'public-website', {
-      websiteFolder: '../personal/dist/',
+    new CreateCloudfrontSite(this, 'WebsiteHome', {
+      websiteFolder: '../personal/dist',
       indexDoc: 'index.html',
       hostedZone: 'thonbecker.com',
-      subDomain: "www.thonbecker.com"
+      domain: 'www.thonbecker.com',
+    });
+
+    new HttpsRedirect(this, 'Redirect', {
+      recordNames: ['thonbecker.com'],
+      targetDomain: 'www.thonbecker.com',
+      zone: route53.HostedZone.fromHostedZoneAttributes(this, 'HostedZone', {
+        hostedZoneId: 'Z0960080GF0UBO75OWWP',
+        zoneName: 'thonbecker.com',
+      }),
     });
 
     new CfnOutput(this, 'HTTP API Url', {
