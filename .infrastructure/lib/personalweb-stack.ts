@@ -76,7 +76,7 @@ export class PersonalWebStack extends Stack {
       websiteFolder: '../personal/dist/',
       indexDoc: 'index.html',
       hostedZone: 'thonbecker.com',
-      domain: 'www.thonbecker.com',
+      subDomain: "www.thonbecker.com"
     });
 
     new CfnOutput(this, 'HTTP API Url', {
