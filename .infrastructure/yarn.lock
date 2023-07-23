@@ -35,7 +35,7 @@
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-alpha/-/aws-apigatewayv2-alpha-2.88.0-alpha.0.tgz#237fa9f4e4034cd4a18c07da73e0a4bf9a49a8e3"
   integrity sha512-xCYzaXDyI+cs88MTFOMCE142KczRwEERTF0AtCqWgBwi6Se0aWd8ilwOh3jkL90sRDYquIJ01jlET2biFWmduw==
 
-"@aws-cdk/aws-apigatewayv2-integrations-alpha@2.88.0-alpha.0":
+"@aws-cdk/aws-apigatewayv2-integrations-alpha@^2.88.0-alpha.0":
   version "2.88.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-apigatewayv2-integrations-alpha/-/aws-apigatewayv2-integrations-alpha-2.88.0-alpha.0.tgz#32cd96f6db2f4dd8161254a2f6fd87f3059c8e8d"
   integrity sha512-G7wvMnGEysfpNEJaVNUAY4PEPkD4QesMHfWyDIUNyED9lx1NiSv3hgtr87hzadJq+j2nRCCwMj9Rls8d+bBzQw==
