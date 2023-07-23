@@ -1,7 +1,7 @@
 name: AWS Service CI/CD
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
