@@ -7,7 +7,7 @@ import {HttpLambdaIntegration} from '@aws-cdk/aws-apigatewayv2-integrations-alph
 import {Construct} from 'constructs';
 import {CreateCloudfrontSite} from 'cdk-simplewebsite-deploy';
 import {HttpMethod} from '@aws-cdk/aws-apigatewayv2-alpha';
-import {HttpsRedirect} from 'aws-cdk-lib/aws-route53-patterns/lib/website-redirect';
+import {HttpsRedirect} from 'aws-cdk-lib/aws-route53-patterns';
 
 export class PersonalWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
