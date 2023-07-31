@@ -1310,10 +1310,10 @@ case@1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk-simplewebsite-deploy@2.0.65:
-  version "2.0.65"
-  resolved "https://registry.yarnpkg.com/cdk-simplewebsite-deploy/-/cdk-simplewebsite-deploy-2.0.65.tgz#43ba4b08ccc3d84d4e0ccd23b1fe849cd89eda6b"
-  integrity sha512-gUOc0/icfHCH5yfe6ypYp4jwki96GsQCjcB2lze3brfONSMpTFnuC2+OzHbi33DuSDhl4p40du8yy3t0STjY+A==
+cdk-simplewebsite-deploy@2.0.66:
+  version "2.0.66"
+  resolved "https://registry.yarnpkg.com/cdk-simplewebsite-deploy/-/cdk-simplewebsite-deploy-2.0.66.tgz#8066abca60583e8ad3cc7564748a5dbd1f535d2a"
+  integrity sha512-cQoEVfBI2VEs9UN8J9DG6kccT6eib95/6hyOnLU3i1KCZSLKS87DnUe5dAo3hRtzg2LV+PA+I8gu2Q2vu/I2XQ==
 
 chalk@^2.0.0:
   version "2.4.2"
