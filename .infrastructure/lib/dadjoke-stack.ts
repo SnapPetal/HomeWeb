@@ -1,10 +1,10 @@
-import {Stack, StackProps, CfnOutput} from 'aws-cdk-lib';
-import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
-import * as iam from 'aws-cdk-lib/aws-iam';
-import * as apigw from '@aws-cdk/aws-apigatewayv2-alpha';
-import {HttpLambdaIntegration} from '@aws-cdk/aws-apigatewayv2-integrations-alpha';
-import {Construct} from 'constructs';
-import {HttpMethod} from '@aws-cdk/aws-apigatewayv2-alpha';
+import { Stack, StackProps, CfnOutput } from "aws-cdk-lib";
+import * as lambda from "aws-cdk-lib/aws-lambda-nodejs";
+import * as iam from "aws-cdk-lib/aws-iam";
+import * as apigw from "@aws-cdk/aws-apigatewayv2-alpha";
+import { HttpLambdaIntegration } from "@aws-cdk/aws-apigatewayv2-integrations-alpha";
+import { Construct } from "constructs";
+import { HttpMethod } from "@aws-cdk/aws-apigatewayv2-alpha";
 
 export class DadJokeStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -12,26 +12,26 @@ export class DadJokeStack extends Stack {
 
     const pollyJokeLambda = new lambda.NodejsFunction(
       this,
-      'PollyJokeHandler',
+      "PollyJokeHandler",
       {
-        entry: '../functions/createJokeMediaFile.ts',
-      }
+        entry: "../functions/createJokeMediaFile.ts",
+      },
     );
 
-    const pollyMediaLambda = new lambda.NodejsFunction(this, 'PollyHandler', {
-      entry: '../functions/createMediaFile.ts',
+    const pollyMediaLambda = new lambda.NodejsFunction(this, "PollyHandler", {
+      entry: "../functions/createMediaFile.ts",
     });
 
     const pollyStatement = new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
-      resources: ['*'],
-      actions: ['translate:TranslateText', 'polly:SynthesizeSpeech'],
+      resources: ["*"],
+      actions: ["translate:TranslateText", "polly:SynthesizeSpeech"],
     });
 
     const s3Statement = new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
-      resources: ['*'],
-      actions: ['s3:PutObject'],
+      resources: ["*"],
+      actions: ["s3:PutObject"],
     });
 
     pollyJokeLambda.addToRolePolicy(pollyStatement);
@@ -40,39 +40,39 @@ export class DadJokeStack extends Stack {
     pollyMediaLambda.addToRolePolicy(pollyStatement);
     pollyMediaLambda.addToRolePolicy(s3Statement);
 
-    const api = new apigw.HttpApi(this, '	HttpApiPolly', {
+    const api = new apigw.HttpApi(this, "	HttpApiPolly", {
       corsPreflight: {
-        allowOrigins: ['https://thonbecker.com', 'https://www.thonbecker.com'],
+        allowOrigins: ["https://thonbecker.com", "https://www.thonbecker.com"],
         allowMethods: [apigw.CorsHttpMethod.POST, apigw.CorsHttpMethod.OPTIONS],
         allowHeaders: [
-          'Content-Type',
-          'Access-Control-Allow-Headers',
-          'Access-Control-Allow-Origin',
-          'Access-Control-Allow-Methods',
+          "Content-Type",
+          "Access-Control-Allow-Headers",
+          "Access-Control-Allow-Origin",
+          "Access-Control-Allow-Methods",
         ],
       },
     });
 
     api.addRoutes({
-      path: '/joke',
+      path: "/joke",
       methods: [HttpMethod.POST],
       integration: new HttpLambdaIntegration(
-        'polly-joke-lambda-integration',
-        pollyJokeLambda
+        "polly-joke-lambda-integration",
+        pollyJokeLambda,
       ),
     });
 
     api.addRoutes({
-      path: '/polly',
+      path: "/polly",
       methods: [HttpMethod.POST],
       integration: new HttpLambdaIntegration(
-        'polly-lambda-integration',
-        pollyMediaLambda
+        "polly-lambda-integration",
+        pollyMediaLambda,
       ),
     });
 
-    new CfnOutput(this, 'HTTP API Url', {
-      value: api.url ?? 'Something went wrong with the deploy',
+    new CfnOutput(this, "HTTP API Url", {
+      value: api.url ?? "Something went wrong with the deploy",
     });
   }
 }
