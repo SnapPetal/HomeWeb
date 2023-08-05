@@ -1,8 +1,8 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "target": "ES2018",
     "module": "commonjs",
+    "rootDir": ".",
     "lib": ["es2018"],
     "declaration": true,
     "strict": true,
@@ -14,10 +14,11 @@
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": false,
-    "inlineSourceMap": false,
-    "inlineSources": false,
+    "inlineSourceMap": true,
+    "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
+    "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["node_modules", "cdk.out"]
