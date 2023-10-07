@@ -9,7 +9,7 @@ export class PersonalWebStack extends Stack {
     super(scope, id, props);
 
     new CreateCloudfrontSite(this, "WebsiteHome", {
-      websiteFolder: "../personal/dist",
+      websiteFolder: "../personal/build",
       indexDoc: "index.html",
       hostedZone: "thonbecker.com",
       domain: "www.thonbecker.com",
