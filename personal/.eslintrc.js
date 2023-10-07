@@ -1,10 +1,23 @@
 module.exports = {
-  root: true,
   env: {
-    node: true,
+    browser: true,
+    es2021: true,
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
   extends: [
-    'plugin:vue/vue3-essential',
-    'eslint:recommended',
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
   ],
-}
+  overrides: [],
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react", "prettier"],
+  rules: {},
+};
