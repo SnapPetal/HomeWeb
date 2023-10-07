@@ -1,4 +1,4 @@
-import { Stack, StackProps, CfnOutput } from "aws-cdk-lib";
+import { Stack, StackProps } from "aws-cdk-lib";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import { Construct } from "constructs";
 import { CreateCloudfrontSite } from "cdk-simplewebsite-deploy";
