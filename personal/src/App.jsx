@@ -1,5 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLoaderData,
+} from "react-router-dom";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,54 +11,56 @@ import Typography from "@mui/material/Typography";
 import BibleCard from "./components/BibleCard/index";
 import "./App.css";
 
-export default function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+import "./index.css";
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-  };
-
-  return (
-    <Box
-      className="App"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      width="100vw"
-      height="100vh"
-      bgcolor="#f5f5f5"
-    >
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          <Typography variant="h6" component="div">
-            Thon Becker
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        alignItems="center"
-        width="100%"
-        height="90vh"
-      >
+let router = createBrowserRouter([
+  {
+    path: "/",
+    Component() {
+      return (
         <Box
+          className="App"
           display="flex"
-          justifyContent="center"
+          flexDirection="column"
           alignItems="center"
-          width="100%"
-          height="10vh"
+          width="100vw"
+          height="100vh"
+          bgcolor="#f5f5f5"
         >
-          <input
-            type="text"
-            placeholder="Search documentation..."
-            value={searchTerm}
-            onChange={handleSearch}
-          />
+          <AppBar position="static" color="primary">
+            <Toolbar>
+              <Typography variant="h6" component="div">
+                Thon Becker
+              </Typography>
+            </Toolbar>
+          </AppBar>
+          <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            width="100%"
+            height="90vh"
+          >
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              width="100%"
+              height="10vh"
+            >
+            </Box>
+          </Box>
         </Box>
-        <BibleCard />
-      </Box>
-    </Box>
-  );
+      );
+    },
+  },
+]);
+
+export default function App() {
+  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+}
+
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => router.dispose());
 }
