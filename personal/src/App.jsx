@@ -48,8 +48,7 @@ let router = createBrowserRouter([
               alignItems="center"
               width="100%"
               height="10vh"
-            >
-            </Box>
+            ></Box>
           </Box>
         </Box>
       );
