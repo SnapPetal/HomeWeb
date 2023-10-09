@@ -32,6 +32,6 @@
     "@aws-solutions-constructs/core": "^2.44.0",
     "aws-cdk-lib": "2.100.0",
     "cdk-simplewebsite-deploy": "2.0.68",
-    "constructs": "10.2.70"
+    "constructs": "10.3.0"
   }
 }
