@@ -1,63 +1,22 @@
-import React, { useState } from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useLoaderData,
-} from "react-router-dom";
-import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import BibleCard from "./components/BibleCard/index";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root, { loader as rootLoader } from "./routes/root";
+import Loader from "./components/Loader";
+import Error from "./components/Error";
 import "./App.css";
-
-import "./index.css";
 
 let router = createBrowserRouter([
   {
     path: "/",
-    Component() {
-      return (
-        <Box
-          className="App"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          width="100vw"
-          height="100vh"
-          bgcolor="#f5f5f5"
-        >
-          <AppBar position="static" color="primary">
-            <Toolbar>
-              <Typography variant="h6" component="div">
-                Thon Becker
-              </Typography>
-            </Toolbar>
-          </AppBar>
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            width="100%"
-            height="90vh"
-          >
-            <Box
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-              width="100%"
-              height="10vh"
-            ></Box>
-          </Box>
-        </Box>
-      );
-    },
+    element: <Root />,
+    errorElement: <Error />,
+    loader: rootLoader,
+    children: [],
   },
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />;
+  return <RouterProvider router={router} fallbackElement={<Loader />} />;
 }
 
 if (import.meta.hot) {
