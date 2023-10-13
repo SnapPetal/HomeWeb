@@ -14,7 +14,6 @@ export async function loader() {
 
 export default function Root() {
   const bibleData = useLoaderData();
-  console.log(bibleData);
   return (
     <Box
       className="App"
@@ -40,9 +39,7 @@ export default function Root() {
         width="100%"
         height="90vh"
       >
-        <Await resolve={bibleData}>
-          <BibleVerse {...bibleData} />
-        </Await>
+        <BibleVerse {...bibleData} />
         <Box
           display="flex"
           justifyContent="center"
