@@ -1,8 +1,10 @@
 import React from "react";
+import { Await, useLoaderData } from "react-router-dom";
 import Box from "@mui/material/Box";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import BibleVerse from "../components/BibleCard/index";
 
 export async function loader() {
   const response = await fetch("https://bibleverse.thonbecker.com/");
@@ -11,6 +13,8 @@ export async function loader() {
 }
 
 export default function Root() {
+  const bibleData = useLoaderData();
+  console.log(bibleData);
   return (
     <Box
       className="App"
@@ -36,6 +40,9 @@ export default function Root() {
         width="100%"
         height="90vh"
       >
+        <Await resolve={bibleData}>
+          <BibleVerse {...bibleData} />
+        </Await>
         <Box
           display="flex"
           justifyContent="center"
