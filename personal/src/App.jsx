@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root, { loader as rootLoader } from "./routes/root";
+import Projects from "./routes/projects";
 import Loader from "./components/Loader";
 import Error from "./components/Error";
 import "./App.css";
@@ -11,7 +12,13 @@ let router = createBrowserRouter([
     element: <Root />,
     errorElement: <Error />,
     loader: rootLoader,
-    children: [],
+    children: [
+      {
+        path: "projects",
+        element: <Projects />,
+        errorElement: <Error />,
+      },
+    ],
   },
 ]);
 
