@@ -40,7 +40,7 @@ export default function Root() {
             Contact
           </Button>
           <IconButton
-            href="https://github.com/thonbecker"
+            href="https://github.com/SnapPetal"
             target="_blank"
             color="inherit"
           >
