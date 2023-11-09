@@ -1,6 +1,8 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root, { loader as rootLoader } from "./routes/root";
+import Contact from "./routes/contact";
+import About from "./routes/about";
 import Projects from "./routes/projects";
 import Loader from "./components/Loader";
 import Error from "./components/Error";
@@ -16,6 +18,16 @@ let router = createBrowserRouter([
       {
         path: "projects",
         element: <Projects />,
+        errorElement: <Error />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+        errorElement: <Error />,
+      },
+      {
+        path: "about",
+        element: <About />,
         errorElement: <Error />,
       },
     ],

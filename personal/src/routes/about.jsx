@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
-export default function Projects() {
+export default function About() {
   return (
     <Box
       display="flex"
@@ -13,12 +13,13 @@ export default function Projects() {
     >
       <Container maxWidth="md">
         <Typography variant="h3" component="h1" gutterBottom>
-          Projects
+          About
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Here are some of our latest projects:
+          Hello, I'm Thon Becker. I'm a Software Engineer with 16 years of
+          experience. I specialize in Java Spring Boot. Feel free to contact me
+          for any inquiries.
         </Typography>
-        {/* Add your project cards or list here */}
       </Container>
     </Box>
   );

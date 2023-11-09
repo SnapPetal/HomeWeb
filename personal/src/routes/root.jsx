@@ -1,9 +1,10 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import {
   Box,
-  Container,
+  Grid,
   Typography,
+  Container,
   AppBar,
   Toolbar,
   Button,
@@ -55,9 +56,23 @@ export default function Root() {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Container maxWidth="sm" sx={{ mt: 4 }}>
-        <BibleVerse {...bibleData} />
-      </Container>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Outlet />
+        </Grid>
+        <Grid item xs={12}>
+          <Box display="flex" justifyContent="center">
+            <BibleVerse {...bibleData} />
+          </Box>
+        </Grid>
+      </Grid>
+      <Box display="flex" justifyContent="center" p={2}>
+        <Typography variant="body2" color="textSecondary" align="center">
+          {"Copyright © "}
+          {new Date().getFullYear()}
+          {" Thon Becker"}
+        </Typography>
+      </Box>
     </Box>
   );
 }
