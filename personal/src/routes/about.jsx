@@ -16,9 +16,9 @@ export default function About() {
           About
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Hello, I'm Thon Becker. I'm a Software Engineer with 16 years of
-          experience. I specialize in Java Spring Boot. Feel free to contact me
-          for any inquiries.
+          Hello, I&apos;m Thon Becker. I&apos;m a Software Engineer with 16
+          years of experience. I specialize in Java Spring Boot. Feel free to
+          contact me for any inquiries.
         </Typography>
       </Container>
     </Box>
