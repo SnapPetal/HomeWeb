@@ -1,9 +1,9 @@
-import { type APIGatewayProxyEvent, type APIGatewayProxyResult } from 'aws-lambda'
-import { Polly, Translate } from 'aws-sdk';
-import { Buffer } from 'buffer';
-import { type SendResponse, type SendVoiceResponse } from './types/global'
+import { type APIGatewayProxyEvent } from 'aws-lambda'
+import { Polly, Translate } from 'aws-sdk'
+import { Buffer } from 'buffer'
+import { type SendResponse, type SendVoiceResponse } from '../types/global'
 
-export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+export const handler = async (event: APIGatewayProxyEvent): Promise<SendVoiceResponse> => {
   // Default to Matthew voice and add some default text
   let text = event?.body ?? 'To hear your own script, you need to include text in the message body of your restful request to the API Gateway'
   const voice = event?.queryStringParameters?.voice ?? 'Matthew'
@@ -42,22 +42,18 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
     VoiceId: voice
   }
 
-  const synthesis = await polly.synthesizeSpeech(params).promise()
-  const audioStreamBuffer = Buffer.from(synthesis.AudioStream)
-
-  return sendVoiceRes(200, audioStreamBuffer.toString('base64'))
-}
-
-const sendVoiceRes = (status: number, body: string): SendVoiceResponse => {
-  const response = {
-    statusCode: status,
-    headers: {
-      'Content-Type': 'audio/mpeg'
-    },
-    body,
-    isBase64Encoded: true
-  }
-  return response
+  return await polly.synthesizeSpeech(params).promise().then(audio => {
+    if (audio.AudioStream instanceof Buffer) {
+      return {
+        statusCode: 200,
+        headers: {
+          'Content-Type': 'audio/mpeg'
+        },
+        body: audio.AudioStream.toString('base64'),
+        isBase64Encoded: true
+      }
+    } else throw new Error('AudioStream is not a Buffer.')
+  })
 }
 
 const sendRes = (status: number, body: string): SendResponse => {

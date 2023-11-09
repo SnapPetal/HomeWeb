@@ -1,6 +1,6 @@
 import { type APIGatewayProxyEvent, type APIGatewayProxyResult } from 'aws-lambda'
 import { Polly, Translate, S3, config } from 'aws-sdk'
-import { type SendVoiceResponse, type SendResponse } from './types/global'
+import { type SendVoiceResponse, type SendResponse } from '../types/global'
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   // Default to Matthew voice and add some default text
