@@ -14,12 +14,12 @@ export class DadJokeStack extends Stack {
       this,
       "PollyJokeHandler",
       {
-        entry: "../functions/createJokeMediaFile.ts",
+        entry: "../functions/src/createJokeMediaFile.ts",
       },
     );
 
     const pollyMediaLambda = new lambda.NodejsFunction(this, "PollyHandler", {
-      entry: "../functions/createMediaFile.ts",
+      entry: "../functions/src/createMediaFile.ts",
     });
 
     const pollyStatement = new iam.PolicyStatement({
