@@ -1,5 +1,6 @@
 import { type APIGatewayProxyEvent, type APIGatewayProxyResult } from 'aws-lambda'
-import { Polly, Translate } from 'aws-sdk'
+import { Polly, Translate } from 'aws-sdk';
+import { Buffer } from 'buffer';
 import { type SendResponse, type SendVoiceResponse } from './types/global'
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
