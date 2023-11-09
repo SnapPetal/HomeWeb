@@ -70,7 +70,7 @@ export class CdnWebStack extends Stack {
       this,
       "processMediaFile",
       {
-        entry: "../functions/processMediaFile.ts",
+        entry: "../functions/src/processMediaFile.ts",
         logRetention: logs.RetentionDays.FIVE_DAYS,
       },
     );
