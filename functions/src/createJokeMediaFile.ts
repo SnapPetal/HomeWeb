@@ -53,7 +53,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   const uploadParams = {
     Bucket: 'cdn-page-stack-mediabucketbcbb02ba-cxens3y5o2lj',
     Body: synthesis.AudioStream,
-    Key: `dadjokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
+    Key: `DadJokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
   }
 
   // call S3 to retrieve upload file to specified bucket
