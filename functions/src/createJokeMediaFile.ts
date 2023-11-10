@@ -49,7 +49,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   const s3 = new S3({ apiVersion: '2006-03-01' })
 
   const uploadParams = {
-    Bucket: 'cdn-page-stack-mediabucketbcbb02ba-cxens3y5o2lj',
+    Bucket: 'ccdn-page-stack-processedmediabucket446d3976-tjuh27uwjyn4',
     Body: synthesis.AudioStream,
     Key: `DadJokes/${now.getFullYear()}${now.getMonth()}${now.getDate()}.ogg`
   }
