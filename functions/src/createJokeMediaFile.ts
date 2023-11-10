@@ -5,12 +5,11 @@ import { type SendVoiceResponse, type SendResponse } from '../types/global'
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   // Default to Matthew voice and add some default text
   let text =
-    event?.body ??
+    event.body ??
     'To hear your own script, you need to include text in the message body of your restful request to the API Gateway'
-  const voice = event?.queryStringParameters?.voice ?? 'Matthew'
-  const translateFrom = event?.queryStringParameters?.translateFrom ?? 'en'
-  const translateTo = event?.queryStringParameters?.translateTo ?? 'en'
-
+  const voice = event.queryStringParameters?.voice ?? 'Matthew'
+  const translateFrom = event.queryStringParameters?.translateFrom ?? 'en'
+  const translateTo = event.queryStringParameters?.translateTo ?? 'en'
   const validVoices = ['Joanna', 'Matthew', 'Lupe']
 
   if (!validVoices.includes(voice)) {
@@ -34,7 +33,6 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
   }
 
   // Use Polly to translate text into speech
-
   const polly = new Polly()
   const params = {
     OutputFormat: 'ogg_vorbis',
