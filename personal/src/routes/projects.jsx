@@ -10,6 +10,7 @@ export async function loader() {
     header: {
       Accept: "application/json",
       "Content-Type": "text/plain",
+      "User-Agent": "thonbecker.com",
     },
   });
   const { joke } = await dadJokeResponse.json();
