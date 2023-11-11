@@ -5,7 +5,13 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 export async function loader() {
-  const dadJokeResponse = await fetch("https://icanhazdadjoke.com/");
+  const dadJokeResponse = await fetch("https://icanhazdadjoke.com/", {
+    method: "GET",
+    header: {
+      Accept: "application/json",
+      "Content-Type": "text/plain",
+    },
+  });
   const { joke } = await dadJokeResponse.json();
   const jokeResponse = await fetch(
     "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
