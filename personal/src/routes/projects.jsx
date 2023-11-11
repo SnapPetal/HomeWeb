@@ -5,11 +5,10 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 export async function loader() {
-  const dadJokeResponse = await fetch("https://icanhazdadjoke.com/", {
+  const dadJokeResponse = await fetch("https://icanhazdadjoke.com", {
     method: "GET",
-    header: {
+    headers: {
       Accept: "application/json",
-      "Content-Type": "text/plain",
       "User-Agent": "thonbecker.com",
     },
   });
