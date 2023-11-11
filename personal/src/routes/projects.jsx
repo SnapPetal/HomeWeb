@@ -1,22 +1,23 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 export async function loader() {
-  const jokeResponse = await fetch("https://icanhazdadjoke.com/");
-  const jokeData = await jokeResponse.json().joke;
-  const response = await fetch(
+  const dadJokeResponse = await fetch("https://icanhazdadjoke.com/");
+  const { joke } = await dadJokeResponse.json();
+  const jokeResponse = await fetch(
     "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(jokeData),
+      body: JSON.stringify(joke),
     },
   );
-  return await response.json();
+  return await jokeResponse.json();
 }
 
 export default function Projects() {
@@ -32,6 +33,9 @@ export default function Projects() {
       <Container maxWidth="md">
         <Typography variant="h3" component="h1" gutterBottom>
           Projects
+        </Typography>
+        <Typography variant="h4" component="h2" gutterBottom>
+          Dad Joke of the Day
         </Typography>
         <Typography variant="body1" gutterBottom>
           The project utilizes Amazon Polly, an AWS service, to transform a
