@@ -3,7 +3,25 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
+export async function loader() {
+  const jokeResponse = await fetch("https://icanhazdadjoke.com/");
+  const jokeData = await jokeResponse.json().joke;
+  const response = await fetch(
+    "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jokeData),
+    },
+  );
+  return await response.json();
+}
+
 export default function Projects() {
+  const { Location } = useLoaderData();
+
   return (
     <Box
       display="flex"
@@ -16,9 +34,22 @@ export default function Projects() {
           Projects
         </Typography>
         <Typography variant="body1" gutterBottom>
-          Here are some of our latest projects:
+          The project utilizes Amazon Polly, an AWS service, to transform a
+          daily dad joke into an engaging audio experience. Implemented in
+          NodeJS, the script interacts with the Polly API through the Boto3
+          library, allowing for seamless text-to-speech conversion. A predefined
+          dad joke serves as the input text, triggering the Polly service to
+          generate lifelike speech. The synthesized audio is then saved as an
+          OGG file, providing an amusing and dynamically spoken rendition of the
+          chosen dad joke. This simple yet entertaining application showcases
+          the capabilities of AWS Polly in converting text content into
+          natural-sounding speech, adding a delightful auditory dimension to the
+          humor of the day.
         </Typography>
-        {/* Add your project cards or list here */}
+        <audio controls>
+          <source src={Location} type="audio/ogg" />
+          Your browser does not support the audio element.
+        </audio>
       </Container>
     </Box>
   );
