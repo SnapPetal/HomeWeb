@@ -38,7 +38,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
     OutputFormat: 'ogg_vorbis',
     Engine: 'neural',
     TextType: 'ssml',
-    Text: `<speak><amazon:domain name="news">${text}></amazon:domain></speak>`,
+    Text: `<speak><amazon:domain name="news">${text}</amazon:domain></speak>`,
     VoiceId: voice
   }
 
