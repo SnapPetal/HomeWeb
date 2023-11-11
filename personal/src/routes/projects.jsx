@@ -36,7 +36,7 @@ export default function Projects() {
       justifyContent="center"
       alignItems="center"
     >
-      <Container maxWidth="md">
+      <Container maxWidth="lg">
         <Typography variant="h3" component="h1" gutterBottom>
           Projects
         </Typography>
@@ -46,13 +46,13 @@ export default function Projects() {
         <Typography variant="body1" gutterBottom>
           The project utilizes Amazon Polly, an AWS service, to transform a
           daily dad joke into an engaging audio experience. Implemented in
-          NodeJS, the script interacts with the Polly API through the Boto3
-          library, allowing for seamless text-to-speech conversion. A predefined
-          dad joke serves as the input text, triggering the Polly service to
-          generate lifelike speech. The synthesized audio is then saved as an
-          OGG file, providing an amusing and dynamically spoken rendition of the
-          chosen dad joke. This simple yet entertaining application showcases
-          the capabilities of AWS Polly in converting text content into
+          NodeJS, the script interacts with the Polly API, allowing for seamless
+          text-to-speech conversion. A predefined dad joke serves as the input
+          text, triggering the Polly service to generate lifelike speech. The
+          synthesized audio is then saved as an OGG file in a S3 bucket,
+          providing an amusing and dynamically spoken rendition of the chosen
+          dad joke. This simple yet entertaining application showcases the
+          capabilities of AWS Polly in converting text content into
           natural-sounding speech, adding a delightful auditory dimension to the
           humor of the day.
         </Typography>
