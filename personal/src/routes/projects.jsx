@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
-function cleanJoke(joke) {
+function scrubJoke(joke) {
   // Regular expression to match any character that is not a letter, number, space, or common punctuation
   const regex = /[^a-zA-Z0-9 .,?!'"]/g;
 
@@ -25,7 +25,7 @@ export async function loader() {
   const { joke } = await dadJokeResponse.json();
 
   // Clean the joke before sending to Polly
-  joke = cleanJoke(joke);
+  const scrubbedJoke = scrubJoke(joke);
 
   const jokeResponse = await fetch(
     "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
@@ -34,7 +34,7 @@ export async function loader() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(joke),
+      body: scrubbedJoke,
     },
   );
   return await jokeResponse.json();
