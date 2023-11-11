@@ -20,7 +20,7 @@ export async function loader() {
 }
 
 export default function Projects() {
-  const { Location } = useLoaderData();
+  const { key } = useLoaderData();
 
   return (
     <Box
@@ -47,7 +47,7 @@ export default function Projects() {
           humor of the day.
         </Typography>
         <audio controls>
-          <source src={Location} type="audio/ogg" />
+          <source src={`https://cdn.thonbecker.com/${key}`} type="audio/ogg" />
           Your browser does not support the audio element.
         </audio>
       </Container>
