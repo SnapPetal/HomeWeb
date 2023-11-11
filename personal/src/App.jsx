@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root, { loader as rootLoader } from "./routes/root";
 import Contact from "./routes/contact";
 import About from "./routes/about";
-import Projects from "./routes/projects";
+import Projects, { loader as projectsLoader } from "./routes/projects";
 import Loader from "./components/Loader";
 import Error from "./components/Error";
 import "./App.css";
@@ -17,6 +17,7 @@ let router = createBrowserRouter([
     children: [
       {
         path: "projects",
+        loader: projectsLoader,
         element: <Projects />,
         errorElement: <Error />,
       },
