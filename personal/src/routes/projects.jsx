@@ -5,14 +5,11 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 function cleanJoke(joke) {
-  // Remove any newline characters
-  joke = joke.replace(/\r?\n|\r/g, " ");
+  // Regular expression to match any character that is not a letter, number, space, or common punctuation
+  const regex = /[^a-zA-Z0-9 .,?!'"]/g;
 
-  // Remove any extra spaces
-  joke = joke.replace(/\s+/g, " ");
-
-  // Trim any leading or trailing spaces
-  joke = joke.trim();
+  // Replace any character that matches the regular expression with an empty string
+  joke = joke.replace(regex, "");
 
   return joke;
 }
@@ -29,7 +26,7 @@ export async function loader() {
 
   // Clean the joke before sending to Polly
   joke = cleanJoke(joke);
-  
+
   const jokeResponse = await fetch(
     "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
     {
