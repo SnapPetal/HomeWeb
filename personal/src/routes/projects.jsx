@@ -4,6 +4,19 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
+function cleanJoke(joke) {
+  // Remove any newline characters
+  joke = joke.replace(/\r?\n|\r/g, " ");
+
+  // Remove any extra spaces
+  joke = joke.replace(/\s+/g, " ");
+
+  // Trim any leading or trailing spaces
+  joke = joke.trim();
+
+  return joke;
+}
+
 export async function loader() {
   const dadJokeResponse = await fetch("https://icanhazdadjoke.com", {
     method: "GET",
@@ -13,6 +26,10 @@ export async function loader() {
     },
   });
   const { joke } = await dadJokeResponse.json();
+
+  // Clean the joke before sending to Polly
+  joke = cleanJoke(joke);
+  
   const jokeResponse = await fetch(
     "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
     {
