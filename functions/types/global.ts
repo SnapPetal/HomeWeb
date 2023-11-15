@@ -1,3 +1,7 @@
+import { AWSError } from "aws-sdk"
+import { SearchFacesByImageResponse } from "aws-sdk/clients/rekognition"
+import { PromiseResult } from "aws-sdk/lib/request"
+
 export interface SendVoiceResponse {
   statusCode: number
   headers: {
@@ -13,4 +17,10 @@ export interface SendResponse {
     'Content-Type': string
   }
   body: string
+}
+
+export interface SendFacialSearchResponse {
+  statusCode: number
+  data: PromiseResult<SearchFacesByImageResponse, AWSError>
+  message: string
 }

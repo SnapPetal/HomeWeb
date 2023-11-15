@@ -67,11 +67,11 @@ export class CdnWebStack extends Stack {
       ),
     });
 
-    const processMediaFileLambda = new lambda.NodejsFunction(
+    const facialSearchLambda = new lambda.NodejsFunction(
       this,
       "processMediaFile",
       {
-        entry: "../functions/src/processMediaFile.ts",
+        entry: "../functions/src/facialSearch.ts",
         logRetention: logs.RetentionDays.FIVE_DAYS,
       },
     );
@@ -80,7 +80,7 @@ export class CdnWebStack extends Stack {
       this,
       "Process Media File From Bucket",
       {
-        lambdaFunction: processMediaFileLambda,
+        lambdaFunction: facialSearchLambda,
       },
     );
 

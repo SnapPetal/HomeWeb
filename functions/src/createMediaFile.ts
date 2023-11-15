@@ -42,7 +42,7 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<SendVoiceRes
     VoiceId: voice
   }
 
-  await polly.synthesizeSpeech(params).promise().then(audio => {
+  return await polly.synthesizeSpeech(params).promise().then(audio => {
     if (audio.AudioStream instanceof Buffer) {
       return {
         statusCode: 200,
