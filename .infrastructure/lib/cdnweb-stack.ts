@@ -1,6 +1,7 @@
 import { Duration, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { RemovalPolicy } from "aws-cdk-lib";
+import * as iam from "aws-cdk-lib/aws-iam";
 import * as acm from "aws-cdk-lib/aws-certificatemanager";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
@@ -67,18 +68,32 @@ export class CdnWebStack extends Stack {
       ),
     });
 
+    const facialSearchLambdaRole = new iam.Role(this, 'facialSearchRole', {
+      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    });
+    
+    facialSearchLambdaRole.addToPolicy(new iam.PolicyStatement({
+      actions: [
+        'rekognition:DetectFaces',
+        'rekognition:DetectLabels',
+        // Add other Rekognition actions as needed
+      ],
+      resources: ['*'],
+    }));
+
     const facialSearchLambda = new lambda.NodejsFunction(
       this,
-      "processMediaFile",
+      "facialSearch",
       {
         entry: "../functions/src/facialSearch.ts",
         logRetention: logs.RetentionDays.FIVE_DAYS,
+        role: facialSearchLambdaRole,
       },
     );
 
     const processMediaFile = new tasks.LambdaInvoke(
       this,
-      "Process Media File From Bucket",
+      "Search for Facial Rekognition from Media File",
       {
         lambdaFunction: facialSearchLambda,
       },
