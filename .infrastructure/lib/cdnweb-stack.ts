@@ -136,6 +136,11 @@ export class CdnWebStack extends Stack {
       },
     );
 
+    // Enable logging for the state machine
+    const logGroup = new logs.LogGroup(this, 'ProcessedMediaStepFunctionLogGroup', {
+      retention: logs.RetentionDays.ONE_WEEK, // Set the retention period as needed
+    });
+
     const processMediaFile = new tasks.LambdaInvoke(
       this,
       "Search for Facial Rekognition from Media File",
@@ -152,6 +157,10 @@ export class CdnWebStack extends Stack {
         timeout: Duration.minutes(5),
         stateMachineType: sfn.StateMachineType.EXPRESS,
         definitionBody: sfn.DefinitionBody.fromChainable(definition),
+        logs: {
+          destination: logGroup,
+          level: sfn.LogLevel.ERROR,
+        },
       },
     });
   }
