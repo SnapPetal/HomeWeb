@@ -46,49 +46,55 @@ export class CdnWebStack extends Stack {
       eventBridgeEnabled: true,
     });
 
-    const rekognitionRole = new iam.Role(this, 'RekognitionRole', {
-      assumedBy: new iam.ServicePrincipal('rekognition.amazonaws.com'),
-    });
-
-    rekognitionRole.addToPolicy(
+    // Add the specified bucket policy
+    mediaBucket.addToResourcePolicy(
       new iam.PolicyStatement({
+        sid: "AWSRekognitionS3AclBucketRead20191011",
         effect: iam.Effect.ALLOW,
-        actions: ['s3:GetBucketAcl', 's3:GetBucketLocation'],
+        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
+        actions: ["s3:GetBucketAcl", "s3:GetBucketLocation"],
         resources: [mediaBucket.bucketArn],
-        sid: 'AWSRekognitionS3AclBucketRead20191011',
-      })
+      }),
     );
 
-    rekognitionRole.addToPolicy(
+    mediaBucket.addToResourcePolicy(
       new iam.PolicyStatement({
+        sid: "AWSRekognitionS3GetBucket20191011",
         effect: iam.Effect.ALLOW,
-        actions: ['s3:GetObject', 's3:GetObjectAcl', 's3:GetObjectVersion', 's3:GetObjectTagging'],
+        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
+        actions: [
+          "s3:GetObject",
+          "s3:GetObjectAcl",
+          "s3:GetObjectVersion",
+          "s3:GetObjectTagging",
+        ],
         resources: [`${mediaBucket.bucketArn}/*`],
-        sid: 'AWSRekognitionS3GetBucket20191011',
-      })
+      }),
     );
 
-    rekognitionRole.addToPolicy(
+    mediaBucket.addToResourcePolicy(
       new iam.PolicyStatement({
+        sid: "AWSRekognitionS3ACLBucketWrite20191011",
         effect: iam.Effect.ALLOW,
-        actions: ['s3:GetBucketAcl'],
+        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
+        actions: ["s3:GetBucketAcl"],
         resources: [mediaBucket.bucketArn],
-        sid: 'AWSRekognitionS3ACLBucketWrite20191011',
-      })
+      }),
     );
 
-    rekognitionRole.addToPolicy(
+    mediaBucket.addToResourcePolicy(
       new iam.PolicyStatement({
+        sid: "AWSRekognitionS3PutObject20191011",
         effect: iam.Effect.ALLOW,
-        actions: ['s3:PutObject'],
+        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
+        actions: ["s3:PutObject"],
         resources: [`${mediaBucket.bucketArn}/*`],
         conditions: {
           StringEquals: {
-            's3:x-amz-acl': 'bucket-owner-full-control',
+            "s3:x-amz-acl": "bucket-owner-full-control",
           },
         },
-        sid: 'AWSRekognitionS3PutObject20191011',
-      })
+      }),
     );
 
     const websiteDist = new cloudfront.Distribution(this, "WebsiteDist", {
@@ -113,33 +119,35 @@ export class CdnWebStack extends Stack {
       ),
     });
 
-    const facialSearchLambdaRole = new iam.Role(this, 'facialSearchRole', {
-      assumedBy: new iam.ServicePrincipal('lambda.amazonaws.com'),
+    const facialSearchLambdaRole = new iam.Role(this, "facialSearchRole", {
+      assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
     });
-    
-    facialSearchLambdaRole.addToPolicy(new iam.PolicyStatement({
-      actions: [
-        'rekognition:DetectFaces',
-        'rekognition:DetectLabels',
-        // Add other Rekognition actions as needed
-      ],
-      resources: ['*'],
-    }));
 
-    const facialSearchLambda = new lambda.NodejsFunction(
-      this,
-      "facialSearch",
-      {
-        entry: "../functions/src/facialSearch.ts",
-        logRetention: logs.RetentionDays.FIVE_DAYS,
-        role: facialSearchLambdaRole,
-      },
+    facialSearchLambdaRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: [
+          "rekognition:DetectFaces",
+          "rekognition:DetectLabels",
+          // Add other Rekognition actions as needed
+        ],
+        resources: ["*"],
+      }),
     );
 
-    // Enable logging for the state machine
-    const logGroup = new logs.LogGroup(this, 'ProcessedMediaStepFunctionLogGroup', {
-      retention: logs.RetentionDays.ONE_WEEK, // Set the retention period as needed
+    const facialSearchLambda = new lambda.NodejsFunction(this, "facialSearch", {
+      entry: "../functions/src/facialSearch.ts",
+      logRetention: logs.RetentionDays.FIVE_DAYS,
+      role: facialSearchLambdaRole,
     });
+
+    // Enable logging for the state machine
+    const logGroup = new logs.LogGroup(
+      this,
+      "ProcessedMediaStepFunctionLogGroup",
+      {
+        retention: logs.RetentionDays.ONE_WEEK, // Set the retention period as needed
+      },
+    );
 
     const processMediaFile = new tasks.LambdaInvoke(
       this,
