@@ -46,6 +46,51 @@ export class CdnWebStack extends Stack {
       eventBridgeEnabled: true,
     });
 
+    const rekognitionRole = new iam.Role(this, 'RekognitionRole', {
+      assumedBy: new iam.ServicePrincipal('rekognition.amazonaws.com'),
+    });
+
+    rekognitionRole.addToPolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: ['s3:GetBucketAcl', 's3:GetBucketLocation'],
+        resources: [mediaBucket.bucketArn],
+        sid: 'AWSRekognitionS3AclBucketRead20191011',
+      })
+    );
+
+    rekognitionRole.addToPolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: ['s3:GetObject', 's3:GetObjectAcl', 's3:GetObjectVersion', 's3:GetObjectTagging'],
+        resources: [`${mediaBucket.bucketArn}/*`],
+        sid: 'AWSRekognitionS3GetBucket20191011',
+      })
+    );
+
+    rekognitionRole.addToPolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: ['s3:GetBucketAcl'],
+        resources: [mediaBucket.bucketArn],
+        sid: 'AWSRekognitionS3ACLBucketWrite20191011',
+      })
+    );
+
+    rekognitionRole.addToPolicy(
+      new iam.PolicyStatement({
+        effect: iam.Effect.ALLOW,
+        actions: ['s3:PutObject'],
+        resources: [`${mediaBucket.bucketArn}/*`],
+        conditions: {
+          StringEquals: {
+            's3:x-amz-acl': 'bucket-owner-full-control',
+          },
+        },
+        sid: 'AWSRekognitionS3PutObject20191011',
+      })
+    );
+
     const websiteDist = new cloudfront.Distribution(this, "WebsiteDist", {
       defaultBehavior: {
         origin: new origins.S3Origin(processedMediaBucket),
