@@ -170,6 +170,31 @@ export class CdnWebStack extends Stack {
           level: sfn.LogLevel.ERROR,
         },
       },
+      eventRuleProps: {
+        ruleName: `s3-stepfunctions-transcription-event-rule`,
+        eventPattern: {
+          detailType: ["Object Created", "Object Modified"],
+          source: ["aws.s3"],
+          detail: {
+            bucket: {
+              name: [mediaBucket.bucketName],
+            },
+            object: {
+              key: [
+                {
+                  suffix: ".jpg",
+                },
+                {
+                  suffix: ".jpeg",
+                },
+                {
+                  suffix: ".png",
+                },
+              ],
+            },
+          },
+        },
+      },
     });
   }
 }
