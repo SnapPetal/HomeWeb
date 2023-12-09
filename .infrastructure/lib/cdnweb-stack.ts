@@ -212,7 +212,7 @@ export class CdnWebStack extends Stack {
         definitionBody: sfn.DefinitionBody.fromChainable(convertMediaFile),
         logs: {
           destination: logGroup,
-          level: sfn.LogLevel.ERROR,
+          level: sfn.LogLevel.ALL,
         },
       },
       eventRuleProps: {
