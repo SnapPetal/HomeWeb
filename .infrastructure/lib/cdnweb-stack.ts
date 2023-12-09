@@ -143,6 +143,9 @@ export class CdnWebStack extends Stack {
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(5),
         role: convertMediaFileLambdaRole,
+        bundling: {
+          forceDockerBundling: true,
+        },
       },
     );
 
@@ -162,6 +165,9 @@ export class CdnWebStack extends Stack {
       logRetention: logs.RetentionDays.ONE_WEEK,
       timeout: Duration.minutes(5),
       role: facialSearchLambdaRole,
+      bundling: {
+        forceDockerBundling: true,
+      },
     });
 
     // Enable logging for the state machine
