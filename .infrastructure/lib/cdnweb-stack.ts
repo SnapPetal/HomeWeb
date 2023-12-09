@@ -144,14 +144,24 @@ export class CdnWebStack extends Stack {
         timeout: Duration.minutes(5),
         role: convertMediaFileLambdaRole,
         bundling: {
-          commandHooks: {
-            beforeBundling(inputDir: string, outputDir: string): string[] {
-              return [`yarn add sharp --platform=linux`];
-            },
-            beforeInstall() { return []; },
-            afterBundling() { return []; },
-          },
           externalModules: ["sharp"],
+          nodeModules: ["sharp"],
+          commandHooks: {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            beforeBundling(inputDir: string, outputDir: string): string[] {
+              return [];
+            },
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            beforeInstall(inputDir: string, outputDir: string): string[] {
+              return [];
+            },
+            afterBundling(inputDir: string, outputDir: string): string[] {
+              return [
+                `cd ${outputDir}`,
+                "rm -rf node_modules/sharp && npm install --no-save --arch=x86 --platform=linux sharp",
+              ];
+            },
+          },
         },
       },
     );
