@@ -196,7 +196,10 @@ export class CdnWebStack extends Stack {
     stepFunctionRole.addToPolicy(
       new iam.PolicyStatement({
         actions: ["lambda:InvokeFunction"],
-        resources: ["*"],
+        resources: [
+          convertMediaFileLambda.functionArn,
+          facialSearchLambda.functionArn,
+        ],
       }),
     );
 
