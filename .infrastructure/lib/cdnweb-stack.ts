@@ -140,7 +140,7 @@ export class CdnWebStack extends Stack {
       "convertMediaFileLambda",
       {
         entry: "../functions/src/convertMediaFile.ts",
-        logRetention: logs.RetentionDays.FIVE_DAYS,
+        logRetention: logs.RetentionDays.ONE_WEEK,
         role: convertMediaFileLambdaRole,
       },
     );
@@ -158,7 +158,7 @@ export class CdnWebStack extends Stack {
 
     const facialSearchLambda = new lambda.NodejsFunction(this, "facialSearch", {
       entry: "../functions/src/facialSearch.ts",
-      logRetention: logs.RetentionDays.FIVE_DAYS,
+      logRetention: logs.RetentionDays.ONE_WEEK,
       role: facialSearchLambdaRole,
     });
 
@@ -167,7 +167,7 @@ export class CdnWebStack extends Stack {
       this,
       "ProcessedMediaStepFunctionLogGroup",
       {
-        retention: logs.RetentionDays.ONE_WEEK, // Set the retention period as needed
+        retention: logs.RetentionDays.ONE_WEEK,
       },
     );
 
