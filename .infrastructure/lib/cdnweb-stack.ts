@@ -145,17 +145,11 @@ export class CdnWebStack extends Stack {
         role: convertMediaFileLambdaRole,
         bundling: {
           commandHooks: {
-            // Add this hook
             beforeBundling(inputDir: string, outputDir: string): string[] {
-              return [`npm install --os=linux --cpu=x64 sharp`];
+              return [`yarn add sharp --platform=linux`];
             },
-            // Keep the other hooks empty if you don't need them
-            beforeInstall() {
-              return [];
-            },
-            afterBundling() {
-              return [];
-            },
+            beforeInstall() { return []; },
+            afterBundling() { return []; },
           },
           externalModules: ["sharp"],
         },
