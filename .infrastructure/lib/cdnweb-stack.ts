@@ -151,11 +151,7 @@ export class CdnWebStack extends Stack {
 
     facialSearchLambdaRole.addToPolicy(
       new iam.PolicyStatement({
-        actions: [
-          "rekognition:DetectFaces",
-          "rekognition:DetectLabels",
-          // Add other Rekognition actions as needed
-        ],
+        actions: ["rekognition:DetectFaces", "rekognition:DetectLabels"],
         resources: ["*"],
       }),
     );
@@ -193,14 +189,24 @@ export class CdnWebStack extends Stack {
 
     convertMediaFile.next(processMediaFile);
 
-    const definition = convertMediaFile;
+    const stepFunctionRole = new iam.Role(this, "StepFunctionExecutionRole", {
+      assumedBy: new iam.ServicePrincipal("states.amazonaws.com"),
+    });
+
+    stepFunctionRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ["lambda:InvokeFunction"],
+        resources: ["*"],
+      }),
+    );
 
     new S3ToStepfunctions(this, "ProcessedMediaStepFunction", {
       existingBucketObj: mediaBucket,
       stateMachineProps: {
+        role: stepFunctionRole,
         timeout: Duration.minutes(5),
         stateMachineType: sfn.StateMachineType.EXPRESS,
-        definitionBody: sfn.DefinitionBody.fromChainable(definition),
+        definitionBody: sfn.DefinitionBody.fromChainable(convertMediaFile),
         logs: {
           destination: logGroup,
           level: sfn.LogLevel.ERROR,
