@@ -119,6 +119,32 @@ export class CdnWebStack extends Stack {
       ),
     });
 
+    const convertMediaFileLambdaRole = new iam.Role(
+      this,
+      "convertMediaFileRole",
+      {
+        assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
+      },
+    );
+
+    // Add S3 bucket access permissions
+    convertMediaFileLambdaRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ["s3:GetObject"],
+        resources: [`${mediaBucket.bucketArn}/*`],
+      }),
+    );
+
+    const convertMediaFileLambda = new lambda.NodejsFunction(
+      this,
+      "convertMediaFileLambda",
+      {
+        entry: "../functions/src/convertMediaFile.ts",
+        logRetention: logs.RetentionDays.FIVE_DAYS,
+        role: convertMediaFileLambdaRole,
+      },
+    );
+
     const facialSearchLambdaRole = new iam.Role(this, "facialSearchRole", {
       assumedBy: new iam.ServicePrincipal("lambda.amazonaws.com"),
     });
@@ -149,6 +175,14 @@ export class CdnWebStack extends Stack {
       },
     );
 
+    const convertMediaFile = new tasks.LambdaInvoke(
+      this,
+      "Convert Media File to JPEG",
+      {
+        lambdaFunction: convertMediaFileLambda,
+      },
+    );
+
     const processMediaFile = new tasks.LambdaInvoke(
       this,
       "Search for Facial Rekognition from Media File",
@@ -157,7 +191,9 @@ export class CdnWebStack extends Stack {
       },
     );
 
-    const definition = processMediaFile;
+    convertMediaFile.next(processMediaFile);
+
+    const definition = convertMediaFile;
 
     new S3ToStepfunctions(this, "ProcessedMediaStepFunction", {
       existingBucketObj: mediaBucket,
@@ -189,6 +225,9 @@ export class CdnWebStack extends Stack {
                 },
                 {
                   suffix: ".png",
+                },
+                {
+                  suffix: ".heic",
                 },
               ],
             },

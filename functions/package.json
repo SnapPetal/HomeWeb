@@ -8,7 +8,9 @@
     "lint:fix": "eslint ./src --ext .ts --fix"
   },
   "author": "",
-  "dependencies": {},
+  "dependencies": {
+    "sharp": "^0.33.0"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.126",
     "@types/node": "^20.9.0",

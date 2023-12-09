@@ -1,20 +1,8 @@
-import { Rekognition, S3 } from 'aws-sdk'
-import { type S3Event } from 'aws-lambda'
+import { Rekognition } from 'aws-sdk'
 import { type SendFacialSearchResponse } from '../types/global'
 
-export const handler = async (event: S3Event): Promise<SendFacialSearchResponse> => {
+export const handler = async (fileData: Buffer): Promise<SendFacialSearchResponse> => {
   const rekognition = new Rekognition()
-  const s3 = new S3()
-
-  // Get the bucket name and key from the S3Event
-  const bucket = event.Records[0].s3.bucket.name
-  const key = decodeURIComponent(event.Records[0].s3.object.key.replace(/\+/g, ' '))
-
-  // Get the object from the bucket
-  const data = await s3.getObject({ Bucket: bucket, Key: key }).promise()
-
-  // Get the file data
-  const fileData = data.Body
 
   // Convert to buffer
   const params = {
