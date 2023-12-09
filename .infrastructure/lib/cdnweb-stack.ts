@@ -128,11 +128,21 @@ export class CdnWebStack extends Stack {
       },
     );
 
-    // Add S3 bucket access permissions
     convertMediaFileLambdaRole.addToPolicy(
       new iam.PolicyStatement({
         actions: ["s3:GetObject"],
         resources: [`${mediaBucket.bucketArn}/*`],
+      }),
+    );
+
+    convertMediaFileLambdaRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+        ],
+        resources: ["arn:aws:logs:*:*:*"],
       }),
     );
 
@@ -177,6 +187,17 @@ export class CdnWebStack extends Stack {
       new iam.PolicyStatement({
         actions: ["rekognition:DetectFaces", "rekognition:DetectLabels"],
         resources: ["*"],
+      }),
+    );
+
+    facialSearchLambdaRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+        ],
+        resources: ["arn:aws:logs:*:*:*"],
       }),
     );
 
