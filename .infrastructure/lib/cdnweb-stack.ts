@@ -139,7 +139,7 @@ export class CdnWebStack extends Stack {
       this,
       "convertMediaFileLambda",
       {
-        entry: "../functions/src/convertMediaFile.ts",
+        entry: "./functions/src/convertMediaFile.ts",
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(5),
         role: convertMediaFileLambdaRole,
@@ -161,7 +161,7 @@ export class CdnWebStack extends Stack {
     );
 
     const facialSearchLambda = new lambda.NodejsFunction(this, "facialSearch", {
-      entry: "../functions/src/facialSearch.ts",
+      entry: "./functions/src/facialSearch.ts",
       logRetention: logs.RetentionDays.ONE_WEEK,
       timeout: Duration.minutes(5),
       role: facialSearchLambdaRole,
