@@ -22,7 +22,7 @@ export const handler = async (event: S3Event): Promise<SendFacialSearchResponse>
     CollectionId: 'faces-collection',
 
     // Minimum match confidence score
-    FaceMatchThreshold: 90,
+    FaceMatchThreshold: 40,
     Image: {
       Bytes: fileData
     },
