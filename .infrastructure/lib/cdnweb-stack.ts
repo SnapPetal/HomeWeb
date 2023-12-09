@@ -233,12 +233,12 @@ export class CdnWebStack extends Stack {
       existingBucketObj: mediaBucket,
       stateMachineProps: {
         role: stepFunctionRole,
-        timeout: Duration.minutes(5),
         stateMachineType: sfn.StateMachineType.EXPRESS,
         definitionBody: sfn.DefinitionBody.fromChainable(convertMediaFile),
         logs: {
+          includeExecutionData: true,
           destination: logGroup,
-          level: sfn.LogLevel.ALL,
+          level: sfn.LogLevel.ERROR,
         },
       },
       eventRuleProps: {
