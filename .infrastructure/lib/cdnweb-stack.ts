@@ -144,6 +144,19 @@ export class CdnWebStack extends Stack {
         timeout: Duration.minutes(5),
         role: convertMediaFileLambdaRole,
         bundling: {
+          commandHooks: {
+            // Add this hook
+            beforeBundling(inputDir: string, outputDir: string): string[] {
+              return [`npm install --os=linux --cpu=x64 sharp`];
+            },
+            // Keep the other hooks empty if you don't need them
+            beforeInstall() {
+              return [];
+            },
+            afterBundling() {
+              return [];
+            },
+          },
           externalModules: ["sharp"],
         },
       },
