@@ -197,8 +197,8 @@ export class CdnWebStack extends Stack {
       new iam.PolicyStatement({
         actions: ["lambda:InvokeFunction"],
         resources: [
-          convertMediaFileLambda.functionArn,
-          facialSearchLambda.functionArn,
+          `${convertMediaFileLambda.functionArn}:*`,
+          `${facialSearchLambda.functionArn}:*`,
         ],
       }),
     );
