@@ -13,6 +13,7 @@ import { S3ToStepfunctions } from "@aws-solutions-constructs/aws-s3-stepfunction
 import * as sfn from "aws-cdk-lib/aws-stepfunctions";
 import * as tasks from "aws-cdk-lib/aws-stepfunctions-tasks";
 import * as logs from "aws-cdk-lib/aws-logs";
+import { Runtime } from "aws-cdk-lib/aws-lambda";
 
 export class CdnWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -140,8 +141,10 @@ export class CdnWebStack extends Stack {
       "convertMediaFileLambda",
       {
         entry: "../functions/src/convertMediaFile.ts",
+        memorySize: 1024,
+        runtime: Runtime.NODEJS_20_X,
         logRetention: logs.RetentionDays.ONE_WEEK,
-        timeout: Duration.minutes(5),
+        timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
         bundling: {
           externalModules: ["sharp"],
@@ -179,8 +182,9 @@ export class CdnWebStack extends Stack {
 
     const facialSearchLambda = new lambda.NodejsFunction(this, "facialSearch", {
       entry: "../functions/src/facialSearch.ts",
+      runtime: Runtime.NODEJS_20_X,
       logRetention: logs.RetentionDays.ONE_WEEK,
-      timeout: Duration.minutes(5),
+      timeout: Duration.minutes(2),
       role: facialSearchLambdaRole,
     });
 
