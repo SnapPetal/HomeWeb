@@ -173,7 +173,7 @@ export class CdnWebStack extends Stack {
       eventRuleProps: {
         ruleName: `s3-stepfunctions-transcription-event-rule`,
         eventPattern: {
-          detailType: ["Object Created", "Object Modified"],
+          detailType: ["Object Created"],
           source: ["aws.s3"],
           detail: {
             bucket: {
