@@ -1,5 +1,5 @@
 import * as AWS from 'aws-sdk'
-import sharp = require('sharp')
+import sharp from 'sharp'
 
 interface S3EventDetail {
   version: string
@@ -31,7 +31,6 @@ interface CloudWatchS3Event {
 }
 
 export const handler = async (event: CloudWatchS3Event): Promise<Buffer> => {
-  console.log(event)
   const bucket = event.detail.bucket.name
   const key = decodeURIComponent(event.detail.object.key.replace(/\+/g, ' '))
 
