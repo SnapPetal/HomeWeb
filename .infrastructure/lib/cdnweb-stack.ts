@@ -165,6 +165,8 @@ export class CdnWebStack extends Stack {
         timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
         layers: [sharpLayer],
+        bundling: { 
+          externalModules: ["sharp"] },
       },
     );
 

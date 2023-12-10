@@ -8,12 +8,11 @@
     "lint:fix": "eslint ./src --ext .ts --fix"
   },
   "author": "",
-  "dependencies": {
-    "sharp": "^0.33.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/aws-lambda": "^8.10.130",
     "@types/node": "^20.10.4",
+    "@types/sharp": "^0.32.0",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "aws-sdk": "^2.1515.0",
     "eslint": "^8.55.0",
