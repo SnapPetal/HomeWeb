@@ -151,7 +151,7 @@ export class CdnWebStack extends Stack {
       this,
       "convertMediaFileLambda",
       {
-        entry: path.resolve("./functions/src/convertMediaFile.ts"),
+        entry: path.resolve("../functions/src/convertMediaFile.ts"),
         memorySize: 1024,
         runtime: Runtime.NODEJS_20_X,
         logRetention: logs.RetentionDays.ONE_WEEK,
