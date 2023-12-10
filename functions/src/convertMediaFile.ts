@@ -1,5 +1,5 @@
 import * as AWS from 'aws-sdk'
-import * as sharp from 'sharp'
+import sharp = require('sharp')
 
 interface S3EventDetail {
   version: string
