@@ -14,6 +14,7 @@ import * as sfn from "aws-cdk-lib/aws-stepfunctions";
 import * as tasks from "aws-cdk-lib/aws-stepfunctions-tasks";
 import * as logs from "aws-cdk-lib/aws-logs";
 import { Runtime } from "aws-cdk-lib/aws-lambda";
+import path = require("path");
 
 export class CdnWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -150,31 +151,15 @@ export class CdnWebStack extends Stack {
       this,
       "convertMediaFileLambda",
       {
-        entry: "../functions/src/convertMediaFile.ts",
+        entry: path.resolve("./functions/src/convertMediaFile.ts"),
         memorySize: 1024,
         runtime: Runtime.NODEJS_20_X,
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
         bundling: {
-          externalModules: ["sharp"],
           nodeModules: ["sharp"],
-          commandHooks: {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            beforeBundling(inputDir: string, outputDir: string): string[] {
-              return [];
-            },
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            beforeInstall(inputDir: string, outputDir: string): string[] {
-              return [];
-            },
-            afterBundling(inputDir: string, outputDir: string): string[] {
-              return [
-                `cd ${outputDir}`,
-                "rm -rf node_modules/sharp && npm install --no-save --arch=x86 --platform=linux sharp",
-              ];
-            },
-          },
+          forceDockerBundling: true,
         },
       },
     );
