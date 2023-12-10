@@ -7,7 +7,8 @@ import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import * as targets from "aws-cdk-lib/aws-route53-targets";
-import * as lambda from "aws-cdk-lib/aws-lambda-nodejs";
+import * as lambda from "aws-cdk-lib/aws-lambda";
+import * as lambdaNode from "aws-cdk-lib/aws-lambda-nodejs";
 import * as s3 from "aws-cdk-lib/aws-s3";
 import { S3ToStepfunctions } from "@aws-solutions-constructs/aws-s3-stepfunctions";
 import * as sfn from "aws-cdk-lib/aws-stepfunctions";
@@ -147,19 +148,25 @@ export class CdnWebStack extends Stack {
       }),
     );
 
-    const convertMediaFileLambda = new lambda.NodejsFunction(
+    const sharpLayer = lambda.LayerVersion.fromLayerVersionArn(
+      this,
+      "SharpLayer",
+      "arn:aws:lambda:us-east-1:664759038511:layer:sharp:1",
+    );
+
+    const convertMediaFileLambda = new lambdaNode.NodejsFunction(
       this,
       "convertMediaFileLambda",
       {
-        entry: path.join(__dirname, "../../functions/src/convertMediaFile.ts"),
+        entry: "../functions/src/convertMediaFile.ts",
         memorySize: 1024,
-        runtime: Runtime.NODEJS_20_X,
+        runtime: Runtime.NODEJS_18_X,
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
+        layers: [sharpLayer],
         bundling: {
-          nodeModules: ["sharp"],
-          forceDockerBundling: true,
+          externalModules: ["sharp"],
         },
       },
     );
@@ -186,13 +193,17 @@ export class CdnWebStack extends Stack {
       }),
     );
 
-    const facialSearchLambda = new lambda.NodejsFunction(this, "facialSearch", {
-      entry: "../functions/src/facialSearch.ts",
-      runtime: Runtime.NODEJS_20_X,
-      logRetention: logs.RetentionDays.ONE_WEEK,
-      timeout: Duration.minutes(2),
-      role: facialSearchLambdaRole,
-    });
+    const facialSearchLambda = new lambdaNode.NodejsFunction(
+      this,
+      "facialSearch",
+      {
+        entry: "../functions/src/facialSearch.ts",
+        runtime: Runtime.NODEJS_18_X,
+        logRetention: logs.RetentionDays.ONE_WEEK,
+        timeout: Duration.minutes(2),
+        role: facialSearchLambdaRole,
+      },
+    );
 
     // Enable logging for the state machine
     const logGroup = new logs.LogGroup(
