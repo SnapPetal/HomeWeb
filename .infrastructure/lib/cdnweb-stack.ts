@@ -151,7 +151,7 @@ export class CdnWebStack extends Stack {
     const sharpLayer = lambda.LayerVersion.fromLayerVersionArn(
       this,
       "SharpLayer",
-      "arn:aws:lambda:us-east-1:664759038511:layer:sharp:1",
+      "arn:aws:lambda:us-east-1:664759038511:layer:sharp:2",
     );
 
     const convertMediaFileLambda = new lambdaNode.NodejsFunction(
