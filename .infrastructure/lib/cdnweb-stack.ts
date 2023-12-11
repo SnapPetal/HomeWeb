@@ -158,17 +158,19 @@ export class CdnWebStack extends Stack {
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
-        bundling: { 
+        bundling: {
           externalModules: ["sharp"],
           commandHooks: {
             beforeBundling(inputDir: string, outputDir: string): string[] {
-              return ['npm install --os=linux --cpu=x64 sharp --no-save --no-package-lock'];
+              return [];
             },
             beforeInstall(inputDir: string, outputDir: string): string[] {
               return [];
             },
             afterBundling(inputDir: string, outputDir: string): string[] {
-              return [];
+              return [
+                "npm install --os=linux --cpu=x64 sharp --no-save --no-package-lock",
+              ];
             },
           },
         },
