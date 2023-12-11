@@ -160,6 +160,7 @@ export class CdnWebStack extends Stack {
         role: convertMediaFileLambdaRole,
         bundling: {
           externalModules: ["sharp"],
+          nodeModules: ["sharp"],
           commandHooks: {
             beforeBundling(inputDir: string, outputDir: string): string[] {
               return [];
@@ -169,7 +170,8 @@ export class CdnWebStack extends Stack {
             },
             afterBundling(inputDir: string, outputDir: string): string[] {
               return [
-                "npm install --os=linux --cpu=x64 sharp --no-save --no-package-lock",
+                `cd ${outputDir}`,
+                "rm -rf node_modules/sharp && npm install --arch=x64 --platform=linux sharp",
               ];
             },
           },
