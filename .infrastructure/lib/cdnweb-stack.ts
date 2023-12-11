@@ -148,12 +148,6 @@ export class CdnWebStack extends Stack {
       }),
     );
 
-    const sharpLayer = lambda.LayerVersion.fromLayerVersionArn(
-      this,
-      "SharpLayer",
-      "arn:aws:lambda:us-east-1:664759038511:layer:sharp:3",
-    );
-
     const convertMediaFileLambda = new lambdaNode.NodejsFunction(
       this,
       "convertMediaFileLambda",
@@ -164,9 +158,20 @@ export class CdnWebStack extends Stack {
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
-        layers: [sharpLayer],
         bundling: { 
-          externalModules: ["sharp"] },
+          externalModules: ["sharp"],
+          commandHooks: {
+            beforeBundling(inputDir: string, outputDir: string): string[] {
+              return ['npm install --os=linux --cpu=x64 sharp --no-save --no-package-lock'];
+            },
+            beforeInstall(inputDir: string, outputDir: string): string[] {
+              return [];
+            },
+            afterBundling(inputDir: string, outputDir: string): string[] {
+              return [];
+            },
+          },
+        },
       },
     );
 
