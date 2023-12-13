@@ -1,5 +1,7 @@
-import * as AWS from 'aws-sdk'
-import sharp from 'sharp'
+import * as AWS from 'aws-sdk';
+import * as gm from 'gm';
+import { promisify } from 'util';
+
 
 interface S3EventDetail {
   version: string
@@ -31,16 +33,23 @@ interface CloudWatchS3Event {
 }
 
 export const handler = async (event: CloudWatchS3Event): Promise<Buffer> => {
-  const bucket = event.detail.bucket.name
-  const key = decodeURIComponent(event.detail.object.key.replace(/\+/g, ' '))
+  const bucket = event.detail.bucket.name;
+  const key = decodeURIComponent(event.detail.object.key.replace(/\+/g, ' '));
 
   const params: AWS.S3.GetObjectRequest = {
     Bucket: bucket,
-    Key: key
-  }
+    Key: key,
+  };
 
-  const S3 = new AWS.S3()
-  const { Body } = await S3.getObject(params).promise()
-  const inputData = Body as Buffer
-  return await sharp(inputData).jpeg().toBuffer()
-}
+  const S3 = new AWS.S3();
+  const { Body } = await S3.getObject(params).promise();
+  const inputData = Body as Buffer;
+
+  // Use promisify to convert gm's callback-based API to promises
+  const toBuffer = promisify<Buffer>(gm(inputData).setFormat('jpeg').toBuffer);
+  
+  // Call the function and await its result
+  const outputBuffer = await toBuffer();
+
+  return outputBuffer;
+};
