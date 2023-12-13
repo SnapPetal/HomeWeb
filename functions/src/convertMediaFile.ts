@@ -1,5 +1,5 @@
 import * as AWS from 'aws-sdk';
-import * as gm from 'gm';
+import * as imagemagick from 'imagemagick';
 import { promisify } from 'util';
 
 
