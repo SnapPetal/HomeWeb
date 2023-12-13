@@ -171,7 +171,7 @@ export class CdnWebStack extends Stack {
             afterBundling(inputDir: string, outputDir: string): string[] {
               return [
                 `cd ${outputDir}`,
-                "rm -rf node_modules/sharp && npm install --arch=x64 --platform=linux sharp",
+                "rm -rf node_modules/sharp && npm install SHARP_IGNORE_GLOBAL_LIBVIPS=1 && npm install --arch=x64 --platform=linux sharp",
               ];
             },
           },
