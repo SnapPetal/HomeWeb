@@ -158,24 +158,6 @@ export class CdnWebStack extends Stack {
         logRetention: logs.RetentionDays.ONE_WEEK,
         timeout: Duration.minutes(2),
         role: convertMediaFileLambdaRole,
-        bundling: {
-          externalModules: ["sharp"],
-          nodeModules: ["sharp"],
-          commandHooks: {
-            beforeBundling(inputDir: string, outputDir: string): string[] {
-              return [];
-            },
-            beforeInstall(inputDir: string, outputDir: string): string[] {
-              return [];
-            },
-            afterBundling(inputDir: string, outputDir: string): string[] {
-              return [
-                `cd ${outputDir}`,
-                "rm -rf node_modules/sharp && npm install --arch=x64 --platform=linux sharp",
-              ];
-            },
-          },
-        },
       },
     );
 
