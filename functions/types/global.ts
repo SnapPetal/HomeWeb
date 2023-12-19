@@ -18,9 +18,3 @@ export interface SendResponse {
   }
   body: string
 }
-
-export interface SendFacialSearchResponse {
-  statusCode: number
-  data: PromiseResult<SearchFacesByImageResponse, AWSError>
-  message: string
-}
