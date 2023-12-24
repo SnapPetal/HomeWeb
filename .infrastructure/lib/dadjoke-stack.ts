@@ -5,6 +5,7 @@ import * as apigw from "@aws-cdk/aws-apigatewayv2-alpha";
 import { HttpLambdaIntegration } from "@aws-cdk/aws-apigatewayv2-integrations-alpha";
 import { Construct } from "constructs";
 import { HttpMethod } from "@aws-cdk/aws-apigatewayv2-alpha";
+import { Runtime } from "aws-cdk-lib/aws-lambda";
 
 export class DadJokeStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -15,10 +16,12 @@ export class DadJokeStack extends Stack {
       "PollyJokeHandler",
       {
         entry: "../functions/src/createJokeMediaFile.ts",
+        runtime: Runtime.NODEJS_20_X,
       },
     );
 
     const pollyMediaLambda = new lambda.NodejsFunction(this, "PollyHandler", {
+      runtime: Runtime.NODEJS_20_X,
       entry: "../functions/src/createMediaFile.ts",
     });
 

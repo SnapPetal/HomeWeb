@@ -8,7 +8,7 @@ export class CdnWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const mediaBucket = new s3.Bucket(this, "MediaBucket", {
+    new s3.Bucket(this, "MediaBucket", {
       removalPolicy: RemovalPolicy.RETAIN,
       autoDeleteObjects: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
