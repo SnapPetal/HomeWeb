@@ -34,6 +34,7 @@ export class CdnWebStack extends Stack {
             prefix: "mediaInventory",
           },
         },
+      ],
     });
   }
 }
