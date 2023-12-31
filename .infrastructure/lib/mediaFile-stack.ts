@@ -23,13 +23,9 @@ export class MediaFileStack extends Stack {
       },
     );
 
-    const s3Statement = new iam.PolicyStatement({
-      effect: iam.Effect.ALLOW,
-      resources: ["*"],
-      actions: ["s3:GetObject"],
-    });
-
-    processMediaFileLambda.addToRolePolicy(s3Statement);
+    processMediaFileLambda.role?.addManagedPolicy(
+      iam.ManagedPolicy.fromAwsManagedPolicyName("AmazonS3ReadOnlyAccess"),
+    );
 
     const api = new HttpApi(this, "	HttpApiMediaFile", {
       corsPreflight: {
