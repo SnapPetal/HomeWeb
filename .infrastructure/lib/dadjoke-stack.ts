@@ -1,10 +1,13 @@
 import { Stack, StackProps, CfnOutput } from "aws-cdk-lib";
 import * as lambda from "aws-cdk-lib/aws-lambda-nodejs";
 import * as iam from "aws-cdk-lib/aws-iam";
-import * as apigw from "@aws-cdk/aws-apigatewayv2-alpha";
-import { HttpLambdaIntegration } from "@aws-cdk/aws-apigatewayv2-integrations-alpha";
+import { HttpLambdaIntegration } from "aws-cdk-lib/aws-apigatewayv2-integrations";
 import { Construct } from "constructs";
-import { HttpMethod } from "@aws-cdk/aws-apigatewayv2-alpha";
+import {
+  CorsHttpMethod,
+  HttpApi,
+  HttpMethod,
+} from "aws-cdk-lib/aws-apigatewayv2";
 import { Runtime } from "aws-cdk-lib/aws-lambda";
 
 export class DadJokeStack extends Stack {
@@ -43,10 +46,10 @@ export class DadJokeStack extends Stack {
     pollyMediaLambda.addToRolePolicy(pollyStatement);
     pollyMediaLambda.addToRolePolicy(s3Statement);
 
-    const api = new apigw.HttpApi(this, "	HttpApiPolly", {
+    const api = new HttpApi(this, "	HttpApiPolly", {
       corsPreflight: {
         allowOrigins: ["https://thonbecker.com", "https://www.thonbecker.com"],
-        allowMethods: [apigw.CorsHttpMethod.POST, apigw.CorsHttpMethod.OPTIONS],
+        allowMethods: [CorsHttpMethod.POST, CorsHttpMethod.OPTIONS],
         allowHeaders: [
           "Content-Type",
           "Access-Control-Allow-Headers",

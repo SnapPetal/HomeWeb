@@ -1,10 +1,13 @@
 import { Stack, StackProps, CfnOutput } from "aws-cdk-lib";
 import * as lambda from "aws-cdk-lib/aws-lambda-nodejs";
 import * as iam from "aws-cdk-lib/aws-iam";
-import * as apigw from "@aws-cdk/aws-apigatewayv2-alpha";
-import { HttpLambdaIntegration } from "@aws-cdk/aws-apigatewayv2-integrations-alpha";
+import { HttpLambdaIntegration } from "aws-cdk-lib/aws-apigatewayv2-integrations";
 import { Construct } from "constructs";
-import { HttpMethod } from "@aws-cdk/aws-apigatewayv2-alpha";
+import {
+  CorsHttpMethod,
+  HttpApi,
+  HttpMethod,
+} from "aws-cdk-lib/aws-apigatewayv2";
 import { Runtime } from "aws-cdk-lib/aws-lambda";
 
 export class MediaFileStack extends Stack {
@@ -28,10 +31,10 @@ export class MediaFileStack extends Stack {
 
     processMediaFileLambda.addToRolePolicy(s3Statement);
 
-    const api = new apigw.HttpApi(this, "	HttpApiMediaFile", {
+    const api = new HttpApi(this, "	HttpApiMediaFile", {
       corsPreflight: {
         allowOrigins: ["https://thonbecker.com", "https://www.thonbecker.com"],
-        allowMethods: [apigw.CorsHttpMethod.GET, apigw.CorsHttpMethod.OPTIONS],
+        allowMethods: [CorsHttpMethod.GET, CorsHttpMethod.OPTIONS],
         allowHeaders: [
           "Content-Type",
           "Access-Control-Allow-Headers",

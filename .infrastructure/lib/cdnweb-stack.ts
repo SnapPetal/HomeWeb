@@ -2,7 +2,6 @@ import { Duration, Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { RemovalPolicy } from "aws-cdk-lib";
 import * as s3 from "aws-cdk-lib/aws-s3";
-import path = require("path");
 
 export class CdnWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {

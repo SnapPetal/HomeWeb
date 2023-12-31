@@ -25,8 +25,6 @@
     "typescript": "~5.3.3"
   },
   "dependencies": {
-    "@aws-cdk/aws-apigatewayv2-alpha": "2.114.1-alpha.0",
-    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.114.1-alpha.0",
     "@aws-solutions-constructs/aws-eventbridge-stepfunctions": "^2.47.0",
     "@aws-solutions-constructs/aws-s3-stepfunctions": "^2.47.0",
     "@aws-solutions-constructs/core": "^2.47.0",
