@@ -1,7 +1,7 @@
 import { S3 } from 'aws-sdk'
 import { type APIGatewayProxyEvent } from 'aws-lambda'
 import { Readable } from 'stream'
-import * as csv from 'csvtojson'
+import csv from 'csvtojson'
 
 const s3 = new S3()
 
