@@ -24,7 +24,7 @@ new DadJokeStack(app, "dad-joke-api-stack", {
     region: "us-east-1",
   },
 });
-new MediaFileStack(app, "dad-joke-api-stack", {
+new MediaFileStack(app, "media-file-api-stack", {
   env: {
     account: "664759038511",
     region: "us-east-1",

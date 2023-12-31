@@ -28,7 +28,7 @@ export class MediaFileStack extends Stack {
 
     processMediaFileLambda.addToRolePolicy(s3Statement);
 
-    const api = new apigw.HttpApi(this, "	HttpApiFamilyPictures", {
+    const api = new apigw.HttpApi(this, "	HttpApiMediaFile", {
       corsPreflight: {
         allowOrigins: ["https://thonbecker.com", "https://www.thonbecker.com"],
         allowMethods: [apigw.CorsHttpMethod.GET, apigw.CorsHttpMethod.OPTIONS],
