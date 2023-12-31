@@ -1,13 +1,13 @@
 import { S3 } from 'aws-sdk'
 import { type APIGatewayProxyEvent } from 'aws-lambda'
 import { Readable } from 'stream'
-import csv from 'csvtojson'
+import * as csv from 'csvtojson'
 
 const s3 = new S3()
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<string> => {
   console.log(event)
-  const bucketName = 'cdn-page-stack-inventorybucketa869b8cb-4bxdk5l41aleInfo'
+  const bucketName = 'cdn-page-stack-inventorybucketa869b8cb-4bxdk5l41ale'
 
   const objects = await s3.listObjectsV2({ Bucket: bucketName }).promise()
 
