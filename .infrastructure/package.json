@@ -1,17 +1,15 @@
 {
-  "name": "infrastructure",
+  "name": "homeweb",
   "version": "0.1.0",
   "bin": {
-    ".infrastructure": "bin/.infrastructure.js"
+    "homeweb": "bin/homeweb.js"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
     "cdk": "cdk",
     "compile": "tsc",
-    "lint": "prettier . --check",
-    "fix": "prettier . --write"
+    "format": "prettier . --write"
   },
   "devDependencies": {
     "@types/jest": "29.5.11",
@@ -25,8 +23,6 @@
     "typescript": "~5.3.3"
   },
   "dependencies": {
-    "@aws-solutions-constructs/aws-eventbridge-stepfunctions": "^2.47.0",
-    "@aws-solutions-constructs/aws-s3-stepfunctions": "^2.47.0",
     "@aws-solutions-constructs/core": "^2.47.0",
     "aws-cdk-lib": "2.117.0",
     "cdk-simplewebsite-deploy": "2.0.74",
