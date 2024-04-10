@@ -4,25 +4,33 @@
   "description": "",
   "scripts": {
     "build": "tsc",
-    "lint": "eslint ./src --ext .ts",
-    "lint:fix": "eslint ./src --ext .ts --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "author": "",
   "dependencies": {
-    "aws-sdk": "^2.1535.0",
+    "aws-sdk": "^2.1596.0",
     "mime": "^4.0.1",
     "source-map-support": "^0.5.16"
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.131",
+    "@eslint/eslintrc": "^3.0.2",
+    "@eslint/js": "^9.0.0",
+    "@types/aws-lambda": "^8.10.137",
     "@types/imagemagick": "^0.0.35",
-    "@types/node": "^20.11.0",
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
-    "eslint": "^8.56.0",
-    "eslint-config-standard-with-typescript": "^43.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "eslint": "^8.0.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
     "eslint-plugin-promise": "^6.0.0",
-    "typescript": "5.3.3"
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "globals": "^15.0.0",
+    "typescript": "*",
+    "typescript-eslint": "^7.6.0"
   }
 }

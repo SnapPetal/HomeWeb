@@ -1,14 +1,12 @@
 import { Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
 import { RemovalPolicy } from "aws-cdk-lib";
-import * as iam from "aws-cdk-lib/aws-iam";
 import * as acm from "aws-cdk-lib/aws-certificatemanager";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import * as targets from "aws-cdk-lib/aws-route53-targets";
 import * as s3 from "aws-cdk-lib/aws-s3";
-import path = require("path");
 
 export class CdnWebStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -34,63 +32,12 @@ export class CdnWebStack extends Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
 
-    const mediaBucket = new s3.Bucket(this, "MediaBucket", {
+    new s3.Bucket(this, "MediaBucket", {
       removalPolicy: RemovalPolicy.RETAIN,
       autoDeleteObjects: false,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
     });
-
-    // Add the specified bucket policy
-    mediaBucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        sid: "AWSRekognitionS3AclBucketRead20191011",
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
-        actions: ["s3:GetBucketAcl", "s3:GetBucketLocation"],
-        resources: [mediaBucket.bucketArn],
-      }),
-    );
-
-    mediaBucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        sid: "AWSRekognitionS3GetBucket20191011",
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
-        actions: [
-          "s3:GetObject",
-          "s3:GetObjectAcl",
-          "s3:GetObjectVersion",
-          "s3:GetObjectTagging",
-        ],
-        resources: [`${mediaBucket.bucketArn}/*`],
-      }),
-    );
-
-    mediaBucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        sid: "AWSRekognitionS3ACLBucketWrite20191011",
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
-        actions: ["s3:GetBucketAcl"],
-        resources: [mediaBucket.bucketArn],
-      }),
-    );
-
-    mediaBucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        sid: "AWSRekognitionS3PutObject20191011",
-        effect: iam.Effect.ALLOW,
-        principals: [new iam.ServicePrincipal("rekognition.amazonaws.com")],
-        actions: ["s3:PutObject"],
-        resources: [`${mediaBucket.bucketArn}/*`],
-        conditions: {
-          StringEquals: {
-            "s3:x-amz-acl": "bucket-owner-full-control",
-          },
-        },
-      }),
-    );
 
     const websiteDist = new cloudfront.Distribution(this, "WebsiteDist", {
       defaultBehavior: {

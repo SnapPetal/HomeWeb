@@ -5,7 +5,7 @@ const s3 = new S3()
 
 export const handler = async (event: APIGatewayProxyEvent): Promise<string> => {
   console.log(event)
-  const bucketName = 'cdn-page-stack-mediabucketbcbb02ba-cxens3y5o2lj'
+  const bucketName = 'cdn-page-stack-processedmediabucket446d3976-oonhpdwdpfzq'
 
   const objects = await s3.listObjectsV2({ Bucket: bucketName }).promise()
 
