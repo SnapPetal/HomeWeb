@@ -1,6 +1,5 @@
 import React from "react";
-import { Skeleton, Typography, CardContent, Card } from "@mui/material";
-import { useQuery } from "@tanstack/react-query";
+import { Typography, CardContent, Card } from "@mui/material";
 
 export default function index({ book, text, chapter, verse }) {
   return (
