@@ -1,18 +1,15 @@
 import React from "react";
 import { Outlet, useLoaderData } from "react-router-dom";
-import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
-import MuiAppBar from "@mui/material/AppBar";
+import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -36,75 +33,104 @@ export async function loader() {
 
 const drawerWidth = 240;
 
-const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
-  ({ theme, open }) => ({
-    flexGrow: 1,
-    padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: `-${drawerWidth}px`,
-    ...(open && {
-      transition: theme.transitions.create("margin", {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
-      marginLeft: 0,
-    }),
-  }),
-);
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
-})(({ theme, open }) => ({
-  transition: theme.transitions.create(["margin", "width"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: `${drawerWidth}px`,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-}));
-
-const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: "flex-end",
-}));
-
 export default function Root() {
   const bibleData = useLoaderData();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isClosing, setIsClosing] = React.useState(false);
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    setIsClosing(true);
+    setMobileOpen(false);
   };
+
+  const handleDrawerTransitionEnd = () => {
+    setIsClosing(false);
+  };
+
+  const handleDrawerToggle = () => {
+    if (!isClosing) {
+      setMobileOpen(!mobileOpen);
+    }
+  };
+
+  const drawer = (
+    <div>
+      <Toolbar />
+      <Divider />
+      <ListItem disablePadding>
+        <ListItemButton href="/">
+          <ListItemIcon>
+            <Home />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton href="/projects">
+          <ListItemIcon>
+            <Folder />
+          </ListItemIcon>
+          <ListItemText primary="Projects" />
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton href="/about">
+          <ListItemIcon>
+            <Person />
+          </ListItemIcon>
+          <ListItemText primary="About" />
+        </ListItemButton>
+      </ListItem>
+      <ListItem disablePadding>
+        <ListItemButton href="/contact">
+          <ListItemIcon>
+            <Mail />
+          </ListItemIcon>
+          <ListItemText primary="Contact" />
+        </ListItemButton>
+      </ListItem>
+      <Divider />
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton href="https://github.com/SnapPetal" target="_blank">
+            <ListItemIcon>
+              <GitHub />
+            </ListItemIcon>
+            <ListItemText primary="Github" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton
+            href="https://www.linkedin.com/in/thon-becker-9a7a7b1b5/"
+            target="_blank"
+          >
+            <ListItemIcon>
+              <LinkedIn />
+            </ListItemIcon>
+            <ListItemText primary="LinkedIn" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </div>
+  );
 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar
+        position="fixed"
+        sx={{
+          width: { xs: "100%", sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: "none" }) }}
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -113,104 +139,81 @@ export default function Root() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
+      <Box
+        component="nav"
+        sx={{ width: { xs: "100%", sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <ListItem disablePadding>
-          <ListItemButton href="/">
-            <ListItemIcon>
-              <Home />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="/projects">
-            <ListItemIcon>
-              <Folder />
-            </ListItemIcon>
-            <ListItemText primary="Projects" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="/about">
-            <ListItemIcon>
-              <Person />
-            </ListItemIcon>
-            <ListItemText primary="About" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton href="/contact">
-            <ListItemIcon>
-              <Mail />
-            </ListItemIcon>
-            <ListItemText primary="Contact" />
-          </ListItemButton>
-        </ListItem>
-        <Divider />
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton href="https://github.com/SnapPetal" target="_blank">
-              <ListItemIcon>
-                <GitHub />
-              </ListItemIcon>
-              <ListItemText primary="Github" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton
-              href="https://www.linkedin.com/in/thon-becker-9a7a7b1b5/"
-              target="_blank"
-            >
-              <ListItemIcon>
-                <LinkedIn />
-              </ListItemIcon>
-              <ListItemText primary="LinkedIn" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </Drawer>
-      <Main open={open}>
-        <DrawerHeader />
-        <Grid container spacing={2}>
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onTransitionEnd={handleDrawerTransitionEnd}
+          onClose={handleDrawerClose}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: { xs: "100%", sm: drawerWidth },
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: "none", sm: "block" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: { xs: "100%", sm: drawerWidth },
+            },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          width: { xs: "100%", sm: `calc(100% - ${drawerWidth}px)` },
+          flexShrink: 1,
+        }}
+      >
+        <Toolbar />
+        <Grid container spacing={2} sx={{ display: "flex", flexWrap: "wrap" }}>
           <Grid item xs={12}>
             <Outlet />
           </Grid>
           <Grid item xs={12}>
-            <Box display="flex" justifyContent="center">
+            <Box
+              display="flex"
+              justifyContent="center"
+              sx={{ flexWrap: "wrap" }}
+            >
               <BibleVerse {...bibleData} />
             </Box>
           </Grid>
         </Grid>
-        <Box display="flex" justifyContent="center" p={2}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          p={2}
+          sx={{ flexWrap: "wrap" }}
+        >
           <Typography variant="body2" color="textSecondary" align="center">
             {"Copyright © "}
             {new Date().getFullYear()}
             {" Thon Becker"}
           </Typography>
         </Box>
-      </Main>
+      </Box>
     </Box>
   );
 }
