@@ -101,7 +101,7 @@ export default function Root() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-            href="https://www.linkedin.com/in/thon-becker-9a7a7b1b5/"
+            href="https://www.linkedin.com/in/thon-becker-66600947/"
             target="_blank"
           >
             <ListItemIcon>
