@@ -28,8 +28,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/",
-    "lint:fix": "eslint --fix src/"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
