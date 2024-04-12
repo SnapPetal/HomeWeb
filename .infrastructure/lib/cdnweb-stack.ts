@@ -1,6 +1,6 @@
 import { Stack, StackProps } from "aws-cdk-lib";
 import { Construct } from "constructs";
-import { RemovalPolicy } from "aws-cdk-lib";
+import { RemovalPolicy, Duration } from "aws-cdk-lib";
 import * as acm from "aws-cdk-lib/aws-certificatemanager";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
@@ -30,6 +30,19 @@ export class CdnWebStack extends Stack {
       autoDeleteObjects: true,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       encryption: s3.BucketEncryption.S3_MANAGED,
+      lifecycleRules: [
+        {
+          prefix: "DadJokes/",
+          abortIncompleteMultipartUploadAfter: Duration.days(90),
+          expiration: Duration.days(365),
+          transitions: [
+            {
+              storageClass: s3.StorageClass.INFREQUENT_ACCESS,
+              transitionAfter: Duration.days(30),
+            },
+          ],
+        },
+      ],
     });
 
     new s3.Bucket(this, "MediaBucket", {
