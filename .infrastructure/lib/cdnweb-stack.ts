@@ -40,6 +40,18 @@ export class CdnWebStack extends Stack {
               storageClass: s3.StorageClass.INFREQUENT_ACCESS,
               transitionAfter: Duration.days(30),
             },
+            {
+              storageClass: s3.StorageClass.INTELLIGENT_TIERING,
+              transitionAfter: Duration.days(60),
+            },
+            {
+              storageClass: s3.StorageClass.GLACIER,
+              transitionAfter: Duration.days(90),
+            },
+            {
+              storageClass: s3.StorageClass.DEEP_ARCHIVE,
+              transitionAfter: Duration.days(180),
+            },
           ],
         },
       ],
