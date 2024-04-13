@@ -30,10 +30,10 @@
   resolved "https://registry.yarnpkg.com/@aws-cdk/integ-tests-alpha/-/integ-tests-alpha-2.135.0-alpha.0.tgz#a20bc3cd8c9df062fc59fa4a61079d49be02a83f"
   integrity sha512-xnwAh86J4ZQIF4inbRM6QKQwGBvLJgdNTLsY39jkK8jjytw/b4TFqIwgeH/TmdskZkGxwimkleLrcbwslsU8vw==
 
-"@aws-solutions-constructs/core@^2.54.1":
-  version "2.54.1"
-  resolved "https://registry.yarnpkg.com/@aws-solutions-constructs/core/-/core-2.54.1.tgz#2020210748c07cb44814ebd3d3571fdd2056f374"
-  integrity sha512-e2U9uIPyMtRXe8xSgKvVxlPce70oEzLlmtckVzla1rfBbBsZnPC3E+zU4zwr3HHEPXaJdLgxsbrygBUAwsdFEw==
+"@aws-solutions-constructs/core@^2.55.0":
+  version "2.55.0"
+  resolved "https://registry.yarnpkg.com/@aws-solutions-constructs/core/-/core-2.55.0.tgz#117772a552865fe4695b89c71c5df9ebb17f37b8"
+  integrity sha512-TT1oVOCH6GBdAKxrgaas2JzUQ5LCi1FdV1eUVX+2UEj30YA8+alf0ISoFAuVnXfvjSk1QMxUO1ydSSWchv4kOA==
   dependencies:
     "@aws-cdk/integ-tests-alpha" "2.135.0-alpha.0"
     constructs "^10.0.0"
