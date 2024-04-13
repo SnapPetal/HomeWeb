@@ -26,9 +26,26 @@ import {
 import BibleVerse from "../components/BibleCard/index";
 
 export async function loader() {
-  const response = await fetch("https://bibleverse.thonbecker.com/");
-  const verse = await response.json();
-  return verse;
+  let cache = sessionStorage.getItem("verseCache");
+  if (cache) {
+    return JSON.parse(cache);
+  }
+
+  let retries = 3;
+  while (retries > 0) {
+    try {
+      const response = await fetch("https://bibleverse.thonbecker.com/");
+      const verse = await response.json();
+      sessionStorage.setItem("verseCache", JSON.stringify(verse));
+      return verse;
+    } catch (error) {
+      console.error(`Failed to fetch, attempts left: ${retries - 1}`, error);
+      retries--;
+      if (retries === 0) {
+        throw error;
+      }
+    }
+  }
 }
 
 const drawerWidth = 240;
@@ -150,6 +167,7 @@ export default function Root() {
           open={mobileOpen}
           onTransitionEnd={handleDrawerTransitionEnd}
           onClose={handleDrawerClose}
+          onClick={handleDrawerToggle}
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
