@@ -2,7 +2,12 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/functions"
+    schedule:
+      interval: "daily"
+      
+  - package-ecosystem: "npm"
+    directory: "/personal"
     schedule:
       interval: "daily"
       
