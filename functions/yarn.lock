@@ -505,9 +505,9 @@ micromatch@^4.0.4:
     picomatch "^2.3.1"
 
 mime@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-4.0.1.tgz#ad7563d1bfe30253ad97dedfae2b1009d01b9470"
-  integrity sha512-5lZ5tyrIfliMXzFtkYyekWbtRXObT9OWa8IwQ5uxTBDHucNNwniRqo0yInflj+iYi5CBa6qxadGzGarDfuEOxA==
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-4.0.2.tgz#2da851f9b6545ed402525fa9075c440d76f20ef5"
+  integrity sha512-rSR2L7RhEm0ifwn6lZAa+CcLy7EEl6POovp3QcnFHb/C5P4B+h6u+yCQPQaWzNdecHL8p85zRowrAjpF9F46Og==
 
 minimatch@^9.0.4:
   version "9.0.4"
