@@ -158,7 +158,7 @@ export default function Root() {
       </AppBar>
       <Box
         component="nav"
-        sx={{ width: { xs: "100%", sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { xs: "100%", sm: drawerWidth }, flexShrink: { sm: 0 }, display: "flex" }}
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -232,6 +232,6 @@ export default function Root() {
           </Typography>
         </Box>
       </Box>
-    </Box>
+    </Box >
   );
 }
