@@ -3,6 +3,7 @@ import { Construct } from "constructs";
 import * as cognito from "aws-cdk-lib/aws-cognito";
 import * as acm from "aws-cdk-lib/aws-certificatemanager";
 import * as route53 from "aws-cdk-lib/aws-route53";
+import * as route53Targets from "aws-cdk-lib/aws-route53-targets";
 
 export class IdpStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -67,11 +68,18 @@ export class IdpStack extends Stack {
       domainName: "auth.thonbecker.com",
       validation: acm.CertificateValidation.fromDns(zone),
     });
-    personalUserPool.addDomain("CustomDomain", {
+    const personalUserPoolDomain = personalUserPool.addDomain("CustomDomain", {
       customDomain: {
-        domainName: "user.thonbecker.com",
+        domainName: "auth.thonbecker.com",
         certificate: cert,
       },
+    });
+    new route53.ARecord(this, "AliasRecord", {
+      zone: zone,
+      recordName: "auth.thonbecker.com",
+      target: route53.RecordTarget.fromAlias(
+        new route53Targets.UserPoolDomainTarget(personalUserPoolDomain),
+      ),
     });
   }
 }
