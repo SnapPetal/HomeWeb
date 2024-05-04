@@ -82,6 +82,7 @@ export class IdpStack extends Stack {
       ),
     });
     personalUserPool.addClient("endurance-app-client", {
+      generateSecret: true,
       oAuth: {
         flows: {
           authorizationCodeGrant: true,
