@@ -81,5 +81,15 @@ export class IdpStack extends Stack {
         new route53Targets.UserPoolDomainTarget(personalUserPoolDomain),
       ),
     });
+    personalUserPool.addClient("endurance-app-client", {
+      oAuth: {
+        flows: {
+          authorizationCodeGrant: true,
+        },
+        scopes: [cognito.OAuthScope.OPENID],
+        callbackUrls: ["https://endurance.thonbecker.com/welcome"],
+        logoutUrls: ["https://endurance.thonbecker.com/signin"],
+      },
+    });
   }
 }
