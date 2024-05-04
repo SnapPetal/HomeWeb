@@ -64,7 +64,7 @@ export class IdpStack extends Stack {
       domainName: "thonbecker.com",
     });
     const cert = new acm.Certificate(this, "Certificate", {
-      domainName: "user.thonbecker.com",
+      domainName: "auth.thonbecker.com",
       validation: acm.CertificateValidation.fromDns(zone),
     });
     personalUserPool.addDomain("CustomDomain", {
