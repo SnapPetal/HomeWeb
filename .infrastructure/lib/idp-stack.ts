@@ -3,10 +3,23 @@ import { Construct } from "constructs";
 import * as cognito from "aws-cdk-lib/aws-cognito";
 import * as acm from "aws-cdk-lib/aws-certificatemanager";
 import * as route53 from "aws-cdk-lib/aws-route53";
+import * as iam from "aws-cdk-lib/aws-iam";
+import * as cdk from "aws-cdk-lib"; // Add this line
 
 export class IdpStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
+
+    const smsRole = new iam.Role(this, "smsRole", {
+      assumedBy: new iam.ServicePrincipal("cognito-idp.amazonaws.com"),
+    });
+
+    smsRole.addToPolicy(
+      new iam.PolicyStatement({
+        actions: ["SNS:Publish"],
+        resources: ["*"],
+      }),
+    );
 
     const personalUserPool = new cognito.UserPool(this, "personalUserpool", {
       userPoolName: "personalUserpool",
@@ -42,6 +55,8 @@ export class IdpStack extends Stack {
       },
       accountRecovery: cognito.AccountRecovery.EMAIL_ONLY,
       selfSignUpEnabled: true,
+      smsRole: smsRole,
+      smsRoleExternalId: cdk.Stack.of(this).stackId,
       userVerification: {
         emailSubject:
           "Welcome to Thon Becker Solutions - Please Verify Your Email",
