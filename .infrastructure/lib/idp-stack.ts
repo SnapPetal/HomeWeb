@@ -88,8 +88,8 @@ export class IdpStack extends Stack {
           authorizationCodeGrant: true,
         },
         scopes: [cognito.OAuthScope.OPENID],
-        callbackUrls: ["https://endurance.thonbecker.com/welcome"],
-        logoutUrls: ["https://endurance.thonbecker.com/signin"],
+        callbackUrls: ["https://endurance.thonbecker.solutions/hello"],
+        logoutUrls: ["https://endurance.thonbecker.solutions/logout"],
       },
     });
   }
