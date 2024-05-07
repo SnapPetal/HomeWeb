@@ -25,7 +25,7 @@
     "typescript": "~5.4.5"
   },
   "dependencies": {
-    "@aws-solutions-constructs/core": "^2.56.0",
+    "@aws-solutions-constructs/core": "^2.57.0",
     "aws-cdk-lib": "2.140.0",
     "cdk-simplewebsite-deploy": "2.0.81",
     "constructs": "10.3.0"
