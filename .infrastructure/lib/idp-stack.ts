@@ -12,7 +12,10 @@ export class IdpStack extends Stack {
     const personalUserPool = new cognito.UserPool(this, "personalUserpool", {
       userPoolName: "personalUserpool",
       signInCaseSensitive: false,
-      signInAliases: { username: true },
+      signInAliases: { username: true,
+        email: true,
+        phone: false,
+       },
       autoVerify: { email: true },
       standardAttributes: {
         fullname: {
@@ -48,12 +51,12 @@ export class IdpStack extends Stack {
       domainName: "thonbecker.com",
     });
     const cert = new acm.Certificate(this, "Certificate", {
-      domainName: "auth.thonbecker.com",
+      domainName: "id.thonbecker.com",
       validation: acm.CertificateValidation.fromDns(zone),
     });
     const personalUserPoolDomain = personalUserPool.addDomain("CustomDomain", {
       customDomain: {
-        domainName: "auth.thonbecker.com",
+        domainName: "id.thonbecker.com",
         certificate: cert,
       },
     });
