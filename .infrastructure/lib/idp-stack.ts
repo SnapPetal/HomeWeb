@@ -13,33 +13,16 @@ export class IdpStack extends Stack {
       userPoolName: "personalUserpool",
       signInCaseSensitive: false,
       signInAliases: { username: true },
-      autoVerify: { email: true, phone: true },
-      keepOriginal: {
-        email: true,
-        phone: true,
-      },
+      autoVerify: { email: true },
       standardAttributes: {
         fullname: {
           required: true,
-          mutable: false,
-        },
-        address: {
-          required: false,
           mutable: true,
         },
-      },
-      mfa: cognito.Mfa.REQUIRED,
-      mfaSecondFactor: {
-        sms: true,
-        otp: true,
-      },
-      passwordPolicy: {
-        minLength: 12,
-        requireLowercase: true,
-        requireUppercase: true,
-        requireDigits: true,
-        requireSymbols: true,
-        tempPasswordValidity: Duration.days(3),
+        address: {
+          required: true,
+          mutable: true,
+        },
       },
       accountRecovery: cognito.AccountRecovery.EMAIL_ONLY,
       selfSignUpEnabled: true,
@@ -88,8 +71,10 @@ export class IdpStack extends Stack {
           authorizationCodeGrant: true,
         },
         scopes: [cognito.OAuthScope.OPENID],
-        callbackUrls: ["https://endurance.thonbecker.solutions/login/oauth2/code/cognito"],
-        logoutUrls: ["https://endurance.thonbecker.solutions/logout"],
+        callbackUrls: [
+          "https://global.thonbecker.solutions/login/oauth2/code/cognito",
+        ],
+        logoutUrls: ["https://global.thonbecker.solutions/logout"],
       },
     });
   }
