@@ -62,7 +62,7 @@ export class IdpStack extends Stack {
     });
     new route53.ARecord(this, "AliasRecord", {
       zone: zone,
-      recordName: "auth.thonbecker.com",
+      recordName: "id.thonbecker.com",
       target: route53.RecordTarget.fromAlias(
         new route53Targets.UserPoolDomainTarget(personalUserPoolDomain),
       ),
