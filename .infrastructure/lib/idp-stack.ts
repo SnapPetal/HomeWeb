@@ -50,7 +50,7 @@ export class IdpStack extends Stack {
         },
         scopes: [cognito.OAuthScope.OPENID],
         callbackUrls: [
-          "https://endurance.thonbecker.solutions/login/oauth2/code/cognito",
+          "https://endurance.thonbecker.solutions/login/oauth2/code/endurance",
         ],
         logoutUrls: ["https://endurance.thonbecker.solutions/logout"],
       },
@@ -63,7 +63,7 @@ export class IdpStack extends Stack {
         },
         scopes: [cognito.OAuthScope.OPENID],
         callbackUrls: [
-          "https://global.thonbecker.solutions/login/oauth2/code/cognito",
+          "https://global.thonbecker.solutions/login/oauth2/code/global",
         ],
         logoutUrls: ["https://global.thonbecker.solutions/logout"],
       },
@@ -75,7 +75,7 @@ export class IdpStack extends Stack {
           authorizationCodeGrant: true,
         },
         scopes: [cognito.OAuthScope.OPENID],
-        callbackUrls: ["http://localhost:8080/login/oauth2/code/cognito"],
+        callbackUrls: ["http://localhost:8080/login/oauth2/code/local"],
         logoutUrls: ["https://localhost.solutions/logout"],
       },
     });
