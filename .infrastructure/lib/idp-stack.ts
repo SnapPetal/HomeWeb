@@ -42,7 +42,20 @@ export class IdpStack extends Stack {
         new route53Targets.UserPoolDomainTarget(personalUserPoolDomain),
       ),
     });
-    personalUserPool.addClient("endurance-app-client", {
+    personalUserPool.addClient("endurance-app-client-base", {
+      generateSecret: true,
+      oAuth: {
+        flows: {
+          authorizationCodeGrant: true,
+        },
+        scopes: [cognito.OAuthScope.OPENID],
+        callbackUrls: [
+          "https://endurance.thonbecker.solutions/login/oauth2/code/cognito",
+        ],
+        logoutUrls: ["https://endurance.thonbecker.solutions/logout"],
+      },
+    });
+    personalUserPool.addClient("endurance-app-client-global", {
       generateSecret: true,
       oAuth: {
         flows: {
@@ -53,6 +66,17 @@ export class IdpStack extends Stack {
           "https://global.thonbecker.solutions/login/oauth2/code/cognito",
         ],
         logoutUrls: ["https://global.thonbecker.solutions/logout"],
+      },
+    });
+    personalUserPool.addClient("endurance-app-client-local", {
+      generateSecret: true,
+      oAuth: {
+        flows: {
+          authorizationCodeGrant: true,
+        },
+        scopes: [cognito.OAuthScope.OPENID],
+        callbackUrls: ["http://localhost:8080/login/oauth2/code/cognito"],
+        logoutUrls: ["https://localhost.solutions/logout"],
       },
     });
   }
