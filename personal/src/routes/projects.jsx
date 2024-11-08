@@ -1,93 +1,96 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import {useLoaderData} from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
 function scrubJoke(joke) {
-  // Regular expression to match any character that is not a letter, number, space, or common punctuation
-  const regex = /[^a-zA-Z0-9 .,?!'"]/g;
+    // Regular expression to match any character that is not a letter, number, space, or common punctuation
+    const regex = /[^a-zA-Z0-9 .,?!'"]/g;
 
-  // Replace any character that matches the regular expression with an empty string
-  joke = joke.replace(regex, "");
+    // Replace any character that matches the regular expression with an empty string
+    joke = joke.replace(regex, "");
 
-  return joke;
+    return joke;
 }
 
 export async function loader() {
-  const dadJokeResponse = await fetch("https://icanhazdadjoke.com", {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      "User-Agent": "thonbecker.com",
-    },
-  });
-  const { joke } = await dadJokeResponse.json();
+    const dadJokeResponse = await fetch("https://icanhazdadjoke.com", {
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "User-Agent": "thonbecker.com",
+        },
+    });
+    const {joke} = await dadJokeResponse.json();
 
-  // Clean the joke before sending to Polly
-  const scrubbedJoke = scrubJoke(joke);
+    // Clean the joke before sending to Polly
+    const scrubbedJoke = scrubJoke(joke);
 
-  const jokeResponse = await fetch(
-    "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: scrubbedJoke,
-    },
-  );
-  return await jokeResponse.json();
+    const jokeResponse = await fetch(
+        "https://ondxpdql18.execute-api.us-east-1.amazonaws.com/joke",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: scrubbedJoke,
+        },
+    );
+    return await jokeResponse.json();
 }
 
 export default function Projects() {
-  const { key } = useLoaderData();
+    const {key} = useLoaderData();
 
-  return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Container maxWidth="lg">
-        <Typography variant="h3" component="h1" gutterBottom>
-          Projects
-        </Typography>
-        <Typography variant="h4" component="h2" gutterBottom>
-          Dad Joke of the Day
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          The project utilizes Amazon Polly, an AWS service, to transform a
-          daily dad joke into an engaging audio experience. Implemented in
-          NodeJS, the script interacts with the Polly API, allowing for seamless
-          text-to-speech conversion. A predefined dad joke serves as the input
-          text, triggering the Polly service to generate lifelike speech. The
-          synthesized audio is then saved as an OGG file in a S3 bucket,
-          providing an amusing and dynamically spoken rendition of the chosen
-          dad joke. This simple yet entertaining application showcases the
-          capabilities of AWS Polly in converting text content into
-          natural-sounding speech, adding a delightful auditory dimension to the
-          humor of the day.
-        </Typography>
-        <audio controls>
-          <source src={`https://cdn.thonbecker.com/${key}`} type="audio/ogg" />
-          Your browser does not support the audio element.
-        </audio>
-      <Typography variant="h4" component="h2" gutterBottom>
-        Prayer Wall
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        The Prayer Wall App is an interactive web application where users can share and view prayer requests. Built using React, this app provides a simple and clean interface for user submissions, and displays them in real-time. An embedded iframe is utilized within the application to display external content related to prayers.
-      <
+    return (
+        <Box
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+        >
+            <Container maxWidth="lg">
+                <Typography variant="h3" component="h1" gutterBottom>
+                    Projects
+                </Typography>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    Dad Joke of the Day
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    The project utilizes Amazon Polly, an AWS service, to transform a
+                    daily dad joke into an engaging audio experience. Implemented in
+                    NodeJS, the script interacts with the Polly API, allowing for seamless
+                    text-to-speech conversion. A predefined dad joke serves as the input
+                    text, triggering the Polly service to generate lifelike speech. The
+                    synthesized audio is then saved as an OGG file in a S3 bucket,
+                    providing an amusing and dynamically spoken rendition of the chosen
+                    dad joke. This simple yet entertaining application showcases the
+                    capabilities of AWS Polly in converting text content into
+                    natural-sounding speech, adding a delightful auditory dimension to the
+                    humor of the day.
+                </Typography>
+                <audio controls>
+                    <source src={`https://cdn.thonbecker.com/${key}`} type="audio/ogg"/>
+                    Your browser does not support the audio element.
+                </audio>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    Prayer Wall
+                </Typography>
+                <Typography variant="body1" gutterBottom>
+                    The Prayer Wall App is an interactive web application where users can share and view prayer
+                    requests. Built using React, this app provides a simple and clean interface for user submissions,
+                    and displays them in real-time. An embedded iframe is utilized within the application to display
+                    external content related to prayers.
+                <
         /Typography>
-        <iframe
-          title="Prayer Wall"
-          src="https://app.staging.godlistens.com/community/global/prayer-wall"
-          width="100%"
-          height="500"
-        />
-    </Container>
-    </Box>
-  );
+                <iframe
+                    title="Prayer Wall"
+                    src="https://app.staging.godlistens.com/community/global/prayer-wall"
+                    width="100%"
+                    height="500"
+                />
+            </Container>
+        </Box>
+    );
 }
