@@ -74,6 +74,11 @@ export default function Projects() {
                     <source src={`https://cdn.thonbecker.com/${key}`} type="audio/ogg"/>
                     Your browser does not support the audio element.
                 </audio>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    Prayer Wall
+                </Typography>
+                <iframe src={"https://app.staging.godlistens.com/community/global/prayer-wall"} width="100%"
+                        height="400px"/>
             </Container>
         </Box>
     );
