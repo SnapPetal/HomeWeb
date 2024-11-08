@@ -83,7 +83,7 @@ export default function Projects() {
         /Typography>
         <iframe
           title="Prayer Wall"
-          src="https://app.godlistens.com/community/global/prayer-wall"
+          src="https://app.staging.godlistens.com/community/global/prayer-wall"
           width="100%"
           height="500"
         />
