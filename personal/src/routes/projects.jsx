@@ -74,22 +74,6 @@ export default function Projects() {
                     <source src={`https://cdn.thonbecker.com/${key}`} type="audio/ogg"/>
                     Your browser does not support the audio element.
                 </audio>
-                <Typography variant="h4" component="h2" gutterBottom>
-                    Prayer Wall
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                    The Prayer Wall App is an interactive web application where users can share and view prayer
-                    requests. Built using React, this app provides a simple and clean interface for user submissions,
-                    and displays them in real-time. An embedded iframe is utilized within the application to display
-                    external content related to prayers.
-                <
-        /Typography>
-                <iframe
-                    title="Prayer Wall"
-                    src="https://app.staging.godlistens.com/community/global/prayer-wall"
-                    width="100%"
-                    height="500"
-                />
             </Container>
         </Box>
     );
